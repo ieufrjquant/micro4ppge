@@ -1,0 +1,1577 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.551">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Microeconomics 4 - 1&nbsp; Game Theory</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./index.html" rel="prev">
+<link href="./logo_gpeq_html.png" rel="icon" type="image/png">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./game-theory.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Game Theory</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="./index.html" class="sidebar-logo-link">
+      <img src="./logo_gpeq_html.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Microeconomics 4</a> 
+        <div class="sidebar-tools-main">
+    <a href="./Microeconomics-4.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
+    <div class="dropdown">
+      <a href="" title="Share" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Share"><i class="bi bi-share"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=|url|">
+              <i class="bi bi-bi-twitter pe-1"></i>
+            Twitter
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://www.facebook.com/sharer/sharer.php?u=|url|">
+              <i class="bi bi-bi-facebook pe-1"></i>
+            Facebook
+            </a>
+          </li>
+      </ul>
+    </div>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./game-theory.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Game Theory</span></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#what-is-game-theory" id="toc-what-is-game-theory" class="nav-link active" data-scroll-target="#what-is-game-theory"><span class="header-section-number">1.1</span> What is Game Theory?</a>
+  <ul class="collapse">
+  <li><a href="#brief-history" id="toc-brief-history" class="nav-link" data-scroll-target="#brief-history">Brief History</a></li>
+  <li><a href="#key-elements-of-a-game" id="toc-key-elements-of-a-game" class="nav-link" data-scroll-target="#key-elements-of-a-game">Key Elements of a Game</a></li>
+  <li><a href="#normal-form-games" id="toc-normal-form-games" class="nav-link" data-scroll-target="#normal-form-games">Normal-Form Games</a></li>
+  <li><a href="#mixed-and-correlated-strategies" id="toc-mixed-and-correlated-strategies" class="nav-link" data-scroll-target="#mixed-and-correlated-strategies">Mixed and Correlated Strategies</a></li>
+  </ul></li>
+  <li><a href="#dominated-strategies" id="toc-dominated-strategies" class="nav-link" data-scroll-target="#dominated-strategies"><span class="header-section-number">1.2</span> Dominated Strategies</a>
+  <ul class="collapse">
+  <li><a href="#advertising-war-coke-vs.-pepsi" id="toc-advertising-war-coke-vs.-pepsi" class="nav-link" data-scroll-target="#advertising-war-coke-vs.-pepsi">Advertising War: Coke vs.&nbsp;Pepsi</a></li>
+  <li><a href="#prisoners-dilemma-pd" id="toc-prisoners-dilemma-pd" class="nav-link" data-scroll-target="#prisoners-dilemma-pd">Prisoners’ Dilemma (PD)</a></li>
+  <li><a href="#modified-prisoners-dilemma" id="toc-modified-prisoners-dilemma" class="nav-link" data-scroll-target="#modified-prisoners-dilemma">Modified Prisoners’ Dilemma</a></li>
+  <li><a href="#pure-strategies-may-be-dominated-by-mixed-strategies" id="toc-pure-strategies-may-be-dominated-by-mixed-strategies" class="nav-link" data-scroll-target="#pure-strategies-may-be-dominated-by-mixed-strategies">Pure Strategies May Be Dominated by Mixed Strategies</a></li>
+  </ul></li>
+  <li><a href="#the-beauty-contest" id="toc-the-beauty-contest" class="nav-link" data-scroll-target="#the-beauty-contest"><span class="header-section-number">1.3</span> The Beauty Contest</a>
+  <ul class="collapse">
+  <li><a href="#keynesian-beauty-contest" id="toc-keynesian-beauty-contest" class="nav-link" data-scroll-target="#keynesian-beauty-contest">Keynesian Beauty Contest</a></li>
+  <li><a href="#the-beauty-contest-and-the-stock-market" id="toc-the-beauty-contest-and-the-stock-market" class="nav-link" data-scroll-target="#the-beauty-contest-and-the-stock-market">The Beauty Contest and the Stock Market</a></li>
+  </ul></li>
+  <li><a href="#iterated-deletion-of-strictly-dominated-strategies" id="toc-iterated-deletion-of-strictly-dominated-strategies" class="nav-link" data-scroll-target="#iterated-deletion-of-strictly-dominated-strategies"><span class="header-section-number">1.4</span> Iterated Deletion of Strictly Dominated Strategies</a>
+  <ul class="collapse">
+  <li><a href="#remarks" id="toc-remarks" class="nav-link" data-scroll-target="#remarks">Remarks</a></li>
+  </ul></li>
+  <li><a href="#detour-on-common-knowledge" id="toc-detour-on-common-knowledge" class="nav-link" data-scroll-target="#detour-on-common-knowledge"><span class="header-section-number">1.5</span> Detour on Common Knowledge</a>
+  <ul class="collapse">
+  <li><a href="#the-story-of-the-unfaithful-wives" id="toc-the-story-of-the-unfaithful-wives" class="nav-link" data-scroll-target="#the-story-of-the-unfaithful-wives">The Story of the Unfaithful Wives</a></li>
+  <li><a href="#rationalizability" id="toc-rationalizability" class="nav-link" data-scroll-target="#rationalizability">Rationalizability</a></li>
+  <li><a href="#what-is-a-belief" id="toc-what-is-a-belief" class="nav-link" data-scroll-target="#what-is-a-belief">What is a “Belief”?</a></li>
+  <li><a href="#rationalizabile-strategies" id="toc-rationalizabile-strategies" class="nav-link" data-scroll-target="#rationalizabile-strategies">Rationalizabile Strategies</a></li>
+  <li><a href="#rationalizability-in-cournot-duopoly" id="toc-rationalizability-in-cournot-duopoly" class="nav-link" data-scroll-target="#rationalizability-in-cournot-duopoly">Rationalizability in Cournot Duopoly</a></li>
+  <li><a href="#never-best-responses" id="toc-never-best-responses" class="nav-link" data-scroll-target="#never-best-responses">Never Best Responses</a></li>
+  <li><a href="#iteration-and-best-responses" id="toc-iteration-and-best-responses" class="nav-link" data-scroll-target="#iteration-and-best-responses">Iteration and Best Responses</a></li>
+  <li><a href="#closed-under-rational-behavior" id="toc-closed-under-rational-behavior" class="nav-link" data-scroll-target="#closed-under-rational-behavior">Closed under Rational Behavior</a></li>
+  <li><a href="#epistemic-foundations-of-rationalizability" id="toc-epistemic-foundations-of-rationalizability" class="nav-link" data-scroll-target="#epistemic-foundations-of-rationalizability">Epistemic Foundations of Rationalizability</a></li>
+  <li><a href="#interpretation" id="toc-interpretation" class="nav-link" data-scroll-target="#interpretation">Interpretation</a></li>
+  <li><a href="#knowledge-and-common-knowledge" id="toc-knowledge-and-common-knowledge" class="nav-link" data-scroll-target="#knowledge-and-common-knowledge">Knowledge and Common Knowledge</a></li>
+  <li><a href="#public-events" id="toc-public-events" class="nav-link" data-scroll-target="#public-events">Public Events</a></li>
+  <li><a href="#strategies" id="toc-strategies" class="nav-link" data-scroll-target="#strategies">Strategies</a></li>
+  <li><a href="#common-knowledge-of-rationality" id="toc-common-knowledge-of-rationality" class="nav-link" data-scroll-target="#common-knowledge-of-rationality">Common Knowledge of Rationality</a></li>
+  </ul></li>
+  <li><a href="#nash-equilibrium" id="toc-nash-equilibrium" class="nav-link" data-scroll-target="#nash-equilibrium"><span class="header-section-number">1.6</span> Nash Equilibrium</a>
+  <ul class="collapse">
+  <li><a href="#remarks-1" id="toc-remarks-1" class="nav-link" data-scroll-target="#remarks-1">Remarks</a></li>
+  <li><a href="#what-are-the-assumptions" id="toc-what-are-the-assumptions" class="nav-link" data-scroll-target="#what-are-the-assumptions">What Are the Assumptions?</a></li>
+  <li><a href="#do-soccer-players-flip-coins" id="toc-do-soccer-players-flip-coins" class="nav-link" data-scroll-target="#do-soccer-players-flip-coins">Do Soccer Players Flip Coins?</a></li>
+  <li><a href="#tennis-service-game" id="toc-tennis-service-game" class="nav-link" data-scroll-target="#tennis-service-game">Tennis Service Game</a></li>
+  <li><a href="#stag-hunt" id="toc-stag-hunt" class="nav-link" data-scroll-target="#stag-hunt">Stag Hunt</a></li>
+  <li><a href="#which-equilibrium-is-more-plausible" id="toc-which-equilibrium-is-more-plausible" class="nav-link" data-scroll-target="#which-equilibrium-is-more-plausible">Which Equilibrium is More Plausible?</a></li>
+  <li><a href="#epistemic-foundations" id="toc-epistemic-foundations" class="nav-link" data-scroll-target="#epistemic-foundations">Epistemic Foundations</a></li>
+  <li><a href="#evolutionary-foundations" id="toc-evolutionary-foundations" class="nav-link" data-scroll-target="#evolutionary-foundations">Evolutionary Foundations</a></li>
+  <li><a href="#convergence" id="toc-convergence" class="nav-link" data-scroll-target="#convergence">Convergence</a></li>
+  <li><a href="#remarks-2" id="toc-remarks-2" class="nav-link" data-scroll-target="#remarks-2">Remarks</a></li>
+  </ul></li>
+  <li><a href="#existence-of-nash-equilibrium" id="toc-existence-of-nash-equilibrium" class="nav-link" data-scroll-target="#existence-of-nash-equilibrium"><span class="header-section-number">1.7</span> Existence of Nash Equilibrium</a>
+  <ul class="collapse">
+  <li><a href="#nash-1950-1" id="toc-nash-1950-1" class="nav-link" data-scroll-target="#nash-1950-1">Nash (1950)</a></li>
+  <li><a href="#kakutani" id="toc-kakutani" class="nav-link" data-scroll-target="#kakutani">Kakutani</a></li>
+  <li><a href="#existence-of-nash-equilibria" id="toc-existence-of-nash-equilibria" class="nav-link" data-scroll-target="#existence-of-nash-equilibria">Existence of Nash Equilibria</a></li>
+  <li><a href="#correspondences" id="toc-correspondences" class="nav-link" data-scroll-target="#correspondences">Correspondences</a></li>
+  <li><a href="#closed-graph" id="toc-closed-graph" class="nav-link" data-scroll-target="#closed-graph">Closed Graph</a></li>
+  <li><a href="#upper-hemicontinuity" id="toc-upper-hemicontinuity" class="nav-link" data-scroll-target="#upper-hemicontinuity">Upper Hemicontinuity</a></li>
+  <li><a href="#the-maximum-theorem" id="toc-the-maximum-theorem" class="nav-link" data-scroll-target="#the-maximum-theorem">The Maximum Theorem</a></li>
+  <li><a href="#a-fixed-point-theorem" id="toc-a-fixed-point-theorem" class="nav-link" data-scroll-target="#a-fixed-point-theorem">A Fixed-Point Theorem</a></li>
+  <li><a href="#convexity" id="toc-convexity" class="nav-link" data-scroll-target="#convexity">Convexity</a></li>
+  <li><a href="#existence-of-nash-equilibrium-1" id="toc-existence-of-nash-equilibrium-1" class="nav-link" data-scroll-target="#existence-of-nash-equilibrium-1">Existence of Nash Equilibrium</a></li>
+  <li><a href="#existence-of-mixed-strategy-nash-equilibrium" id="toc-existence-of-mixed-strategy-nash-equilibrium" class="nav-link" data-scroll-target="#existence-of-mixed-strategy-nash-equilibrium">Existence of Mixed-Strategy Nash Equilibrium</a></li>
+  <li><a href="#upperhemicontinuity-of-nash-equilibrium" id="toc-upperhemicontinuity-of-nash-equilibrium" class="nav-link" data-scroll-target="#upperhemicontinuity-of-nash-equilibrium">Upperhemicontinuity of Nash Equilibrium</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Game Theory</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="what-is-game-theory" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="what-is-game-theory"><span class="header-section-number">1.1</span> What is Game Theory?</h2>
+<div class="callout callout-style-simple callout-tip">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>Game Theory is the formal study of strategic interaction.</strong></p>
+</div>
+</div>
+</div>
+<p>In a strategic setting the actions of several agents are interdependent. Each agent’s outcome depends not only on his actions, but also on the actions of other agents. How to predict opponents’ play and respond optimally?</p>
+<p>Everything is a game…</p>
+<ul>
+<li>poker, chess, soccer, driving, dating, stock market</li>
+<li>advertising, setting prices, entering new markets, building a reputation</li>
+<li>bargaining, partnerships, job market search and screening</li>
+<li>designing contracts, auctions, insurance, environmental regulations</li>
+<li>international relations, trade agreements, electoral campaigns</li>
+</ul>
+<p>Most modern economic research includes game theoretical elements. Eleven game theorists have won the economics Nobel Prize so far.</p>
+<section id="brief-history" class="level3">
+<h3 class="anchored" data-anchor-id="brief-history">Brief History</h3>
+<ul>
+<li>Cournot (1838): quantity setting duopoly</li>
+<li>Zermelo (1913): backward induction</li>
+<li>von Neumann (1928), Borel (1938), von Neumann and Morgenstern (1944): zero-sum games</li>
+<li>Flood and Dresher (1950): experiments</li>
+<li>Nash (1950): equilibrium</li>
+<li>Selten (1965): dynamic games</li>
+<li>Harsanyi (1967): incomplete information</li>
+<li>Akerlof (1970), Spence (1973): first applications</li>
+<li>1980s boom, continuing nowadays: repeated games, bargaining, reputation, equilibrium refinements, industrial organization, contract theory, mechanism/market design</li>
+<li>1990s: parallel development of behavioral economics</li>
+<li>more recently: applications to computer science, political science, psychology, evolutionary biology</li>
+</ul>
+</section>
+<section id="key-elements-of-a-game" class="level3">
+<h3 class="anchored" data-anchor-id="key-elements-of-a-game">Key Elements of a Game</h3>
+<ul>
+<li><strong>Players:</strong> <em>Who is interacting?</em></li>
+<li><strong>Strategies:</strong> <em>What are the options of each player? In what order do players act?</em></li>
+<li><strong>Payoffs:</strong> <em>How do strategies translate into outcomes? What are players’ preferences over possible outcomes?</em></li>
+<li><strong>Information/Beliefs:</strong> <em>What do players know/believe about the situation and about one another? What actions do they observe before making decisions?</em></li>
+<li><strong>Rationality:</strong> <em>How do players think?</em></li>
+</ul>
+</section>
+<section id="normal-form-games" class="level3">
+<h3 class="anchored" data-anchor-id="normal-form-games">Normal-Form Games</h3>
+<p>A normal (or strategic) form game is a triplet <span class="math inline">(N, S, u)</span> with the following properties:</p>
+<ul>
+<li><span class="math inline">N=\{1,2, \ldots, n\}</span>: finite set of players</li>
+<li><span class="math inline">S_{i} \ni s_{i}</span>: set of pure strategies of player <span class="math inline">i</span></li>
+<li><span class="math inline">S=S_{1} \times \cdots \times S_{n} \ni s=\left(s_{1}, \ldots, s_{n}\right)</span>: set of pure strategy profiles</li>
+<li><span class="math inline">S_{-i}=\prod_{j \neq i} S_{j} \ni S_{-i}</span>: pure strategy profiles of i’s opponents</li>
+<li><span class="math inline">u_{i}: S \rightarrow \mathbb{R}</span>: payoff function of player <span class="math inline">i ; u=\left(u_{1}, \ldots, u_{n}\right)</span>.</li>
+</ul>
+<p>Outcomes are interdependent. Player <span class="math inline">i \in N</span> receives payoff <span class="math inline">u_{i}\left(s_{1}, \ldots, s_{n}\right)</span> when <span class="math inline">s=\left(s_{1}, \ldots, s_{n}\right) \in S</span> is played.</p>
+<p>The structure of the game is common knoweldge: all players know <span class="math inline">(N, S, u)</span>, and know that their opponents know it, and know that their opponents know that everyone knows, and so on.</p>
+<p>The game is finite if <span class="math inline">S</span> is finite.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/clipboard-1451524197.png" class="img-fluid figure-img" style="width:50.0%"></p>
+<figcaption>Rock-Paper-Scissors</figcaption>
+</figure>
+</div>
+</section>
+<section id="mixed-and-correlated-strategies" class="level3">
+<h3 class="anchored" data-anchor-id="mixed-and-correlated-strategies">Mixed and Correlated Strategies</h3>
+<ul>
+<li><span class="math inline">\Delta(X)</span> : set of probability measures (or distributions) over the measurable space <span class="math inline">X</span> (usually, <span class="math inline">X</span> is either finite or a subset of a Euclidean space)</li>
+<li><span class="math inline">\Delta\left(S_{i}\right) \ni \sigma_{i}</span> : mixed strategies of player <span class="math inline">i</span></li>
+<li><span class="math inline">\sigma \in \Delta\left(S_{1}\right) \times \cdots \times \Delta\left(S_{n}\right)</span> : mixed strategy profile, specifies a mixed strategy for each player</li>
+<li><span class="math inline">\Delta(S) \ni \sigma</span> : correlated strategy profiles</li>
+<li><span class="math inline">\sigma_{-i} \in \Delta\left(S_{-i}\right)</span> : correlated belief for player <span class="math inline">i</span></li>
+<li><span class="math inline">\prod_{j \neq i} \Delta\left(S_{j}\right)</span> : set of independent beliefs for <span class="math inline">i</span></li>
+</ul>
+<p>Player <span class="math inline">i</span> has von Neumann-Morgenstern preferences – expected utility – over <span class="math inline">\Delta(S)</span>, i.e., <span class="math inline">u_{i}</span> extends to <span class="math inline">\Delta(S)</span> as follows:</p>
+<p><span class="math display">
+u_{i}(\sigma)=\sum_{s \in S} \sigma(s) u_{i}(s)
+</span></p>
+</section>
+</section>
+<section id="dominated-strategies" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="dominated-strategies"><span class="header-section-number">1.2</span> Dominated Strategies</h2>
+<p>Are there obvious predictions about how a game should be played?</p>
+<section id="advertising-war-coke-vs.-pepsi" class="level3">
+<h3 class="anchored" data-anchor-id="advertising-war-coke-vs.-pepsi">Advertising War: Coke vs.&nbsp;Pepsi</h3>
+<ul>
+<li>Without any advertising, each company earns <span class="math inline">\$ 5 \mathrm{~b} /</span> year from Cola consumers.</li>
+<li>Each company can choose to spend <span class="math inline">\$ 2 \mathrm{~b} /</span> year on advertising.</li>
+<li>Advertising does not increase total sales for Cola, but if one company advertises while the other does not, it captures <span class="math inline">\$ 3 b</span> from the competitor.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/clipboard-1978614282.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
+</figure>
+</div>
+<ul>
+<li>What will the Cola companies do?</li>
+<li>Is there a better feasible outcome?</li>
+</ul>
+</section>
+<section id="prisoners-dilemma-pd" class="level3">
+<h3 class="anchored" data-anchor-id="prisoners-dilemma-pd">Prisoners’ Dilemma (PD)</h3>
+<p>Flood and Dresher (1950): RAND corporation’s investigations into game theory for possible applications to global nuclear strategy</p>
+<ul>
+<li>Two persons are arrested for a crime.</li>
+<li>There is not enough evidence to convict either.</li>
+<li>Different cells, no communication.</li>
+<li>If a suspect testifies against the other (“Defect”) and the other does not (“Cooperate”), the former is released and the latter gets a harsh punishment.</li>
+<li>If both prisoners testify, they share the punishment.</li>
+<li>If neither testifies, both serve time for a smaller offense.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/clipboard-501370081.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%"></p>
+</figure>
+</div>
+<ul>
+<li>Each prisoner is better off defecting regardless of what the other does. We say <span class="math inline">D</span> strictly dominates <span class="math inline">C</span> for each prisoner.</li>
+<li>The resulting outcome is <span class="math inline">(D, D)</span>, which is worse than <span class="math inline">(C, C)</span>.</li>
+</ul>
+</section>
+<section id="modified-prisoners-dilemma" class="level3">
+<h3 class="anchored" data-anchor-id="modified-prisoners-dilemma">Modified Prisoners’ Dilemma</h3>
+<p>Consider the game obtained from the prisoners’ dilemma by changing player 1’s payoff for <span class="math inline">(C, D)</span> from 0 to 2.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/clipboard-790339449.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%"></p>
+</figure>
+</div>
+<ul>
+<li>No matter what player 1 does, player 2 still prefers <span class="math inline">D</span> to <span class="math inline">C</span>.</li>
+<li>If player 1 knows that 2 never plays <span class="math inline">C</span>, then he prefers <span class="math inline">C</span> to <span class="math inline">D</span>.</li>
+<li>Unlike in the prisoners’ dilemma example, we use an additional assumption to reach our prediction in this case: player 1 needs to deduce that player 2 never plays a dominated strategy.</li>
+</ul>
+<div id="def-sds" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 1.1 (Strictly Dominated Strategies)</strong></span> A strategy <span class="math inline">s_{i} \in S_{i}</span> is strictly (s.) dominated by <span class="math inline">\sigma_{i} \in \Delta\left(S_{i}\right)</span> if</p>
+<p><span class="math display">
+u_{i}\left(\sigma_{i}, s_{-i}\right)&gt;u_{i}\left(s_{i}, s_{-i}\right), \forall s_{-i} \in S_{-i}
+</span></p>
+</div>
+</section>
+<section id="pure-strategies-may-be-dominated-by-mixed-strategies" class="level3">
+<h3 class="anchored" data-anchor-id="pure-strategies-may-be-dominated-by-mixed-strategies">Pure Strategies May Be Dominated by Mixed Strategies</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/clipboard-645440440.png" class="img-fluid figure-img" style="width:50.0%"></p>
+<figcaption><span class="math inline">B</span> is s. dominated by <span class="math inline">1 / 2 T+1 / 2 M</span>.</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="the-beauty-contest" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="the-beauty-contest"><span class="header-section-number">1.3</span> The Beauty Contest</h2>
+<ul>
+<li>Players: everyone in the class</li>
+<li>Strategy space: any number in <span class="math inline">\{1,2, \ldots, 100\}</span></li>
+<li>The person whose number is closest to <span class="math inline">2 / 3</span> of the class average wins the game.</li>
+<li>Payoffs: one randomly selected winner receives <span class="math inline">\$ 1</span>.</li>
+</ul>
+<p>Why is this game called a beauty contest?</p>
+<section id="keynesian-beauty-contest" class="level3">
+<h3 class="anchored" data-anchor-id="keynesian-beauty-contest">Keynesian Beauty Contest</h3>
+<p>Keynes described the action of rational actors in a market using an analogy based on a newspaper contest. Entrants are asked to choose a set of 6 faces from photographs that they find “most beautiful”. Those who picked the most popular face are eligible for a prize.</p>
+<p>A naive strategy would be to choose the 6 faces that, in the opinion of the entrant, are most beautiful. A more sophisticated contest entrant, wishing to maximize the chances of winning against naive opponents, would guess which faces the majority finds attractive, and then make a selection based on this inference.</p>
+<p>This can be carried one step further to account for the fact that other entrants would each have their own opinions of what public perceptions of beauty are. What does everyone believe about what everyone else believes about whom others find attractive?</p>
+</section>
+<section id="the-beauty-contest-and-the-stock-market" class="level3">
+<h3 class="anchored" data-anchor-id="the-beauty-contest-and-the-stock-market">The Beauty Contest and the Stock Market</h3>
+<blockquote class="blockquote">
+<p>It is not a case of choosing those faces that, to the best of one’s judgment, are really the prettiest, nor even those that average opinion genuinely thinks the prettiest. We have reached the third degree where we devote our intelligences to anticipating what average opinion expects the average opinion to be. And there are some, I believe, who practice the fourth, fifth and higher degrees.</p>
+<p><span data-text-align="right"><em>John Maynard Keynes,</em><br>
+<em>General Theory of Employment, Interest and Money, 1936</em></span></p>
+</blockquote>
+<p>Keynes suggested that similar behavior is observed in the stock market. Shares are not priced based on what people think their fundamental value is, but rather on what they think everyone else thinks the value is and what they think about these beliefs, and so on.</p>
+</section>
+</section>
+<section id="iterated-deletion-of-strictly-dominated-strategies" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="iterated-deletion-of-strictly-dominated-strategies"><span class="header-section-number">1.4</span> Iterated Deletion of Strictly Dominated Strategies</h2>
+<p>We can iteratively eliminate dominated strategies, under the assumption that “I know that you know that other players know… that everyone knows the payoffs and that no one would ever use a dominated strategy.”</p>
+<div id="def-idsds" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 1.2</strong></span> For all <span class="math inline">i \in N</span>, set <span class="math inline">S_{i}^{0}=S_{i}</span> and define <span class="math inline">S_{i}^{k}</span> recursively by</p>
+<p><span class="math display">
+S_{i}^{k}=\left\{s_{i} \in S_{i}^{k-1} \mid \nexists \sigma_{i} \in \Delta\left(S_{i}^{k-1}\right), u_{i}\left(\sigma_{i}, s_{-i}\right)&gt;u_{i}\left(s_{i}, s_{-i}\right), \forall s_{-i} \in S_{-i}^{k-1}\right\}
+</span></p>
+<p>The set of pure strategies of player <span class="math inline">i</span> that survive iterated deletion of <span class="math inline">s</span>. dominated strategies is <span class="math inline">S_{i}^{\infty}=\cap_{k \geq 0} S_{i}^{k}</span>. The set of surviving mixed strategies is</p>
+<p><span class="math display">
+\left\{\sigma_{i} \in \Delta\left(S_{i}^{\infty}\right) \mid \nexists \sigma_{i}^{\prime} \in \Delta\left(S_{i}^{\infty}\right), u_{i}\left(\sigma_{i}^{\prime}, s_{-i}\right)&gt;u_{i}\left(\sigma_{i}, s_{-i}\right), \forall s_{-i} \in S_{-i}^{\infty}\right\}
+</span></p>
+</div>
+<section id="remarks" class="level3">
+<h3 class="anchored" data-anchor-id="remarks">Remarks</h3>
+<p>In a finite game, the elimination procedure ends in a finite number of steps, so <span class="math inline">S^{\infty}</span> is simply the set of strategies left at the final stage.</p>
+<p>In an infinite game, if <span class="math inline">S</span> is a compact metric space and <span class="math inline">u</span> is continuous, then one can use Cantor’s theorem (a decreasing nested sequence of non-empty compact sets has nonempty intersection) to show that <span class="math inline">S^{\infty} \neq \emptyset</span>.</p>
+<p>Definition assumes that at each iteration all dominated strategies of every player are deleted simultaneously. In a finite game, the limit set <span class="math inline">S^{\infty}</span> does not depend on the particular order in which deletion proceeds.</p>
+<p>Outcome does not change if we eliminate s. dominated mixed strategies at every step. A strategy dominated against all pure strategies of the opponents iff it is dominated against all their mixed strategies. Eliminating mixed strategies for player <span class="math inline">i</span> at any stage does not affect the set of <span class="math inline">s</span>. dominated pure strategies for any <span class="math inline">j \neq i</span> at the next stage.</p>
+</section>
+</section>
+<section id="detour-on-common-knowledge" class="level2" data-number="1.5">
+<h2 data-number="1.5" class="anchored" data-anchor-id="detour-on-common-knowledge"><span class="header-section-number">1.5</span> Detour on Common Knowledge</h2>
+<ul>
+<li>Is common knowledge a sensible assumption? What does the definition of <span class="math inline">S_{i}^{100}</span> entail?</li>
+<li>Higher order beliefs, common knowledge of rationality…</li>
+<li>Why did the strategy of choosing 1 not win in the beauty contest?</li>
+</ul>
+<section id="the-story-of-the-unfaithful-wives" class="level3">
+<h3 class="anchored" data-anchor-id="the-story-of-the-unfaithful-wives">The Story of the Unfaithful Wives</h3>
+<ul>
+<li>A village with 100 married couples and a high priest.</li>
+<li>The men had to pass a logic exam before being allowed to marry.</li>
+<li>It is common knowledge that the high priest is truthful.</li>
+<li>The men would gossip about adulterous relationships and each knows which of the other wives are unfaithful.</li>
+<li>No one would ever inform a husband about his cheating wife.</li>
+<li>The high priest knows that some wives are unfaithful and decides that such immorality should no longer be tolerated.</li>
+<li>The priest convenes all the men at the temple and publicly announces that the integrity of the village has been compromised-there is at least one cheating wife.</li>
+<li>He also points out that even though no one knows whether his wife is faithful, each man has heard about the other unfaithful wives.</li>
+<li>He orders that every man certain of his wife’s infidelity should shoot her at midnight.</li>
+<li>39 silent nights went by and. . on the <span class="math inline">40^{\text {th }}</span> shots were heard.</li>
+</ul>
+<p>How many wives were shot? Were all the unfaithful wives murdered? How did men learn of the infidelity of their wives after 39 nights in which nothing happened?</p>
+</section>
+<section id="rationalizability" class="level3">
+<h3 class="anchored" data-anchor-id="rationalizability">Rationalizability</h3>
+<ul>
+<li>Solution concept introduced independently by Bernheim (1984) and Pearce (1984).</li>
+<li>Like iterated dominance, rationalizability derives restrictions on play from common knowledge of payoffs and the fact that players are “reasonable.”</li>
+<li>Dominance: unreasonable to use a strategy that performs worse than another (fixed) one in every scenario.</li>
+<li>Rationalizability: irrational for a player to choose a strategy that is not a best response to some beliefs about opponents’ strategies.</li>
+</ul>
+</section>
+<section id="what-is-a-belief" class="level3">
+<h3 class="anchored" data-anchor-id="what-is-a-belief">What is a “Belief”?</h3>
+<ul>
+<li>Bernheim &amp; Pearce: every player i’s beliefs <span class="math inline">\sigma_{-i}</span> about the play of <span class="math inline">j \neq i</span> must be independent, i.e., <span class="math inline">\sigma_{-i} \in \prod_{j \neq i} \Delta\left(S_{j}\right)</span>.</li>
+<li>Alternatively, allow player <span class="math inline">i</span> to believe that the actions of opponents are correlated, i.e., any <span class="math inline">\sigma_{-i} \in \Delta\left(S_{-i}\right)</span> is a possibility.</li>
+<li>The two definitions have different implications for <span class="math inline">n \geq 3</span>.</li>
+</ul>
+<p>Focus on case with correlated beliefs. Such beliefs represent a player’s uncertainty about his opponents’ actions, not necessarily his theory about their deliberate randomization and coordination.</p>
+<p>Player <span class="math inline">i</span> may place equal probability on two scenarios: either both <span class="math inline">j</span> and <span class="math inline">k</span> pick action <span class="math inline">A</span> or they both play <span class="math inline">B</span>. If <span class="math inline">i</span> is not sure which theory is true, then his beliefs are correlated even though he knows that <span class="math inline">j</span> and <span class="math inline">k</span> are acting independently.</p>
+<div id="def-br" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 1.3 (Best Responses)</strong></span> A strategy <span class="math inline">\sigma_{i} \in S_{i}</span> is a best response to a belief <span class="math inline">\sigma_{-i} \in \Delta\left(S_{-i}\right)</span> if</p>
+<p><span class="math display">
+u_{i}\left(\sigma_{i}, \sigma_{-i}\right) \geq u_{i}\left(s_{i}, \sigma_{-i}\right), \forall s_{i} \in S_{i}
+</span></p>
+</div>
+</section>
+<section id="rationalizabile-strategies" class="level3">
+<h3 class="anchored" data-anchor-id="rationalizabile-strategies">Rationalizabile Strategies</h3>
+<p>Common knowledge of payoffs and rationality imposes restrictions on play…</p>
+<div id="def-rs" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 1.4</strong></span> Set <span class="math inline">S^{0}=S</span> and let <span class="math inline">S^{k}</span> be given recursively by</p>
+<p><span class="math display">
+S_{i}^{k}=\left\{s_{i} \in S_{i}^{k-1} \mid \exists \sigma_{-i} \in \Delta\left(S_{-i}^{k-1}\right), u_{i}\left(s_{i}, \sigma_{-i}\right) \geq u_{i}\left(s_{i}^{\prime}, \sigma_{-i}\right), \forall s_{i}^{\prime} \in S_{i}^{k-1}\right\}
+</span></p>
+<p>The set of correlated rationalizable strategies for player <span class="math inline">i</span> is <span class="math inline">S_{i}^{\infty}=\bigcap_{k \geq 0} S_{i}^{k}</span>. A mixed strategy <span class="math inline">\sigma_{i} \in \Delta\left(S_{i}\right)</span> is rationalizable if there is a belief <span class="math inline">\sigma_{-i} \in \Delta\left(S_{-i}^{\infty}\right)</span> s.t. <span class="math inline">u_{i}\left(\sigma_{i}, \sigma_{-i}\right) \geq u_{i}\left(s_{i}, \sigma_{-i}\right)</span> for all <span class="math inline">s_{i} \in S_{i}^{\infty}</span>.</p>
+</div>
+<p>The definition of independent rationalizability replaces <span class="math inline">\Delta\left(S_{-i}^{k-1}\right)</span> and <span class="math inline">\Delta\left(S_{-i}^{\infty}\right)</span> with <span class="math inline">\prod_{j \neq i} \Delta\left(S_{j}^{k-1}\right)</span> and <span class="math inline">\prod_{j \neq i} \Delta\left(S_{j}^{\infty}\right)</span>, resp.</p>
+</section>
+<section id="rationalizability-in-cournot-duopoly" class="level3">
+<h3 class="anchored" data-anchor-id="rationalizability-in-cournot-duopoly">Rationalizability in Cournot Duopoly</h3>
+<p>Two firms compete on the market for a divisible homogeneous good.</p>
+<ul>
+<li>Each firm <span class="math inline">i=1,2</span> has zero marginal cost and simultaneously decides to produce an amount of output <span class="math inline">q_{i} \geq 0</span>.</li>
+<li>The resulting price is <span class="math inline">p=1-q_{1}-q_{2}</span>.</li>
+<li>Profit of firm <span class="math inline">i</span> is <span class="math inline">q_{i}\left(1-q_{1}-q_{2}\right)</span>.</li>
+</ul>
+<p>Best response of one firm if the other produces <span class="math inline">q</span> is</p>
+<p><span class="math inline">B(q)=\max (0,(1-q) / 2)(j=3-i) ; B</span> is decreasing. If <span class="math inline">q \lesseqgtr r</span> then</p>
+<p><span class="math inline">B(q) \gtreqless(1-r) / 2</span>.</p>
+<ul>
+<li>Since <span class="math inline">q \geq q^{0}:=0</span>, only strategies <span class="math inline">q \leq q^{1}:=B\left(q^{0}\right)=\left(1-q^{0}\right) / 2</span> are best responses, <span class="math inline">S_{i}^{1}=\left[q^{0}, q^{1}\right]</span>.</li>
+<li>Then only <span class="math inline">q \geq q^{2}:=B\left(q^{1}\right)=\left(1-q^{1}\right) / 2</span> survives the second round of elimination, <span class="math inline">S_{i}^{2}=\left[q^{2}, q^{1}\right] \ldots</span></li>
+<li>We obtain a sequence</li>
+</ul>
+<p><span class="math display">
+q^{0} \leq q^{2} \leq \ldots \leq q^{2 k} \leq \ldots \leq q^{2 k+1} \leq \ldots \leq q^{1}
+</span></p>
+<p>where <span class="math inline">q^{2 k}=\sum_{l=1}^{k} 1 / 4^{l}=\left(1-1 / 4^{k}\right) / 3</span> and <span class="math inline">q^{2 k+1}=\left(1-q^{2 k}\right) / 2</span> s.t. <span class="math inline">S_{i}^{2 k+1}=\left[q^{2 k}, q^{2 k+1}\right]</span> and <span class="math inline">S_{i}^{2 k}=\left[q^{2 k}, q^{2 k-1}\right]</span> for all <span class="math inline">k \geq 0</span>.</p>
+<p><span class="math inline">\lim _{k \rightarrow \infty} q^{k}=1 / 3</span>, so the only rationalizable strategy for firm <span class="math inline">i</span> is <span class="math inline">q_{i}=1 / 3</span> (the Nash equilibrium).</p>
+<p>What strategies are rationalizable with more than two firms?</p>
+</section>
+<section id="never-best-responses" class="level3">
+<h3 class="anchored" data-anchor-id="never-best-responses">Never Best Responses</h3>
+<p>A strategy <span class="math inline">\sigma_{i} \in \Delta\left(S_{i}\right)</span> is never a best response for player <span class="math inline">i</span> if it is not a best response to any correlated belief <span class="math inline">\sigma_{-i} \in \Delta\left(S_{-i}\right)</span>.</p>
+<p>Recall that <span class="math inline">\sigma_{i} \in \Delta\left(S_{i}\right)</span> is s. dominated if <span class="math inline">\exists \sigma_{i}^{\prime} \in \Delta\left(S_{i}\right)</span> s.t.</p>
+<p><span class="math display">
+u_{i}\left(\sigma_{i}^{\prime}, s_{-i}\right)&gt;u_{i}\left(\sigma_{i}, s_{-i}\right), \forall s_{-i} \in S_{-i}
+</span></p>
+<div id="thm-nbr" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 1.1</strong></span> In a finite game, a strategy is never a best response iff it is s. dominated.</p>
+</div>
+<div id="cor-1" class="theorem corollary">
+<p><span class="theorem-title"><strong>Corollary 1.1</strong></span> Correlated rationalizability and iterated strict dominance coincide.</p>
+</div>
+<p>If <span class="math inline">\sigma_{i}</span> is s. dominated by <span class="math inline">\sigma_{i}^{\prime}</span>, then <span class="math inline">\sigma_{i}</span> is not a best response for any belief <span class="math inline">\sigma_{-i} \in \Delta\left(S_{-i}\right): \sigma_{i}^{\prime}</span> yields a higher payoff than <span class="math inline">\sigma_{i}</span> for player <span class="math inline">i</span> against any <span class="math inline">\sigma_{-i}</span>. Left to prove that a strategy that is not <span class="math inline">\mathrm{s}</span>. dominated is a best response for some beliefs.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Suppose <span class="math inline">\tilde{\sigma}_{i}</span> is not s. dominated for player <span class="math inline">i</span>.</p>
+<ul>
+<li>Define set of “dominated payoffs” for <span class="math inline">i</span> by</li>
+</ul>
+<p><span class="math display">
+D=\left\{x \in \mathbb{R}^{S_{-i}} \mid \exists \sigma_{i} \in \Delta\left(S_{i}\right), x \leq u_{i}\left(\sigma_{i}, \cdot\right)\right\}
+</span></p>
+<p><span class="math inline">D</span> is non-empty, closed, and convex.</p>
+<ul>
+<li><span class="math inline">u_{i}\left(\tilde{\sigma}_{i}, \cdot\right)</span> does not belong to the interior of <span class="math inline">D</span> because it is not <span class="math inline">\mathrm{s}</span>. dominated by any <span class="math inline">\sigma_{i} \in \Delta\left(S_{i}\right)</span>.</li>
+<li>By the supporting hyperplane theorem, <span class="math inline">\exists \alpha \in \mathbb{R}^{S_{-i}} \backslash\{\mathbf{0}\}</span> s.t.</li>
+</ul>
+<p><span class="math display">
+\alpha \cdot u_{i}\left(\tilde{\sigma}_{i}, \cdot\right) \geq \alpha \cdot x, \forall x \in D
+</span></p>
+<p>In particular, <span class="math inline">\alpha \cdot u_{i}\left(\tilde{\sigma}_{i}, \cdot\right) \geq \alpha \cdot u_{i}\left(\sigma_{i}, \cdot\right), \forall \sigma_{i} \in \Delta\left(S_{i}\right)</span>.</p>
+<ul>
+<li>Since <span class="math inline">D</span> is not bounded from below, <span class="math inline">\alpha</span> has non-negative components.</li>
+<li>Normalize <span class="math inline">\alpha</span> so that its components sum to <span class="math inline">1 ; \alpha</span> interpreted as a belief in <span class="math inline">\Delta\left(S_{-i}\right)</span> with the property that</li>
+</ul>
+<p><span class="math display">
+u_{i}\left(\tilde{\sigma}_{i}, \alpha\right) \geq u_{i}\left(\sigma_{i}, \alpha\right), \forall \sigma_{i} \in \Delta\left(S_{i}\right)
+</span></p>
+<p>Thus <span class="math inline">\tilde{\sigma}_{i}</span> is a best response to belief <span class="math inline">\alpha</span>.</p>
+</div>
+</div>
+</section>
+<section id="iteration-and-best-responses" class="level3">
+<h3 class="anchored" data-anchor-id="iteration-and-best-responses">Iteration and Best Responses</h3>
+<div id="thm-ibr" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 1.2</strong></span> For every <span class="math inline">k \geq 0</span>, each <span class="math inline">s_{i} \in S_{i}^{k}</span> is a best response (within <span class="math inline">S_{i}</span> ) to a belief in <span class="math inline">\Delta\left(S_{-i}^{k-1}\right)</span>.</p>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Fix <span class="math inline">s_{i} \in S_{i}^{k} ; s_{i}</span> is a best response within <span class="math inline">S_{i}^{k-1}</span> to some <span class="math inline">\sigma_{-i} \in \Delta\left(S_{-i}^{k-1}\right)</span>. If <span class="math inline">s_{i}</span> were not a best response within <span class="math inline">S_{i}</span> to <span class="math inline">\sigma_{-i}</span>, let <span class="math inline">s_{i}^{\prime}</span> be a best response.</p>
+<p>Since <span class="math inline">s_{i}</span> is a best response within <span class="math inline">S_{i}^{k-1}</span> to <span class="math inline">\sigma_{-i}</span> and <span class="math inline">s_{i}^{\prime}</span> is a better response than <span class="math inline">s_{i}</span> to <span class="math inline">\sigma_{-i}</span>, we need <span class="math inline">s_{i}^{\prime} \notin S_{i}^{k-1}</span>.</p>
+<p>Then <span class="math inline">s_{i}^{\prime}</span> was deleted at an earlier stage, say <span class="math inline">s_{i}^{\prime} \in S_{i}^{l-1}</span> but <span class="math inline">s_{i}^{\prime} \notin S_{i}^{\prime}</span> for some <span class="math inline">I \leq k-1</span>. This contradicts the fact that <span class="math inline">s_{i}^{\prime}</span> is a best response in <span class="math inline">S_{i} \supseteq S_{i}^{l-1}</span> to <span class="math inline">\sigma_{-i} \in \Delta\left(S_{-i}^{k-1}\right) \subseteq \Delta\left(S_{-i}^{\prime-1}\right)</span>.</p>
+</div>
+</div>
+<div id="cor-2" class="theorem corollary">
+<p><span class="theorem-title"><strong>Corollary 1.2</strong></span> If the game is finite, then each <span class="math inline">s_{i} \in S_{i}^{\infty}</span> is a best response (within <span class="math inline">S_{i}</span> ) to a belief in <span class="math inline">\Delta\left(S_{-i}^{\infty}\right)</span>.</p>
+</div>
+</section>
+<section id="closed-under-rational-behavior" class="level3">
+<h3 class="anchored" data-anchor-id="closed-under-rational-behavior">Closed under Rational Behavior</h3>
+<div id="def-crb" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 1.5</strong></span> A set <span class="math inline">Z=Z_{1} \times \ldots \times Z_{n}</span> with <span class="math inline">Z_{i} \subseteq S_{i}</span> for <span class="math inline">i \in N</span> is closed under rational behavior if, for all <span class="math inline">i</span>, every strategy in <span class="math inline">Z_{i}</span> is a best response to a belief in <span class="math inline">\Delta\left(Z_{-i}\right)</span>.</p>
+</div>
+<div id="thm">
+<p>If the game is finite (or if <span class="math inline">S</span> is a compact metric space and <span class="math inline">u</span> is continuous), then <span class="math inline">S^{\infty}</span> is the largest set closed under rational behavior.</p>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math inline">S^{\infty}</span> is closed under rational behavior by Corollary 2. Suppose that there exists <span class="math inline">Z_{1} \times \ldots \times Z_{n} \not \subset S^{\infty}</span> that is closed under rational behavior.</p>
+<p>Consider the smallest <span class="math inline">k</span> for which there is an <span class="math inline">i</span> such that <span class="math inline">Z_{i} \not \subset S_{i}^{k}</span>. It must be that <span class="math inline">k \geq 1</span> and <span class="math inline">Z_{-i} \subseteq S_{-i}^{k-1}</span>.</p>
+<p>By assumption, every element of <span class="math inline">Z_{i}</span> is a best response to an element of <span class="math inline">\Delta\left(Z_{-i}\right) \subset \Delta\left(S_{-i}^{k-1}\right)</span>, contradicting <span class="math inline">Z_{i} \nsubseteq S_{i}^{k}</span>.</p>
+</div>
+</div>
+</section>
+<section id="epistemic-foundations-of-rationalizability" class="level3">
+<h3 class="anchored" data-anchor-id="epistemic-foundations-of-rationalizability">Epistemic Foundations of Rationalizability</h3>
+<p>Formalize the idea of common knowledge and show that rationalizability captures the idea of common knowledge of rationality (and payoffs).</p>
+<div id="def-is" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 1.6 (Information Structure)</strong></span> An information (or belief) structure is a list <span class="math inline">\left(\Omega,\left(l_{i}\right)_{i \in N},\left(p_{i}\right)_{i \in N}\right)</span></p>
+<ul>
+<li><span class="math inline">\Omega</span> is a finite state space</li>
+<li><span class="math inline">l_{i}: \Omega \rightarrow 2^{\Omega}</span> is a partition of <span class="math inline">\Omega</span> for each <span class="math inline">i \in N</span> s.t. <span class="math inline">l_{i}(\omega)</span> is the set of states that <span class="math inline">i</span> thinks are possible when the true state is <span class="math inline">\omega</span>; <span class="math inline">\omega^{\prime} \in l_{i}(\omega) \Leftrightarrow \omega \in l_{i}\left(\omega^{\prime}\right)</span></li>
+<li><span class="math inline">p_{i, l_{i}(\omega)} \in \Delta\left(l_{i}(\omega)\right): i^{\prime}</span> ’s belief at <span class="math inline">\omega</span></li>
+</ul>
+</div>
+</section>
+<section id="interpretation" class="level3">
+<h3 class="anchored" data-anchor-id="interpretation">Interpretation</h3>
+<ul>
+<li>State <span class="math inline">\omega</span> summarizes all the relevant facts about the world. Only one of the states is true; all others are hypothetical states needed to encode players’ beliefs.</li>
+<li>In state <span class="math inline">\omega</span>, player <span class="math inline">i</span> is informed that the state is in <span class="math inline">l_{i}(\omega)</span> and gets no other information.</li>
+<li>Such an information structure arises if each player observes a state-dependent signal and <span class="math inline">l_{i}(\omega)</span> is the set of states for which player <span class="math inline">i</span> ’s signal is identical to the signal at <span class="math inline">\omega</span>.</li>
+</ul>
+</section>
+<section id="knowledge-and-common-knowledge" class="level3">
+<h3 class="anchored" data-anchor-id="knowledge-and-common-knowledge">Knowledge and Common Knowledge</h3>
+<div class="{def-kck}">
+<p>For any event <span class="math inline">F \subseteq \Omega</span>, player <span class="math inline">i</span> knows at <span class="math inline">\omega</span> that <span class="math inline">F</span> obtains if <span class="math inline">l_{i}(\omega) \subseteq F</span>. The event that <span class="math inline">i</span> knows <span class="math inline">F</span> is</p>
+<p><span class="math display">
+K_{i}(F)=\left\{\omega \mid I_{i}(\omega) \subseteq F\right\}
+</span></p>
+<p>The event that everyone knows <span class="math inline">F</span> is defined by</p>
+<p><span class="math display">
+K(F)=\cap_{i \in N} K_{i}(F)
+</span></p>
+<p>Let <span class="math inline">K^{0}(F)=F</span> and <span class="math inline">K^{t+1}(F)=K\left(K^{t}(F)\right)</span> for <span class="math inline">t \geq 0</span>. Set <span class="math inline">K^{\infty}(F)=\bigcap_{t \geq 0} K^{t}(F) . K^{\infty}(F)</span> is the set of states where <span class="math inline">F</span> is common knowledge.</p>
+</div>
+</section>
+<section id="public-events" class="level3">
+<h3 class="anchored" data-anchor-id="public-events">Public Events</h3>
+<p><span class="math inline">K\left(K^{\infty}(F)\right)=K^{\infty}(F) \rightarrow</span> alternative definition of common knowledge</p>
+<p>Event <span class="math inline">F^{\prime}</span> is public if <span class="math inline">F^{\prime}=\cup_{\left(\omega^{\prime} \in F^{\prime}\right.} l_{i}\left(\omega^{\prime}\right)</span> for all <span class="math inline">i</span>. If <span class="math inline">F^{\prime}</span> is public, then <span class="math inline">K\left(F^{\prime}\right)=F^{\prime}</span>, so <span class="math inline">K^{\infty}\left(F^{\prime}\right)=F^{\prime}</span>.</p>
+<div id="lem-1" class="theorem lemma">
+<p><span class="theorem-title"><strong>Lemma 1.1</strong></span> An event <span class="math inline">F</span> is common knowledge at <span class="math inline">\omega</span> iff there exists a public event <span class="math inline">F^{\prime}</span> with <span class="math inline">\omega \in F^{\prime} \subseteq F</span>.</p>
+<p>If <span class="math inline">F</span> is common knowledge at <span class="math inline">\omega</span>, there exists a submodel that includes state <span class="math inline">\omega</span> and respects the information structure where <span class="math inline">F</span> is true state by state.</p>
+</div>
+</section>
+<section id="strategies" class="level3">
+<h3 class="anchored" data-anchor-id="strategies">Strategies</h3>
+<p>Fix a finite game <span class="math inline">(N, S, u)</span>. To give strategic meaning to information states, introduce a strategy profile <span class="math inline">\mathbf{s}: \Omega \rightarrow S</span>.</p>
+<div id="def">
+<p>A strategy profile <span class="math inline">\mathbf{s}: \Omega \rightarrow S</span> is adapted with respect to <span class="math inline">\left(\Omega,\left(I_{i}\right)_{i \in N},\left(p_{i}\right)_{i \in N}\right)</span> if <span class="math inline">\mathbf{s}_{i}(\omega)=\mathbf{s}_{i}\left(\omega^{\prime}\right)</span> whenever <span class="math inline">l_{i}(\omega)=l_{i}\left(\omega^{\prime}\right)</span>.</p>
+</div>
+<p>Players must choose a constant action at all states in each information set since they cannot distinguish states in the same information set.</p>
+<div>
+<p>An epistemic model <span class="math inline">\left(\Omega,\left(l_{i}\right)_{i \in N},\left(p_{i}\right)_{i \in N}, \mathbf{s}\right)</span> consists of an information structure and an adapted strategy profile.</p>
+</div>
+</section>
+<section id="common-knowledge-of-rationality" class="level3">
+<h3 class="anchored" data-anchor-id="common-knowledge-of-rationality">Common Knowledge of Rationality</h3>
+<div class="{def-10}">
+<p>For an epistemic model <span class="math inline">\left(\Omega,\left(l_{i}\right)_{i \in N},\left(p_{i}\right)_{i \in N}, \mathbf{s}\right)</span>, player <span class="math inline">i</span> is rational at <span class="math inline">\omega \in \Omega</span> if</p>
+<p><span class="math display">
+\mathbf{s}_{i}(\omega) \in \arg \max _{s_{i} \in S_{i}} \sum_{\omega^{\prime} \in l_{i}(\omega)} u_{i}\left(s_{i}, \mathbf{s}_{-j}\left(\omega^{\prime}\right)\right) p_{i, l_{i}(\omega)}\left(\omega^{\prime}\right)
+</span></p>
+</div>
+<div id="def-11" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 1.7</strong></span> A strategy <span class="math inline">s_{i} \in S_{i}</span> consistent with common knowledge of rationality if there exists a model <span class="math inline">\left(\Omega,\left(l_{j}\right)_{j \in N},\left(p_{j}\right)_{j \in N}, \mathbf{s}\right)</span> and state <span class="math inline">\omega^{*} \in \Omega</span> with <span class="math inline">\mathbf{s}_{i}\left(\omega^{*}\right)=s_{i}</span> at which it is common knowledge that all players are rational.</p>
+<p>Equivalently, <span class="math inline">\exists\left(\Omega,\left(l_{j}\right)_{j \in N},\left(p_{j}\right)_{j \in N}, \mathbf{s}\right)</span> s.t. <span class="math inline">\mathbf{s}_{j}(\omega)</span> is a best response to <span class="math inline">\mathbf{s}_{-j}</span> at each <span class="math inline">\omega \in \Omega</span> for every player <span class="math inline">j \in N</span>.</p>
+</div>
+<div class="{thm-4}">
+<p>For any <span class="math inline">i \in N</span> and <span class="math inline">s_{i} \in S_{i}, s_{i}</span> is consistent with common knowledge of rationality iff <span class="math inline">s_{i} \in S_{i}^{\infty}</span>.</p>
+</div>
+<p>Can extend result to allow for payoff uncertainty (adding the hypothesis that payoffs are common knowledge at the relevant state).</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\Rightarrow)</span> Fix <span class="math inline">s_{i}</span> consistent with common knowledge of rationality.</p>
+<p><span class="math inline">\exists\left(\Omega,\left(l_{j}\right)_{j \in N},\left(p_{j}\right)_{j \in N}, \mathbf{s}\right)</span> with <span class="math inline">\omega^{*} \in \Omega</span> s.t. <span class="math inline">\mathbf{s}_{i}\left(\omega^{*}\right)=s_{i}</span> and</p>
+<p><span class="math display">
+\mathbf{s}_{j}(\omega) \in \arg \max _{s_{j} \in S_{j}} \sum_{\omega^{\prime} \in \ell_{j}(\omega)} u_{j}\left(s_{j}, \mathbf{s}_{-j}\left(\omega^{\prime}\right)\right) p_{j, l, j}(\omega)\left(\omega^{\prime}\right), \forall j \in N, \omega \in \Omega
+</span></p>
+<p>Define <span class="math inline">Z_{j}=\mathbf{s}_{j}(\Omega)</span>. Note that <span class="math inline">s_{i}=\mathbf{s}_{i}\left(\omega^{*}\right) \in s_{i}(\Omega)=Z_{i}</span>. By Theorem 3, to show that <span class="math inline">s_{i} \in S_{i}^{\infty}</span>, it suffices to prove that <span class="math inline">Z</span> is closed under rational behavior.</p>
+<p><span class="math inline">\forall z_{j} \in Z_{j}, \exists \omega \in \Omega</span> s.t. <span class="math inline">z_{j}=\mathbf{s}_{j}(\omega)</span>. Define <span class="math inline">\mu_{j, \omega} \in \Delta\left(Z_{-j}\right)</span> by</p>
+<p><span class="math display">
+\mu_{j, \omega}\left(s_{-j}\right)=\sum_{\omega^{\prime} \in l_{j}(\omega), \mathbf{s}_{-j}\left(\omega^{\prime}\right)=s_{-j}} p_{j, l_{j}(\omega)}\left(\omega^{\prime}\right)
+</span></p>
+<p>Then</p>
+<p><span class="math display">
+\begin{aligned}
+z_{j} &amp; =\mathbf{s}_{j}(\omega) \in \arg \max _{s_{j} \in S_{j}} \sum_{\omega^{\prime} \in l_{j}(\omega)} u_{j}\left(s_{j}, \mathbf{s}_{-j}\left(\omega^{\prime}\right)\right) p_{i, l_{j}(\omega)}\left(\omega^{\prime}\right) \\
+&amp; =\arg \max _{s_{j} \in S_{j}} \sum_{s_{-j} \in Z_{-j}} \mu_{j, \omega}\left(s_{-j}\right) u_{j}\left(s_{j}, s_{-j}\right)
+\end{aligned}
+</span></p>
+<p><span class="math inline">(\Leftarrow)</span> Since <span class="math inline">S^{\infty}</span> is closed under rational behavior, for every <span class="math inline">s_{i} \in S_{i}^{\infty}</span>, there exists <span class="math inline">\mu_{i, s_{i}} \in \Delta\left(S_{-i}^{\infty}\right)</span> for which <span class="math inline">s_{i}</span> is a best response. Define the model <span class="math inline">\left(S^{\infty},\left(l_{i}\right)_{i \in N},\left(p_{i}\right)_{i \in N}, \mathbf{s}\right):</span></p>
+<p><span class="math display">
+\begin{aligned}
+l_{i}(s) &amp; =\left\{s_{i}\right\} \times S_{-i}^{\infty} \\
+p_{i, s}\left(s^{\prime}\right) &amp; =\mu_{i, s_{i}}\left(s_{-i}^{\prime}\right) \\
+\mathbf{s}(s) &amp; =s
+\end{aligned}
+</span></p>
+<p>In this model, it is common knowledge that every player is rational:</p>
+<p><span class="math display">
+\begin{aligned}
+&amp; \forall s \in S^{\infty}, \mathbf{s}_{i}(s)=s_{i} \in \arg \max _{s_{i}^{\prime} \in S_{i}} \sum_{s_{-i} \in S_{-i}^{\infty}} u_{i}\left(s_{i}^{\prime}, s_{-i}\right) \mu_{i, s}\left(s_{-i}^{\prime}\right) \\
+&amp;=\arg \max _{s_{i}^{\prime} \in S_{i}} \sum_{s^{\prime} \in l_{i}(s)} u_{i}\left(s_{i}^{\prime}, s_{-i}\right) p_{i, s}\left(s^{\prime}\right)
+\end{aligned}
+</span></p>
+<p>For every <span class="math inline">s_{i} \in S_{i}^{\infty}</span>, there exists <span class="math inline">s=\left(s_{i}, s_{-i}\right) \in S^{\infty}</span> s.t. <span class="math inline">\mathbf{s}_{i}(s)=s_{i}</span>, showing that <span class="math inline">s_{i}</span> is consistent with common knowledge of rationality.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="nash-equilibrium" class="level2" data-number="1.6">
+<h2 data-number="1.6" class="anchored" data-anchor-id="nash-equilibrium"><span class="header-section-number">1.6</span> Nash Equilibrium</h2>
+<p>Many games are not dominance solvable. Nevertheless, the involved parties find a solution.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/clipboard-2785630839.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<figcaption>Coordination Game, Battle of the Sexes, Matching Pennies</figcaption>
+</figure>
+</div>
+<p>A Nash equilibrium is a strategy profile with the property that no player can benefit by deviating from his corresponding strategy.</p>
+<div id="def-nash1950" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 1.8 (Nash 1950)</strong></span> A mixed-strategy profile <span class="math inline">\sigma^{*}</span> is a Nash equilibrium if for every <span class="math inline">i \in N</span>,</p>
+<p><span class="math display">
+u_{i}\left(\sigma_{i}^{*}, \sigma_{-i}^{*}\right) \geq u_{i}\left(s_{i}, \sigma_{-i}^{*}\right), \forall s_{i} \in S_{i}
+</span></p>
+</div>
+<section id="remarks-1" class="level3">
+<h3 class="anchored" data-anchor-id="remarks-1">Remarks</h3>
+<ul>
+<li>The fact that there is no profitable deviation in pure strategies implies there is no profitable deviation in mixed strategies either.</li>
+<li>If in equilibrium a player uses a mixed strategy that places positive probability on several pure strategies, he must be indifferent between all pure strategies in its support.</li>
+<li>Strategies that do not survive iterated strict dominance (or are not rationalizable) cannot be played with positive probability in a Nash equilibrium.</li>
+</ul>
+</section>
+<section id="what-are-the-assumptions" class="level3">
+<h3 class="anchored" data-anchor-id="what-are-the-assumptions">What Are the Assumptions?</h3>
+<ul>
+<li>Nash equilibria are “consistent” predictions (or “stable” conventions) of how the game will be played.</li>
+<li>If all players expect that a specific Nash equilibrium will arise, then no player has incentives to play differently.</li>
+<li>Each player must have correct conjectures about the strategies of his opponents and play a best response to his conjecture.</li>
+<li>We interpret mixed strategies as beliefs regarding opponents’ play, not necessarily as deliberate randomization.</li>
+<li>Assumes knowledge of strategies (beliefs) and rationality.</li>
+</ul>
+</section>
+<section id="do-soccer-players-flip-coins" class="level3">
+<h3 class="anchored" data-anchor-id="do-soccer-players-flip-coins">Do Soccer Players Flip Coins?</h3>
+<p>Penalty kicks</p>
+<ul>
+<li>Kicker’s strategy space: <span class="math inline">\{L, M, R\}</span></li>
+<li>Goalie’s strategy space: <span class="math inline">\{L, M, R\}</span></li>
+</ul>
+<p>What are the payoffs?</p>
+<ul>
+<li>What’s the Nash equilibrium?</li>
+<li>Simultaneous move game? (125mph, 0.2 seconds reaction time)</li>
+<li>What do players do in reality?</li>
+</ul>
+<p>Chiappori, Levitt, and Groseclose (2002)</p>
+<ul>
+<li>459 kicks in French and Italian first leagues</li>
+<li>162 kickers, 88 goalies</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/clipboard-102551198.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
+</figure>
+</div>
+</section>
+<section id="tennis-service-game" class="level3">
+<h3 class="anchored" data-anchor-id="tennis-service-game">Tennis Service Game</h3>
+<p>Player 1 chooses whether to serve to player 2’s forehand, center or backhand side, and player 2 chooses which side to favor for the return. Unique mixed strategy equilibrium, which puts positive probability only on strategies <span class="math inline">C</span> and <span class="math inline">B</span> for either player.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/clipboard-1044758399.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<ul>
+<li>For player 1 , playing <span class="math inline">C</span> with probability <span class="math inline">\epsilon</span> and <span class="math inline">B</span> with probability <span class="math inline">1-\epsilon \mathrm{s}</span>. dominates <span class="math inline">F</span>.</li>
+<li>If player 1 never chooses <span class="math inline">F</span>, then <span class="math inline">C</span> s. dominates <span class="math inline">F</span> for player 2 .</li>
+<li>In the remaining <span class="math inline">2 \times 2</span> game, there is a unique equilibrium, in which both players place probability <span class="math inline">1 / 4</span> on <span class="math inline">C</span> and <span class="math inline">3 / 4</span> on <span class="math inline">B</span>.</li>
+</ul>
+</section>
+<section id="stag-hunt" class="level3">
+<h3 class="anchored" data-anchor-id="stag-hunt">Stag Hunt</h3>
+<p>Each player can choose to hunt hare by himself or hunt stag with the other. Stag offers a higher payoff, but only if players team up.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/clipboard-3039300426.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<p>The game has two pure strategy Nash equilibria – <span class="math inline">(S, S)</span> and <span class="math inline">(H, H)</span> – and a mixed strategy Nash equilibrium – <span class="math inline">(7 / 8 S+1 / 8 H, 7 / 8 S+1 / 8 H)</span>.</p>
+</section>
+<section id="which-equilibrium-is-more-plausible" class="level3">
+<h3 class="anchored" data-anchor-id="which-equilibrium-is-more-plausible">Which Equilibrium is More Plausible?</h3>
+<ul>
+<li>We may expect <span class="math inline">(S, S)</span> to be played because it is Pareto dominant. However, if one player expects the other to hunt hare, he is much better off hunting hare himself; and the potential downside of choosing stag is bigger than the upside-hare is the safer choice.</li>
+<li>Harsanyi and Selten (1988): <span class="math inline">H</span> is the risk-dominant action-if each player expects the other to choose either action with probability <span class="math inline">1 / 2</span>, then <span class="math inline">H</span> has a higher expected payoff (7.5) than <span class="math inline">S</span> (4.5).</li>
+<li>For a player to optimally choose stag, he should expect the other to play stag with probability <span class="math inline">\geq 7 / 8</span>.</li>
+<li>Coordination problem may persist even if players communicate: regardless of what <span class="math inline">i</span> intends to do, he would prefer <span class="math inline">j</span> to play stag, so attempts to convince <span class="math inline">j</span> to play stag are cheap talk.</li>
+</ul>
+</section>
+<section id="epistemic-foundations" class="level3">
+<h3 class="anchored" data-anchor-id="epistemic-foundations">Epistemic Foundations</h3>
+<ul>
+<li>Aumann and Brandenburger (1995): a framework that can be used to examine the epistemic foundations of Nash equilibrium.</li>
+<li>The primitive of their model is an interactive belief system in which there is a possible set of types for each player; each type has associated to it a payoff for every action profile, a choice of which action to play, and a belief about the types of the other players.</li>
+<li>In a 2-player game, if the game being played, the rationality of the players, and their conjectures are all mutually known, then the conjectures constitute a Nash equilibrium.</li>
+<li>For games with more than 2 players, we need to assume additionally that players have a common prior and that conjectures are commonly known. This ensures that any two players have identical and separable (independent) conjectures about other players, consistent with a mixed strategy profile.</li>
+</ul>
+</section>
+<section id="evolutionary-foundations" class="level3">
+<h3 class="anchored" data-anchor-id="evolutionary-foundations">Evolutionary Foundations</h3>
+<ul>
+<li>Solution concepts motivated by presuming that players make predictions about their opponents’ play by introspection and deduction, using knowledge of their opponents’ payoffs, rationality…</li>
+<li>Alternatively, assume players extrapolate from past observations of play in “similar” games and best respond to expectations based on past observations.</li>
+<li>Cournot (1838) suggested that players take turns setting their outputs in the duopoly game, best responding to the opponent’s last-period action.</li>
+<li>Simultaneous action updating, best responding to average play, populations of players anonymously matched (another way to think about mixed strategies), etc.</li>
+<li>If the process converges to a particular steady state, then the steady state is a Nash equilibrium.</li>
+</ul>
+</section>
+<section id="convergence" class="level3">
+<h3 class="anchored" data-anchor-id="convergence">Convergence</h3>
+<p>How sensitive is the convergence to the initial state? If convergence obtains for all initial strategy profiles sufficiently close to the steady state, we say that the steady state is asymptotically stable.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/clipboard-197530818.png" class="img-fluid figure-img"></p>
+<figcaption>Courtesy of The MIT Press. Used with permission.</figcaption>
+</figure>
+</div>
+<p><br></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/clipboard-1532667264.png" class="img-fluid figure-img" style="width:50.0%"></p>
+<figcaption>Shapley (1964) Cycling</figcaption>
+</figure>
+</div>
+</section>
+<section id="remarks-2" class="level3">
+<h3 class="anchored" data-anchor-id="remarks-2">Remarks</h3>
+<ul>
+<li>Evolutionary processes are myopic and do not offer a compelling description of behavior.</li>
+<li>Such processes do not provide good predictions for behavior in the actual repeated game, if players care about play in future periods and realize that their current actions can affect opponents’ future play.</li>
+</ul>
+</section>
+</section>
+<section id="existence-of-nash-equilibrium" class="level2" data-number="1.7">
+<h2 data-number="1.7" class="anchored" data-anchor-id="existence-of-nash-equilibrium"><span class="header-section-number">1.7</span> Existence of Nash Equilibrium</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/clipboard-1158608298.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<figcaption>Coordination Game, Battle of the Sexes, Matching Pennies</figcaption>
+</figure>
+</div>
+<ul>
+<li>The coordination game and the battle of the sexes have multiple equilibria.</li>
+<li>Matching pennies does not have a pure strategy equilibrium. In the unique equilibrium, both players mix 50-50.</li>
+</ul>
+<div id="thm-5" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 1.3</strong></span> Every finite game has an equilibrium (potentially in mixed strategies).</p>
+</div>
+<section id="nash-1950-1" class="level3">
+<h3 class="anchored" data-anchor-id="nash-1950-1">Nash (1950)</h3>
+<p><br></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/clipboard-849157636.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<div style="margin: -30px;">
+
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/clipboard-2810149651.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><img src="images/clipboard-2258422708.png" class="img-fluid"></p>
+</div>
+</div>
+<p>Courtesy of John F. Nash, Jr.&nbsp;“<a href="http://www.pnas.org/content/36/1/48.full">Equilibirum Points in N-Person Games</a>”. Proceedings of the National Academy of Sciences of the United States of America 36 no. 1 (1949): 48-49.</p>
+</section>
+<section id="kakutani" class="level3">
+<h3 class="anchored" data-anchor-id="kakutani">Kakutani</h3>
+<blockquote class="blockquote">
+<p><em>A long time ago, the Japanese mathematician Kakutani asked me why so many economists had attended the lecture he had just given. When I told him that he was famous because of the Kakutani fixed-point theorem, he replied, ‘What is the Kakutani fixed-point theorem?’</em></p>
+<p>Ken Binmore, Playing for Real, 2007</p>
+</blockquote>
+</section>
+<section id="existence-of-nash-equilibria" class="level3">
+<h3 class="anchored" data-anchor-id="existence-of-nash-equilibria">Existence of Nash Equilibria</h3>
+<p>Prove the existence of Nash equilibria in a more general setting.</p>
+<ul>
+<li>Continuity and compactness assumptions are indispensable, usually needed for the existence of solutions to optimization problems.</li>
+<li>Convexity is usually required for fixed-point theorems.</li>
+</ul>
+<p>Need some topology prerequisites…</p>
+</section>
+<section id="correspondences" class="level3">
+<h3 class="anchored" data-anchor-id="correspondences">Correspondences</h3>
+<p>Topological vector spaces <span class="math inline">X</span> and <span class="math inline">Y</span></p>
+<ul>
+<li>A correspondence <span class="math inline">F: X \rightrightarrows Y</span> is a set valued function taking elements <span class="math inline">x \in X</span> into subsets <span class="math inline">F(x) \subseteq Y</span>.</li>
+<li><span class="math inline">G(F)=\{(x, y) \mid y \in F(x)\}:</span> graph of <span class="math inline">F</span></li>
+<li><span class="math inline">x \in X</span> is a fixed point of <span class="math inline">F</span> if <span class="math inline">x \in F(x)</span></li>
+<li><span class="math inline">F</span> is non-empty/closed-valued/convex-valued if <span class="math inline">F(x)</span> is non-empty/closed/convex for all <span class="math inline">x \in X</span>.</li>
+</ul>
+</section>
+<section id="closed-graph" class="level3">
+<h3 class="anchored" data-anchor-id="closed-graph">Closed Graph</h3>
+<ul>
+<li>A correspondence <span class="math inline">F</span> has closed graph if <span class="math inline">G(F)</span> is a closed subset of <span class="math inline">X \times Y</span>.</li>
+<li>If <span class="math inline">X</span> and <span class="math inline">Y</span> are first-countable spaces (such as metric spaces), then <span class="math inline">F</span> has closed graph iff for any sequence <span class="math inline">\left(x_{m}, y_{m}\right)_{m \geq 0}</span> with <span class="math inline">y_{m} \in F\left(x_{m}\right)</span> for all <span class="math inline">m \geq 0</span>, which converges to a pair <span class="math inline">(x, y)</span>, we have <span class="math inline">y \in F(x)</span>.</li>
+<li>Correspondences with closed graph are closed-valued.</li>
+</ul>
+</section>
+<section id="upper-hemicontinuity" class="level3">
+<h3 class="anchored" data-anchor-id="upper-hemicontinuity">Upper Hemicontinuity</h3>
+<ul>
+<li>A correspondence <span class="math inline">F</span> is upper hemicontinuous at <span class="math inline">x \in X</span> if for every open neighborhood <span class="math inline">V_{Y}</span> of <span class="math inline">F(x)</span>, there exists a neighborhood <span class="math inline">V_{X}</span> of <span class="math inline">x</span> such that <span class="math inline">x^{\prime} \in V_{X} \Rightarrow F\left(x^{\prime}\right) \subset V_{Y}</span>.</li>
+<li>Closed graph and upper hemicontinuity may have different implications. The constant correspondence <span class="math inline">F:[0,1] \rightrightarrows[0,1]</span> defined by <span class="math inline">F(x)=(0,1)</span> is upper hemicontinuous, but does not have a closed graph.</li>
+</ul>
+<p>The two concepts coincide for closed-valued correspondences in most spaces of interest.</p>
+<div id="thm-cgt" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 1.4 (Closed Graph Theorem)</strong></span> A correspondence <span class="math inline">F: X \rightrightarrows Y</span> with compact Hausdorff range <span class="math inline">Y</span> is closed iff it is upper hemicontinuous and closed-valued.</p>
+</div>
+</section>
+<section id="the-maximum-theorem" class="level3">
+<h3 class="anchored" data-anchor-id="the-maximum-theorem">The Maximum Theorem</h3>
+<div id="thm-bmt" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 1.5 (Berge’s Maximum Theorem)</strong></span> Suppose that <span class="math inline">f: X \times Y \rightarrow \mathbb{R}</span> is a continuous function, where <span class="math inline">X</span> and <span class="math inline">Y</span> are metric spaces and <span class="math inline">Y</span> is compact.</p>
+<ol type="1">
+<li>The function <span class="math inline">M: X \rightarrow \mathbb{R}</span>, defined by</li>
+</ol>
+<p><span class="math display">
+M(x)=\max _{y \in Y} f(x, y)
+</span></p>
+<p>is continuous.</p>
+<ol start="2" type="1">
+<li>The correspondence <span class="math inline">F: X \rightrightarrows Y</span>,</li>
+</ol>
+<p><span class="math display">
+F(x)=\arg \max _{y \in Y} f(x, y)
+</span></p>
+<p>is nonempty valued and has a closed graph.</p>
+</div>
+</section>
+<section id="a-fixed-point-theorem" class="level3">
+<h3 class="anchored" data-anchor-id="a-fixed-point-theorem">A Fixed-Point Theorem</h3>
+<div id="thm-kfpt" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 1.6 (Kakutani’s Fixed-Point Theorem)</strong></span> Let <span class="math inline">X</span> be a non-empty, compact, and convex subset of a Euclidean space and let the correspondence <span class="math inline">F: X \rightrightarrows X</span> have closed graph and non-empty convex values. Then the set of fixed points of <span class="math inline">F</span> is non-empty and compact.</p>
+<p>In game theoretic applications, <span class="math inline">X</span> is usually the strategy space, assumed to be compact and convex when we include mixed strategies.</p>
+<p><span class="math inline">F</span> is typically the best response correspondence, which is non-empty valued and has a closed graph by the Maximum Theorem.</p>
+</div>
+</section>
+<section id="convexity" class="level3">
+<h3 class="anchored" data-anchor-id="convexity">Convexity</h3>
+<p>To ensure that <span class="math inline">F</span> is convex-valued, assume that payoff functions are quasi-concave.</p>
+<div id="def-13" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 1.9</strong></span> If <span class="math inline">X</span> is a convex subset of a real vector space, then the function <span class="math inline">f: X \rightarrow \mathbb{R}</span> is quasi-concave if</p>
+<p><span class="math display">
+f(t x+(1-t) y) \geq \min (f(x), f(y)), \forall t \in[0,1], x, y \in X
+</span></p>
+</div>
+<p>Quasi-concavity implies convex upper contour sets and convex arg max.</p>
+</section>
+<section id="existence-of-nash-equilibrium-1" class="level3">
+<h3 class="anchored" data-anchor-id="existence-of-nash-equilibrium-1">Existence of Nash Equilibrium</h3>
+<div id="thm-9" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 1.7</strong></span> Consider a game <span class="math inline">(N, S, u)</span> such that <span class="math inline">S_{i}</span> is a convex and compact subset of a Euclidean space and that <span class="math inline">u_{i}</span> is continuous in <span class="math inline">s</span> and quasi-concave in <span class="math inline">s_{i}</span> for all <span class="math inline">i \in N</span>. Then there exists a pure strategy Nash equilibrium.</p>
+</div>
+<p>The result implies the existence of pure strategy Nash equilibria in generalizations of the Cournot competition game.</p>
+<p>Theorem 9 also implies the existence of mixed strategy Nash equilibria in finite games.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Let <span class="math inline">B_{i}\left(s_{-i}\right):=\arg \max _{s_{i}^{\prime} \in S_{i}} u_{i}\left(s_{i}^{\prime}, s_{-i}\right)</span> and define <span class="math inline">F: S \rightrightarrows S</span>,</li>
+</ul>
+<p><span class="math display">
+F(s)=\left\{\left(s_{1}^{*}, \ldots, s_{n}^{*}\right) \mid s_{i}^{*} \in B_{i}\left(s_{-i}\right), \forall i \in N\right\}=\prod_{i \in N} B_{i}\left(s_{-i}\right), \forall s \in S
+</span></p>
+<ul>
+<li>Since <span class="math inline">S</span> is compact and the utility functions are continuous, the Maximum Theorem implies that <span class="math inline">B_{i}</span> and <span class="math inline">F</span> are non-empty valued and have closed graphs.</li>
+<li>As <span class="math inline">u_{i}</span> is quasi-concave in <span class="math inline">s_{i}</span>, the set <span class="math inline">B_{i}\left(s_{-i}\right)</span> is convex for all <span class="math inline">i</span> and <span class="math inline">s_{-i}</span>, so <span class="math inline">F</span> is convex-valued.</li>
+<li>Kakutani’s fixed-point theorem <span class="math inline">\Rightarrow F</span> has a fixed point,</li>
+</ul>
+<p><span class="math display">
+s^{*} \in F\left(s^{*}\right)
+</span></p>
+<p><span class="math inline">s_{i}^{*} \in B_{i}\left(s_{-i}^{*}\right), \forall i \in N \Rightarrow s^{*}</span> is a Nash equilibrium.</p>
+</div>
+</div>
+</section>
+<section id="existence-of-mixed-strategy-nash-equilibrium" class="level3">
+<h3 class="anchored" data-anchor-id="existence-of-mixed-strategy-nash-equilibrium">Existence of Mixed-Strategy Nash Equilibrium</h3>
+<div id="col-3">
+<p>Every finite game has a mixed strategy Nash equilibrium.</p>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Since <span class="math inline">S</span> is finite, each <span class="math inline">\Delta\left(S_{i}\right)</span> is isomorphic to a simplex in a Euclidean space, which is convex and compact. Player i’s expected utility <span class="math inline">u_{i}(\sigma)=\sum_{s} u_{i}(s) \sigma_{1}\left(s_{1}\right) \cdots \sigma_{n}\left(s_{n}\right)</span> from a mixed strategy profile <span class="math inline">\sigma</span> is continuous in <span class="math inline">\sigma</span> and linear-hence also quasi-concave-in <span class="math inline">\sigma_{i}</span>. The game <span class="math inline">\left(N, \Delta\left(S_{1}\right), \ldots, \Delta\left(S_{n}\right), u\right)</span> satisfies the assumptions of Theorem 9. Therefore, it admits a Nash equilibrium <span class="math inline">\sigma^{*} \in \Delta\left(S_{1}\right) \times \cdots \times \Delta\left(S_{n}\right)</span>, which can be interpreted as a mixed Nash equilibrium in the original game.</p>
+</div>
+</div>
+</section>
+<section id="upperhemicontinuity-of-nash-equilibrium" class="level3">
+<h3 class="anchored" data-anchor-id="upperhemicontinuity-of-nash-equilibrium">Upperhemicontinuity of Nash Equilibrium</h3>
+<p>Fix <span class="math inline">N</span> and <span class="math inline">S</span>.</p>
+<ul>
+<li><span class="math inline">X</span> : compact metric space of payoff-relevant parameters</li>
+<li><span class="math inline">S</span> is a compact metric space (or a finite set)</li>
+<li>payoff function <span class="math inline">u_{i}: S \times X \rightarrow \mathbb{R}</span> of every <span class="math inline">i \in N</span> is continuous in strategies and parameters</li>
+<li><span class="math inline">N E(x)</span> and PNE (x): sets of Nash equilibria and pure Nash equilibria, resp., of game <span class="math inline">(N, S, u(\cdot, x))</span> in which it is common knowledge that the parameter value is <span class="math inline">x</span></li>
+<li>Endow the space of mixed strategies with the weak topology.</li>
+</ul>
+<div id="thm-10" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 1.8</strong></span> The correspondences NE and PNE have closed graphs.</p>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Consider any sequence <span class="math inline">\left(s^{m}, x^{m}\right) \rightarrow(s, x)</span> with <span class="math inline">s^{m} \in \operatorname{PNE}\left(x^{m}\right)</span> for each <span class="math inline">m</span>. Suppose that <span class="math inline">s \notin P N E(x)</span>. Then</p>
+<p><span class="math display">
+u_{i}\left(s_{i}^{\prime}, s_{-i}, x\right)-u_{i}\left(s_{i}, s_{-i}, x\right)&gt;0
+</span></p>
+<p>for some <span class="math inline">i \in N, s_{i}^{\prime} \in S_{i}</span>. Then <span class="math inline">\left(s^{m}, x^{m}\right) \rightarrow(s, x)</span> and the continuity of <span class="math inline">u_{i}</span> imply that</p>
+<p><span class="math display">
+u_{i}\left(s_{i}^{\prime}, s_{-i}^{m}, x^{m}\right)-u_{i}\left(s_{i}^{m}, s_{-i}^{m}, x^{m}\right)&gt;0
+</span></p>
+<p>for sufficiently large <span class="math inline">m</span>. However,</p>
+<p><span class="math display">
+u_{i}\left(s_{i}^{\prime}, s_{-i}^{m}, x^{m}\right)&gt;u_{i}\left(s_{i}^{m}, s_{-i}^{m}, x^{m}\right)
+</span></p>
+<p>contradicts <span class="math inline">s^{m} \in \operatorname{PNE}\left(x^{m}\right)</span>.</p>
+</div>
+</div>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./index.html" class="pagination-link" aria-label="Preface">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Preface</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

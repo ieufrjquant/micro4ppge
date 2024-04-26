@@ -1,0 +1,41 @@
+project:
+  type: book
+  output-dir: docs
+
+book:
+  title: "Microeconomics 4"
+  subtitle: "Lecture Notes from Microeconomics 4 Course <br> Institute of Economics, Federal University of Rio de Janeiro (IE/UFRJ)"
+  
+  sidebar: 
+    logo: logo_gpeq_html.png
+  
+  favicon: logo_gpeq_html.png
+  author: "Pedro Hemsley <br> PPGE IE/UFRJ"
+  date: last-modified
+  
+  chapters:
+    - index.qmd
+    - game-theory.qmd
+    
+  downloads: [pdf]
+  sharing: [twitter, facebook]
+
+format:
+  html:
+    theme: cosmo
+    fontcolor: black
+    html-math-method: katex
+    
+    number-depth: 2
+    
+    css: styles.css
+    
+  pdf: default
+
+monofont: Lato
+
+filters:
+  - parse-latex
+
+editor: visual
+

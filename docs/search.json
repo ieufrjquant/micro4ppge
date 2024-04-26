@@ -1,0 +1,812 @@
+[
+  {
+    "objectID": "game-theory.html",
+    "href": "game-theory.html",
+    "title": "1  Game Theory",
+    "section": "",
+    "text": "1.1 What is Game Theory?\nIn a strategic setting the actions of several agents are interdependent. Each agent’s outcome depends not only on his actions, but also on the actions of other agents. How to predict opponents’ play and respond optimally?\nEverything is a game…\nMost modern economic research includes game theoretical elements. Eleven game theorists have won the economics Nobel Prize so far.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Game Theory</span>"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Microeconomics 4",
+    "section": "",
+    "text": "Preface\nThis is a Quarto book.\nTo learn more about Quarto books visit https://quarto.org/docs/books.\n\n1 + 1\n\n[1] 2",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "game-theory.html#what-is-game-theory",
+    "href": "game-theory.html#what-is-game-theory",
+    "title": "1  Game Theory",
+    "section": "",
+    "text": "Game Theory is the formal study of strategic interaction.\n\n\n\n\n\n\npoker, chess, soccer, driving, dating, stock market\nadvertising, setting prices, entering new markets, building a reputation\nbargaining, partnerships, job market search and screening\ndesigning contracts, auctions, insurance, environmental regulations\ninternational relations, trade agreements, electoral campaigns\n\n\n\nBrief History\n\nCournot (1838): quantity setting duopoly\nZermelo (1913): backward induction\nvon Neumann (1928), Borel (1938), von Neumann and Morgenstern (1944): zero-sum games\nFlood and Dresher (1950): experiments\nNash (1950): equilibrium\nSelten (1965): dynamic games\nHarsanyi (1967): incomplete information\nAkerlof (1970), Spence (1973): first applications\n1980s boom, continuing nowadays: repeated games, bargaining, reputation, equilibrium refinements, industrial organization, contract theory, mechanism/market design\n1990s: parallel development of behavioral economics\nmore recently: applications to computer science, political science, psychology, evolutionary biology\n\n\n\nKey Elements of a Game\n\nPlayers: Who is interacting?\nStrategies: What are the options of each player? In what order do players act?\nPayoffs: How do strategies translate into outcomes? What are players’ preferences over possible outcomes?\nInformation/Beliefs: What do players know/believe about the situation and about one another? What actions do they observe before making decisions?\nRationality: How do players think?\n\n\n\nNormal-Form Games\nA normal (or strategic) form game is a triplet (N, S, u) with the following properties:\n\nN=\\{1,2, \\ldots, n\\}: finite set of players\nS_{i} \\ni s_{i}: set of pure strategies of player i\nS=S_{1} \\times \\cdots \\times S_{n} \\ni s=\\left(s_{1}, \\ldots, s_{n}\\right): set of pure strategy profiles\nS_{-i}=\\prod_{j \\neq i} S_{j} \\ni S_{-i}: pure strategy profiles of i’s opponents\nu_{i}: S \\rightarrow \\mathbb{R}: payoff function of player i ; u=\\left(u_{1}, \\ldots, u_{n}\\right).\n\nOutcomes are interdependent. Player i \\in N receives payoff u_{i}\\left(s_{1}, \\ldots, s_{n}\\right) when s=\\left(s_{1}, \\ldots, s_{n}\\right) \\in S is played.\nThe structure of the game is common knoweldge: all players know (N, S, u), and know that their opponents know it, and know that their opponents know that everyone knows, and so on.\nThe game is finite if S is finite.\n\n\n\nRock-Paper-Scissors\n\n\n\n\nMixed and Correlated Strategies\n\n\\Delta(X) : set of probability measures (or distributions) over the measurable space X (usually, X is either finite or a subset of a Euclidean space)\n\\Delta\\left(S_{i}\\right) \\ni \\sigma_{i} : mixed strategies of player i\n\\sigma \\in \\Delta\\left(S_{1}\\right) \\times \\cdots \\times \\Delta\\left(S_{n}\\right) : mixed strategy profile, specifies a mixed strategy for each player\n\\Delta(S) \\ni \\sigma : correlated strategy profiles\n\\sigma_{-i} \\in \\Delta\\left(S_{-i}\\right) : correlated belief for player i\n\\prod_{j \\neq i} \\Delta\\left(S_{j}\\right) : set of independent beliefs for i\n\nPlayer i has von Neumann-Morgenstern preferences – expected utility – over \\Delta(S), i.e., u_{i} extends to \\Delta(S) as follows:\n\nu_{i}(\\sigma)=\\sum_{s \\in S} \\sigma(s) u_{i}(s)",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Game Theory</span>"
+    ]
+  },
+  {
+    "objectID": "game-theory.html#brief-history",
+    "href": "game-theory.html#brief-history",
+    "title": "1  Game Theory",
+    "section": "1.2 Brief History",
+    "text": "1.2 Brief History\n\nCournot (1838): quantity setting duopoly\nZermelo (1913): backward induction\nvon Neumann (1928), Borel (1938), von Neumann and Morgenstern (1944): zero-sum games\nFlood and Dresher (1950): experiments\nNash (1950): equilibrium\nSelten (1965): dynamic games\nHarsanyi (1967): incomplete information\nAkerlof (1970), Spence (1973): first applications\n1980s boom, continuing nowadays: repeated games, bargaining, reputation, equilibrium refinements, industrial organization, contract theory, mechanism/market design\n1990s: parallel development of behavioral economics\nmore recently: applications to computer science, political science, psychology, evolutionary biology",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Game Theory</span>"
+    ]
+  },
+  {
+    "objectID": "game-theory.html#key-elements-of-a-game",
+    "href": "game-theory.html#key-elements-of-a-game",
+    "title": "1  Game Theory",
+    "section": "1.2 Key Elements of a Game",
+    "text": "1.2 Key Elements of a Game\n\nPlayers: Who is interacting?\nStrategies: What are the options of each player? In what order do players act?\nPayoffs: How do strategies translate into outcomes? What are players’ preferences over possible outcomes?\nInformation/Beliefs: What do players know/believe about the situation and about one another? What actions do they observe before making decisions?\nRationality: How do players think?",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Game Theory</span>"
+    ]
+  },
+  {
+    "objectID": "game-theory.html#rock-paper-scissors",
+    "href": "game-theory.html#rock-paper-scissors",
+    "title": "1  Game Theory",
+    "section": "1.4 Rock-Paper-Scissors",
+    "text": "1.4 Rock-Paper-Scissors",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Game Theory</span>"
+    ]
+  },
+  {
+    "objectID": "game-theory.html#mixed-and-correlated-strategies",
+    "href": "game-theory.html#mixed-and-correlated-strategies",
+    "title": "1  Game Theory",
+    "section": "1.4 Mixed and Correlated Strategies",
+    "text": "1.4 Mixed and Correlated Strategies\n\n\\Delta(X) : set of probability measures (or distributions) over the measurable space X (usually, X is either finite or a subset of a Euclidean space)\n\\Delta\\left(S_{i}\\right) \\ni \\sigma_{i} : mixed strategies of player i\n\\sigma \\in \\Delta\\left(S_{1}\\right) \\times \\cdots \\times \\Delta\\left(S_{n}\\right) : mixed strategy profile, specifies a mixed strategy for each player\n\\Delta(S) \\ni \\sigma : correlated strategy profiles\n\\sigma_{-i} \\in \\Delta\\left(S_{-i}\\right) : correlated belief for player i\n\\prod_{j \\neq i} \\Delta\\left(S_{j}\\right) : set of independent beliefs for i\n\nPlayer i has von Neumann-Morgenstern preferences – expected utility – over \\Delta(S), i.e., u_{i} extends to \\Delta(S) as follows:\n\nu_{i}(\\sigma)=\\sum_{s \\in S} \\sigma(s) u_{i}(s)",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Game Theory</span>"
+    ]
+  },
+  {
+    "objectID": "game-theory.html#advertising-war-coke-vs.-pepsi",
+    "href": "game-theory.html#advertising-war-coke-vs.-pepsi",
+    "title": "1  Game Theory",
+    "section": "1.7 Advertising War: Coke vs. Pepsi",
+    "text": "1.7 Advertising War: Coke vs. Pepsi\n\nWithout any advertising, each company earns \\$ 5 \\mathrm{~b} / year from Cola consumers.\nEach company can choose to spend \\$ 2 \\mathrm{~b} / year on advertising.\nAdvertising does not increase total sales for Cola, but if one company advertises while the other does not, it captures \\$ 3 b from the competitor.\n\nPepsi\nCoke\nNo Ad\n\\mathrm{Ad}\n\nWhat will the Cola companies do?\nIs there a better feasible outcome?",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Game Theory</span>"
+    ]
+  },
+  {
+    "objectID": "game-theory.html#strictly-dominated-strategies",
+    "href": "game-theory.html#strictly-dominated-strategies",
+    "title": "1  Game Theory",
+    "section": "1.8 Strictly Dominated Strategies",
+    "text": "1.8 Strictly Dominated Strategies\n\nDefinition 1.1 A strategy s_{i} \\in S_{i} is strictly (s.) dominated by \\sigma_{i} \\in \\Delta\\left(S_{i}\\right) if\n\nu_{i}\\left(\\sigma_{i}, s_{-i}\\right)&gt;u_{i}\\left(s_{i}, s_{-i}\\right), \\forall s_{-i} \\in S_{-i}",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Game Theory</span>"
+    ]
+  },
+  {
+    "objectID": "game-theory.html#definition-1",
+    "href": "game-theory.html#definition-1",
+    "title": "1  Game Theory",
+    "section": "1.8 {Definition 1}",
+    "text": "1.8 {Definition 1}\nA strategy s_{i} \\in S_{i} is strictly (s.) dominated by \\sigma_{i} \\in \\Delta\\left(S_{i}\\right) if\n\nu_{i}\\left(\\sigma_{i}, s_{-i}\\right)&gt;u_{i}\\left(s_{i}, s_{-i}\\right), \\forall s_{-i} \\in S_{-i}",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Game Theory</span>"
+    ]
+  },
+  {
+    "objectID": "game-theory.html#pure-strategies-may-be-dominated-by-mixed-strategies",
+    "href": "game-theory.html#pure-strategies-may-be-dominated-by-mixed-strategies",
+    "title": "1  Game Theory",
+    "section": "1.6 Pure Strategies May Be Dominated by Mixed Strategies",
+    "text": "1.6 Pure Strategies May Be Dominated by Mixed Strategies\nFigure: B is s. dominated by 1 / 2 T+1 / 2 M.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Game Theory</span>"
+    ]
+  },
+  {
+    "objectID": "game-theory.html#the-beauty-contest",
+    "href": "game-theory.html#the-beauty-contest",
+    "title": "1  Game Theory",
+    "section": "1.3 The Beauty Contest",
+    "text": "1.3 The Beauty Contest\n\nPlayers: everyone in the class\nStrategy space: any number in \\{1,2, \\ldots, 100\\}\nThe person whose number is closest to 2 / 3 of the class average wins the game.\nPayoffs: one randomly selected winner receives \\$ 1.\n\nWhy is this game called a beauty contest?\n\nKeynesian Beauty Contest\nKeynes described the action of rational actors in a market using an analogy based on a newspaper contest. Entrants are asked to choose a set of 6 faces from photographs that they find “most beautiful”. Those who picked the most popular face are eligible for a prize.\nA naive strategy would be to choose the 6 faces that, in the opinion of the entrant, are most beautiful. A more sophisticated contest entrant, wishing to maximize the chances of winning against naive opponents, would guess which faces the majority finds attractive, and then make a selection based on this inference.\nThis can be carried one step further to account for the fact that other entrants would each have their own opinions of what public perceptions of beauty are. What does everyone believe about what everyone else believes about whom others find attractive?\n\n\nThe Beauty Contest and the Stock Market\n\nIt is not a case of choosing those faces that, to the best of one’s judgment, are really the prettiest, nor even those that average opinion genuinely thinks the prettiest. We have reached the third degree where we devote our intelligences to anticipating what average opinion expects the average opinion to be. And there are some, I believe, who practice the fourth, fifth and higher degrees.\nJohn Maynard Keynes,\nGeneral Theory of Employment, Interest and Money, 1936\n\nKeynes suggested that similar behavior is observed in the stock market. Shares are not priced based on what people think their fundamental value is, but rather on what they think everyone else thinks the value is and what they think about these beliefs, and so on.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Game Theory</span>"
+    ]
+  },
+  {
+    "objectID": "game-theory.html#detour-on-common-knowledge",
+    "href": "game-theory.html#detour-on-common-knowledge",
+    "title": "1  Game Theory",
+    "section": "1.5 Detour on Common Knowledge",
+    "text": "1.5 Detour on Common Knowledge\n\nIs common knowledge a sensible assumption? What does the definition of S_{i}^{100} entail?\nHigher order beliefs, common knowledge of rationality…\nWhy did the strategy of choosing 1 not win in the beauty contest?\n\n\nThe Story of the Unfaithful Wives\n\nA village with 100 married couples and a high priest.\nThe men had to pass a logic exam before being allowed to marry.\nIt is common knowledge that the high priest is truthful.\nThe men would gossip about adulterous relationships and each knows which of the other wives are unfaithful.\nNo one would ever inform a husband about his cheating wife.\nThe high priest knows that some wives are unfaithful and decides that such immorality should no longer be tolerated.\nThe priest convenes all the men at the temple and publicly announces that the integrity of the village has been compromised-there is at least one cheating wife.\nHe also points out that even though no one knows whether his wife is faithful, each man has heard about the other unfaithful wives.\nHe orders that every man certain of his wife’s infidelity should shoot her at midnight.\n39 silent nights went by and. . on the 40^{\\text {th }} shots were heard.\n\nHow many wives were shot? Were all the unfaithful wives murdered? How did men learn of the infidelity of their wives after 39 nights in which nothing happened?\n\n\nRationalizability\n\nSolution concept introduced independently by Bernheim (1984) and Pearce (1984).\nLike iterated dominance, rationalizability derives restrictions on play from common knowledge of payoffs and the fact that players are “reasonable.”\nDominance: unreasonable to use a strategy that performs worse than another (fixed) one in every scenario.\nRationalizability: irrational for a player to choose a strategy that is not a best response to some beliefs about opponents’ strategies.\n\n\n\nWhat is a “Belief”?\n\nBernheim & Pearce: every player i’s beliefs \\sigma_{-i} about the play of j \\neq i must be independent, i.e., \\sigma_{-i} \\in \\prod_{j \\neq i} \\Delta\\left(S_{j}\\right).\nAlternatively, allow player i to believe that the actions of opponents are correlated, i.e., any \\sigma_{-i} \\in \\Delta\\left(S_{-i}\\right) is a possibility.\nThe two definitions have different implications for n \\geq 3.\n\nFocus on case with correlated beliefs. Such beliefs represent a player’s uncertainty about his opponents’ actions, not necessarily his theory about their deliberate randomization and coordination.\nPlayer i may place equal probability on two scenarios: either both j and k pick action A or they both play B. If i is not sure which theory is true, then his beliefs are correlated even though he knows that j and k are acting independently.\n\nDefinition 1.3 (Best Responses) A strategy \\sigma_{i} \\in S_{i} is a best response to a belief \\sigma_{-i} \\in \\Delta\\left(S_{-i}\\right) if\n\nu_{i}\\left(\\sigma_{i}, \\sigma_{-i}\\right) \\geq u_{i}\\left(s_{i}, \\sigma_{-i}\\right), \\forall s_{i} \\in S_{i}\n\n\n\n\nRationalizabile Strategies\nCommon knowledge of payoffs and rationality imposes restrictions on play…\n\nDefinition 1.4 Set S^{0}=S and let S^{k} be given recursively by\n\nS_{i}^{k}=\\left\\{s_{i} \\in S_{i}^{k-1} \\mid \\exists \\sigma_{-i} \\in \\Delta\\left(S_{-i}^{k-1}\\right), u_{i}\\left(s_{i}, \\sigma_{-i}\\right) \\geq u_{i}\\left(s_{i}^{\\prime}, \\sigma_{-i}\\right), \\forall s_{i}^{\\prime} \\in S_{i}^{k-1}\\right\\}\n\nThe set of correlated rationalizable strategies for player i is S_{i}^{\\infty}=\\bigcap_{k \\geq 0} S_{i}^{k}. A mixed strategy \\sigma_{i} \\in \\Delta\\left(S_{i}\\right) is rationalizable if there is a belief \\sigma_{-i} \\in \\Delta\\left(S_{-i}^{\\infty}\\right) s.t. u_{i}\\left(\\sigma_{i}, \\sigma_{-i}\\right) \\geq u_{i}\\left(s_{i}, \\sigma_{-i}\\right) for all s_{i} \\in S_{i}^{\\infty}.\n\nThe definition of independent rationalizability replaces \\Delta\\left(S_{-i}^{k-1}\\right) and \\Delta\\left(S_{-i}^{\\infty}\\right) with \\prod_{j \\neq i} \\Delta\\left(S_{j}^{k-1}\\right) and \\prod_{j \\neq i} \\Delta\\left(S_{j}^{\\infty}\\right), resp.\n\n\nRationalizability in Cournot Duopoly\nTwo firms compete on the market for a divisible homogeneous good.\n\nEach firm i=1,2 has zero marginal cost and simultaneously decides to produce an amount of output q_{i} \\geq 0.\nThe resulting price is p=1-q_{1}-q_{2}.\nProfit of firm i is q_{i}\\left(1-q_{1}-q_{2}\\right).\n\nBest response of one firm if the other produces q is\nB(q)=\\max (0,(1-q) / 2)(j=3-i) ; B is decreasing. If q \\lesseqgtr r then\nB(q) \\gtreqless(1-r) / 2.\n\nSince q \\geq q^{0}:=0, only strategies q \\leq q^{1}:=B\\left(q^{0}\\right)=\\left(1-q^{0}\\right) / 2 are best responses, S_{i}^{1}=\\left[q^{0}, q^{1}\\right].\nThen only q \\geq q^{2}:=B\\left(q^{1}\\right)=\\left(1-q^{1}\\right) / 2 survives the second round of elimination, S_{i}^{2}=\\left[q^{2}, q^{1}\\right] \\ldots\nWe obtain a sequence\n\n\nq^{0} \\leq q^{2} \\leq \\ldots \\leq q^{2 k} \\leq \\ldots \\leq q^{2 k+1} \\leq \\ldots \\leq q^{1}\n\nwhere q^{2 k}=\\sum_{l=1}^{k} 1 / 4^{l}=\\left(1-1 / 4^{k}\\right) / 3 and q^{2 k+1}=\\left(1-q^{2 k}\\right) / 2 s.t. S_{i}^{2 k+1}=\\left[q^{2 k}, q^{2 k+1}\\right] and S_{i}^{2 k}=\\left[q^{2 k}, q^{2 k-1}\\right] for all k \\geq 0.\n\\lim _{k \\rightarrow \\infty} q^{k}=1 / 3, so the only rationalizable strategy for firm i is q_{i}=1 / 3 (the Nash equilibrium).\nWhat strategies are rationalizable with more than two firms?\n\n\nNever Best Responses\nA strategy \\sigma_{i} \\in \\Delta\\left(S_{i}\\right) is never a best response for player i if it is not a best response to any correlated belief \\sigma_{-i} \\in \\Delta\\left(S_{-i}\\right).\nRecall that \\sigma_{i} \\in \\Delta\\left(S_{i}\\right) is s. dominated if \\exists \\sigma_{i}^{\\prime} \\in \\Delta\\left(S_{i}\\right) s.t.\n\nu_{i}\\left(\\sigma_{i}^{\\prime}, s_{-i}\\right)&gt;u_{i}\\left(\\sigma_{i}, s_{-i}\\right), \\forall s_{-i} \\in S_{-i}\n\n\nTheorem 1.1 In a finite game, a strategy is never a best response iff it is s. dominated.\n\n\nCorollary 1.1 Correlated rationalizability and iterated strict dominance coincide.\n\nIf \\sigma_{i} is s. dominated by \\sigma_{i}^{\\prime}, then \\sigma_{i} is not a best response for any belief \\sigma_{-i} \\in \\Delta\\left(S_{-i}\\right): \\sigma_{i}^{\\prime} yields a higher payoff than \\sigma_{i} for player i against any \\sigma_{-i}. Left to prove that a strategy that is not \\mathrm{s}. dominated is a best response for some beliefs.\n\n\n\n\n\n\nProof\n\n\n\nSuppose \\tilde{\\sigma}_{i} is not s. dominated for player i.\n\nDefine set of “dominated payoffs” for i by\n\n\nD=\\left\\{x \\in \\mathbb{R}^{S_{-i}} \\mid \\exists \\sigma_{i} \\in \\Delta\\left(S_{i}\\right), x \\leq u_{i}\\left(\\sigma_{i}, \\cdot\\right)\\right\\}\n\nD is non-empty, closed, and convex.\n\nu_{i}\\left(\\tilde{\\sigma}_{i}, \\cdot\\right) does not belong to the interior of D because it is not \\mathrm{s}. dominated by any \\sigma_{i} \\in \\Delta\\left(S_{i}\\right).\nBy the supporting hyperplane theorem, \\exists \\alpha \\in \\mathbb{R}^{S_{-i}} \\backslash\\{\\mathbf{0}\\} s.t.\n\n\n\\alpha \\cdot u_{i}\\left(\\tilde{\\sigma}_{i}, \\cdot\\right) \\geq \\alpha \\cdot x, \\forall x \\in D\n\nIn particular, \\alpha \\cdot u_{i}\\left(\\tilde{\\sigma}_{i}, \\cdot\\right) \\geq \\alpha \\cdot u_{i}\\left(\\sigma_{i}, \\cdot\\right), \\forall \\sigma_{i} \\in \\Delta\\left(S_{i}\\right).\n\nSince D is not bounded from below, \\alpha has non-negative components.\nNormalize \\alpha so that its components sum to 1 ; \\alpha interpreted as a belief in \\Delta\\left(S_{-i}\\right) with the property that\n\n\nu_{i}\\left(\\tilde{\\sigma}_{i}, \\alpha\\right) \\geq u_{i}\\left(\\sigma_{i}, \\alpha\\right), \\forall \\sigma_{i} \\in \\Delta\\left(S_{i}\\right)\n\nThus \\tilde{\\sigma}_{i} is a best response to belief \\alpha.\n\n\n\n\nIteration and Best Responses\n\nTheorem 1.2 For every k \\geq 0, each s_{i} \\in S_{i}^{k} is a best response (within S_{i} ) to a belief in \\Delta\\left(S_{-i}^{k-1}\\right).\n\n\n\n\n\n\n\nProof\n\n\n\nFix s_{i} \\in S_{i}^{k} ; s_{i} is a best response within S_{i}^{k-1} to some \\sigma_{-i} \\in \\Delta\\left(S_{-i}^{k-1}\\right). If s_{i} were not a best response within S_{i} to \\sigma_{-i}, let s_{i}^{\\prime} be a best response.\nSince s_{i} is a best response within S_{i}^{k-1} to \\sigma_{-i} and s_{i}^{\\prime} is a better response than s_{i} to \\sigma_{-i}, we need s_{i}^{\\prime} \\notin S_{i}^{k-1}.\nThen s_{i}^{\\prime} was deleted at an earlier stage, say s_{i}^{\\prime} \\in S_{i}^{l-1} but s_{i}^{\\prime} \\notin S_{i}^{\\prime} for some I \\leq k-1. This contradicts the fact that s_{i}^{\\prime} is a best response in S_{i} \\supseteq S_{i}^{l-1} to \\sigma_{-i} \\in \\Delta\\left(S_{-i}^{k-1}\\right) \\subseteq \\Delta\\left(S_{-i}^{\\prime-1}\\right).\n\n\n\nCorollary 1.2 If the game is finite, then each s_{i} \\in S_{i}^{\\infty} is a best response (within S_{i} ) to a belief in \\Delta\\left(S_{-i}^{\\infty}\\right).\n\n\n\nClosed under Rational Behavior\n\nDefinition 1.5 A set Z=Z_{1} \\times \\ldots \\times Z_{n} with Z_{i} \\subseteq S_{i} for i \\in N is closed under rational behavior if, for all i, every strategy in Z_{i} is a best response to a belief in \\Delta\\left(Z_{-i}\\right).\n\n\nIf the game is finite (or if S is a compact metric space and u is continuous), then S^{\\infty} is the largest set closed under rational behavior.\n\n\n\n\n\n\n\nProof\n\n\n\nS^{\\infty} is closed under rational behavior by Corollary 2. Suppose that there exists Z_{1} \\times \\ldots \\times Z_{n} \\not \\subset S^{\\infty} that is closed under rational behavior.\nConsider the smallest k for which there is an i such that Z_{i} \\not \\subset S_{i}^{k}. It must be that k \\geq 1 and Z_{-i} \\subseteq S_{-i}^{k-1}.\nBy assumption, every element of Z_{i} is a best response to an element of \\Delta\\left(Z_{-i}\\right) \\subset \\Delta\\left(S_{-i}^{k-1}\\right), contradicting Z_{i} \\nsubseteq S_{i}^{k}.\n\n\n\n\nEpistemic Foundations of Rationalizability\nFormalize the idea of common knowledge and show that rationalizability captures the idea of common knowledge of rationality (and payoffs).\n\nDefinition 1.6 (Information Structure) An information (or belief) structure is a list \\left(\\Omega,\\left(l_{i}\\right)_{i \\in N},\\left(p_{i}\\right)_{i \\in N}\\right)\n\n\\Omega is a finite state space\nl_{i}: \\Omega \\rightarrow 2^{\\Omega} is a partition of \\Omega for each i \\in N s.t. l_{i}(\\omega) is the set of states that i thinks are possible when the true state is \\omega; \\omega^{\\prime} \\in l_{i}(\\omega) \\Leftrightarrow \\omega \\in l_{i}\\left(\\omega^{\\prime}\\right)\np_{i, l_{i}(\\omega)} \\in \\Delta\\left(l_{i}(\\omega)\\right): i^{\\prime} ’s belief at \\omega\n\n\n\n\nInterpretation\n\nState \\omega summarizes all the relevant facts about the world. Only one of the states is true; all others are hypothetical states needed to encode players’ beliefs.\nIn state \\omega, player i is informed that the state is in l_{i}(\\omega) and gets no other information.\nSuch an information structure arises if each player observes a state-dependent signal and l_{i}(\\omega) is the set of states for which player i ’s signal is identical to the signal at \\omega.\n\n\n\nKnowledge and Common Knowledge\n\nFor any event F \\subseteq \\Omega, player i knows at \\omega that F obtains if l_{i}(\\omega) \\subseteq F. The event that i knows F is\n\nK_{i}(F)=\\left\\{\\omega \\mid I_{i}(\\omega) \\subseteq F\\right\\}\n\nThe event that everyone knows F is defined by\n\nK(F)=\\cap_{i \\in N} K_{i}(F)\n\nLet K^{0}(F)=F and K^{t+1}(F)=K\\left(K^{t}(F)\\right) for t \\geq 0. Set K^{\\infty}(F)=\\bigcap_{t \\geq 0} K^{t}(F) . K^{\\infty}(F) is the set of states where F is common knowledge.\n\n\n\nPublic Events\nK\\left(K^{\\infty}(F)\\right)=K^{\\infty}(F) \\rightarrow alternative definition of common knowledge\nEvent F^{\\prime} is public if F^{\\prime}=\\cup_{\\left(\\omega^{\\prime} \\in F^{\\prime}\\right.} l_{i}\\left(\\omega^{\\prime}\\right) for all i. If F^{\\prime} is public, then K\\left(F^{\\prime}\\right)=F^{\\prime}, so K^{\\infty}\\left(F^{\\prime}\\right)=F^{\\prime}.\n\nLemma 1.1 An event F is common knowledge at \\omega iff there exists a public event F^{\\prime} with \\omega \\in F^{\\prime} \\subseteq F.\nIf F is common knowledge at \\omega, there exists a submodel that includes state \\omega and respects the information structure where F is true state by state.\n\n\n\nStrategies\nFix a finite game (N, S, u). To give strategic meaning to information states, introduce a strategy profile \\mathbf{s}: \\Omega \\rightarrow S.\n\nA strategy profile \\mathbf{s}: \\Omega \\rightarrow S is adapted with respect to \\left(\\Omega,\\left(I_{i}\\right)_{i \\in N},\\left(p_{i}\\right)_{i \\in N}\\right) if \\mathbf{s}_{i}(\\omega)=\\mathbf{s}_{i}\\left(\\omega^{\\prime}\\right) whenever l_{i}(\\omega)=l_{i}\\left(\\omega^{\\prime}\\right).\n\nPlayers must choose a constant action at all states in each information set since they cannot distinguish states in the same information set.\n\nAn epistemic model \\left(\\Omega,\\left(l_{i}\\right)_{i \\in N},\\left(p_{i}\\right)_{i \\in N}, \\mathbf{s}\\right) consists of an information structure and an adapted strategy profile.\n\n\n\nCommon Knowledge of Rationality\n\nFor an epistemic model \\left(\\Omega,\\left(l_{i}\\right)_{i \\in N},\\left(p_{i}\\right)_{i \\in N}, \\mathbf{s}\\right), player i is rational at \\omega \\in \\Omega if\n\n\\mathbf{s}_{i}(\\omega) \\in \\arg \\max _{s_{i} \\in S_{i}} \\sum_{\\omega^{\\prime} \\in l_{i}(\\omega)} u_{i}\\left(s_{i}, \\mathbf{s}_{-j}\\left(\\omega^{\\prime}\\right)\\right) p_{i, l_{i}(\\omega)}\\left(\\omega^{\\prime}\\right)\n\n\n\nDefinition 1.7 A strategy s_{i} \\in S_{i} consistent with common knowledge of rationality if there exists a model \\left(\\Omega,\\left(l_{j}\\right)_{j \\in N},\\left(p_{j}\\right)_{j \\in N}, \\mathbf{s}\\right) and state \\omega^{*} \\in \\Omega with \\mathbf{s}_{i}\\left(\\omega^{*}\\right)=s_{i} at which it is common knowledge that all players are rational.\nEquivalently, \\exists\\left(\\Omega,\\left(l_{j}\\right)_{j \\in N},\\left(p_{j}\\right)_{j \\in N}, \\mathbf{s}\\right) s.t. \\mathbf{s}_{j}(\\omega) is a best response to \\mathbf{s}_{-j} at each \\omega \\in \\Omega for every player j \\in N.\n\n\nFor any i \\in N and s_{i} \\in S_{i}, s_{i} is consistent with common knowledge of rationality iff s_{i} \\in S_{i}^{\\infty}.\n\nCan extend result to allow for payoff uncertainty (adding the hypothesis that payoffs are common knowledge at the relevant state).\n\n\n\n\n\n\nProof\n\n\n\n\\Rightarrow) Fix s_{i} consistent with common knowledge of rationality.\n\\exists\\left(\\Omega,\\left(l_{j}\\right)_{j \\in N},\\left(p_{j}\\right)_{j \\in N}, \\mathbf{s}\\right) with \\omega^{*} \\in \\Omega s.t. \\mathbf{s}_{i}\\left(\\omega^{*}\\right)=s_{i} and\n\n\\mathbf{s}_{j}(\\omega) \\in \\arg \\max _{s_{j} \\in S_{j}} \\sum_{\\omega^{\\prime} \\in \\ell_{j}(\\omega)} u_{j}\\left(s_{j}, \\mathbf{s}_{-j}\\left(\\omega^{\\prime}\\right)\\right) p_{j, l, j}(\\omega)\\left(\\omega^{\\prime}\\right), \\forall j \\in N, \\omega \\in \\Omega\n\nDefine Z_{j}=\\mathbf{s}_{j}(\\Omega). Note that s_{i}=\\mathbf{s}_{i}\\left(\\omega^{*}\\right) \\in s_{i}(\\Omega)=Z_{i}. By Theorem 3, to show that s_{i} \\in S_{i}^{\\infty}, it suffices to prove that Z is closed under rational behavior.\n\\forall z_{j} \\in Z_{j}, \\exists \\omega \\in \\Omega s.t. z_{j}=\\mathbf{s}_{j}(\\omega). Define \\mu_{j, \\omega} \\in \\Delta\\left(Z_{-j}\\right) by\n\n\\mu_{j, \\omega}\\left(s_{-j}\\right)=\\sum_{\\omega^{\\prime} \\in l_{j}(\\omega), \\mathbf{s}_{-j}\\left(\\omega^{\\prime}\\right)=s_{-j}} p_{j, l_{j}(\\omega)}\\left(\\omega^{\\prime}\\right)\n\nThen\n\n\\begin{aligned}\nz_{j} & =\\mathbf{s}_{j}(\\omega) \\in \\arg \\max _{s_{j} \\in S_{j}} \\sum_{\\omega^{\\prime} \\in l_{j}(\\omega)} u_{j}\\left(s_{j}, \\mathbf{s}_{-j}\\left(\\omega^{\\prime}\\right)\\right) p_{i, l_{j}(\\omega)}\\left(\\omega^{\\prime}\\right) \\\\\n& =\\arg \\max _{s_{j} \\in S_{j}} \\sum_{s_{-j} \\in Z_{-j}} \\mu_{j, \\omega}\\left(s_{-j}\\right) u_{j}\\left(s_{j}, s_{-j}\\right)\n\\end{aligned}\n\n(\\Leftarrow) Since S^{\\infty} is closed under rational behavior, for every s_{i} \\in S_{i}^{\\infty}, there exists \\mu_{i, s_{i}} \\in \\Delta\\left(S_{-i}^{\\infty}\\right) for which s_{i} is a best response. Define the model \\left(S^{\\infty},\\left(l_{i}\\right)_{i \\in N},\\left(p_{i}\\right)_{i \\in N}, \\mathbf{s}\\right):\n\n\\begin{aligned}\nl_{i}(s) & =\\left\\{s_{i}\\right\\} \\times S_{-i}^{\\infty} \\\\\np_{i, s}\\left(s^{\\prime}\\right) & =\\mu_{i, s_{i}}\\left(s_{-i}^{\\prime}\\right) \\\\\n\\mathbf{s}(s) & =s\n\\end{aligned}\n\nIn this model, it is common knowledge that every player is rational:\n\n\\begin{aligned}\n& \\forall s \\in S^{\\infty}, \\mathbf{s}_{i}(s)=s_{i} \\in \\arg \\max _{s_{i}^{\\prime} \\in S_{i}} \\sum_{s_{-i} \\in S_{-i}^{\\infty}} u_{i}\\left(s_{i}^{\\prime}, s_{-i}\\right) \\mu_{i, s}\\left(s_{-i}^{\\prime}\\right) \\\\\n&=\\arg \\max _{s_{i}^{\\prime} \\in S_{i}} \\sum_{s^{\\prime} \\in l_{i}(s)} u_{i}\\left(s_{i}^{\\prime}, s_{-i}\\right) p_{i, s}\\left(s^{\\prime}\\right)\n\\end{aligned}\n\nFor every s_{i} \\in S_{i}^{\\infty}, there exists s=\\left(s_{i}, s_{-i}\\right) \\in S^{\\infty} s.t. \\mathbf{s}_{i}(s)=s_{i}, showing that s_{i} is consistent with common knowledge of rationality.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Game Theory</span>"
+    ]
+  },
+  {
+    "objectID": "game-theory.html#the-story-of-the-unfaithful-wives",
+    "href": "game-theory.html#the-story-of-the-unfaithful-wives",
+    "title": "1  Game Theory",
+    "section": "1.10 The Story of the Unfaithful Wives",
+    "text": "1.10 The Story of the Unfaithful Wives\n\nA village with 100 married couples and a high priest.\nThe men had to pass a logic exam before being allowed to marry.\nIt is common knowledge that the high priest is truthful.\nThe men would gossip about adulterous relationships and each knows which of the other wives are unfaithful.\nNo one would ever inform a husband about his cheating wife.\nThe high priest knows that some wives are unfaithful and decides that such immorality should no longer be tolerated.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Game Theory</span>"
+    ]
+  },
+  {
+    "objectID": "game-theory.html#continued-story",
+    "href": "game-theory.html#continued-story",
+    "title": "1  Game Theory",
+    "section": "1.11 Continued Story",
+    "text": "1.11 Continued Story\n\nThe priest convenes all the men at the temple and publicly announces that the integrity of the village has been compromised-there is at least one cheating wife.\nHe also points out that even though no one knows whether his wife is faithful, each man has heard about the other unfaithful wives.\nHe orders that every man certain of his wife’s infidelity should shoot her at midnight.\n39 silent nights went by and. . on the 40^{\\text {th }} shots were heard.\n\nHow many wives were shot? Were all the unfaithful wives murdered? How did men learn of the infidelity of their wives after 39 nights in which nothing happened?",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Game Theory</span>"
+    ]
+  },
+  {
+    "objectID": "game-theory.html#rationalizability",
+    "href": "game-theory.html#rationalizability",
+    "title": "1  Game Theory",
+    "section": "1.9 Rationalizability",
+    "text": "1.9 Rationalizability\n\nSolution concept introduced independently by Bernheim (1984) and Pearce (1984).\nLike iterated dominance, rationalizability derives restrictions on play from common knowledge of payoffs and the fact that players are “reasonable.”\nDominance: unreasonable to use a strategy that performs worse than another (fixed) one in every scenario.\nRationalizability: irrational for a player to choose a strategy that is not a best response to some beliefs about opponents’ strategies.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Game Theory</span>"
+    ]
+  },
+  {
+    "objectID": "game-theory.html#what-is-a-belief",
+    "href": "game-theory.html#what-is-a-belief",
+    "title": "1  Game Theory",
+    "section": "1.10 What is a “Belief”?",
+    "text": "1.10 What is a “Belief”?\n\nBernheim & Pearce: every player i’s beliefs \\sigma_{-i} about the play of j \\neq i must be independent, i.e., \\sigma_{-i} \\in \\prod_{j \\neq i} \\Delta\\left(S_{j}\\right).\nAlternatively, allow player i to believe that the actions of opponents are correlated, i.e., any \\sigma_{-i} \\in \\Delta\\left(S_{-i}\\right) is a possibility.\nThe two definitions have different implications for n \\geq 3.\n\nFocus on case with correlated beliefs. Such beliefs represent a player’s uncertainty about his opponents’ actions, not necessarily his theory about their deliberate randomization and coordination.\nPlayer i may place equal probability on two scenarios: either both j and k pick action A or they both play B. If i is not sure which theory is true, then his beliefs are correlated even though he knows that j and k are acting independently.\n\nDefinition 1.3 (Best Responses) A strategy \\sigma_{i} \\in S_{i} is a best response to a belief \\sigma_{-i} \\in \\Delta\\left(S_{-i}\\right) if\n\nu_{i}\\left(\\sigma_{i}, \\sigma_{-i}\\right) \\geq u_{i}\\left(s_{i}, \\sigma_{-i}\\right), \\forall s_{i} \\in S_{i}",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Game Theory</span>"
+    ]
+  },
+  {
+    "objectID": "game-theory.html#best-responses",
+    "href": "game-theory.html#best-responses",
+    "title": "1  Game Theory",
+    "section": "1.11 Best Responses",
+    "text": "1.11 Best Responses\n\nDefinition 1.3 A strategy \\sigma_{i} \\in S_{i} is a best response to a belief \\sigma_{-i} \\in \\Delta\\left(S_{-i}\\right) if\n\nu_{i}\\left(\\sigma_{i}, \\sigma_{-i}\\right) \\geq u_{i}\\left(s_{i}, \\sigma_{-i}\\right), \\forall s_{i} \\in S_{i}",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Game Theory</span>"
+    ]
+  },
+  {
+    "objectID": "game-theory.html#definition-3",
+    "href": "game-theory.html#definition-3",
+    "title": "1  Game Theory",
+    "section": "1.17 {Definition 3}",
+    "text": "1.17 {Definition 3}\nA strategy \\sigma_{i} \\in S_{i} is a best response to a belief \\sigma_{-i} \\in \\Delta\\left(S_{-i}\\right) if\n\nu_{i}\\left(\\sigma_{i}, \\sigma_{-i}\\right) \\geq u_{i}\\left(s_{i}, \\sigma_{-i}\\right), \\forall s_{i} \\in S_{i}\n\n##Rationalizabile Strategies}\nCommon knowledge of payoffs and rationality imposes restrictions on play…\n##Definition 4}\nSet S^{0}=S and let S^{k} be given recursively by\n\nS_{i}^{k}=\\left\\{s_{i} \\in S_{i}^{k-1} \\mid \\exists \\sigma_{-i} \\in \\Delta\\left(S_{-i}^{k-1}\\right), u_{i}\\left(s_{i}, \\sigma_{-i}\\right) \\geq u_{i}\\left(s_{i}^{\\prime}, \\sigma_{-i}\\right), \\forall s_{i}^{\\prime} \\in S_{i}^{k-1}\\right\\}\n\nThe set of correlated rationalizable strategies for player i is S_{i}^{\\infty}=\\bigcap_{k \\geq 0} S_{i}^{k}. A mixed strategy \\sigma_{i} \\in \\Delta\\left(S_{i}\\right) is rationalizable if there is a belief \\sigma_{-i} \\in \\Delta\\left(S_{-i}^{\\infty}\\right) s.t. u_{i}\\left(\\sigma_{i}, \\sigma_{-i}\\right) \\geq u_{i}\\left(s_{i}, \\sigma_{-i}\\right) for all s_{i} \\in S_{i}^{\\infty}.\nThe definition of independent rationalizability replaces \\Delta\\left(S_{-i}^{k-1}\\right) and \\Delta\\left(S_{-i}^{\\infty}\\right) with \\prod_{j \\neq i} \\Delta\\left(S_{j}^{k-1}\\right) and \\prod_{j \\neq i} \\Delta\\left(S_{j}^{\\infty}\\right), resp.\n##Rationalizability in Cournot Duopoly}\nTwo firms compete on the market for a divisible homogeneous good.\n\nEach firm i=1,2 has zero marginal cost and simultaneously decides to produce an amount of output q_{i} \\geq 0.\nThe resulting price is p=1-q_{1}-q_{2}.\nProfit of firm i is q_{i}\\left(1-q_{1}-q_{2}\\right).\n\n##Rationalizability in Cournot Duopoly}\nBest response of one firm if the other produces q is\nB(q)=\\max (0,(1-q) / 2)(j=3-i) ; B is decreasing. If q \\lesseqgtr r then\nB(q) \\gtreqless(1-r) / 2.\n\nSince q \\geq q^{0}:=0, only strategies q \\leq q^{1}:=B\\left(q^{0}\\right)=\\left(1-q^{0}\\right) / 2 are best responses, S_{i}^{1}=\\left[q^{0}, q^{1}\\right].\nThen only q \\geq q^{2}:=B\\left(q^{1}\\right)=\\left(1-q^{1}\\right) / 2 survives the second round of elimination, S_{i}^{2}=\\left[q^{2}, q^{1}\\right] \\ldots\nWe obtain a sequence\n\n\nq^{0} \\leq q^{2} \\leq \\ldots \\leq q^{2 k} \\leq \\ldots \\leq q^{2 k+1} \\leq \\ldots \\leq q^{1}\n\nwhere q^{2 k}=\\sum_{l=1}^{k} 1 / 4^{l}=\\left(1-1 / 4^{k}\\right) / 3 and q^{2 k+1}=\\left(1-q^{2 k}\\right) / 2 s.t. S_{i}^{2 k+1}=\\left[q^{2 k}, q^{2 k+1}\\right] and S_{i}^{2 k}=\\left[q^{2 k}, q^{2 k-1}\\right] for all k \\geq 0.\n\\lim _{k \\rightarrow \\infty} q^{k}=1 / 3, so the only rationalizable strategy for firm i is q_{i}=1 / 3 (the Nash equilibrium).\nWhat strategies are rationalizable with more than two firms?\n##Never Best Responses}\nA strategy \\sigma_{i} \\in \\Delta\\left(S_{i}\\right) is never a best response for player i if it is not a best response to any correlated belief \\sigma_{-i} \\in \\Delta\\left(S_{-i}\\right).\nRecall that \\sigma_{i} \\in \\Delta\\left(S_{i}\\right) is s. dominated if \\exists \\sigma_{i}^{\\prime} \\in \\Delta\\left(S_{i}\\right) s.t.\n\nu_{i}\\left(\\sigma_{i}^{\\prime}, s_{-i}\\right)&gt;u_{i}\\left(\\sigma_{i}, s_{-i}\\right), \\forall s_{-i} \\in S_{-i}\n\n##Theorem 1}\nIn a finite game, a strategy is never a best response iff it is s. dominated.\n##Corollary 1}\nCorrelated rationalizability and iterated strict dominance coincide.\nIf \\sigma_{i} is s. dominated by \\sigma_{i}^{\\prime}, then \\sigma_{i} is not a best response for any belief \\sigma_{-i} \\in \\Delta\\left(S_{-i}\\right): \\sigma_{i}^{\\prime} yields a higher payoff than \\sigma_{i} for player i against any \\sigma_{-i}. Left to prove that a strategy that is not \\mathrm{s}. dominated is a best response for some beliefs.\n##Proof}\nSuppose \\tilde{\\sigma}_{i} is not s. dominated for player i.\n\nDefine set of “dominated payoffs” for i by\n\n\nD=\\left\\{x \\in \\mathbb{R}^{S_{-i}} \\mid \\exists \\sigma_{i} \\in \\Delta\\left(S_{i}\\right), x \\leq u_{i}\\left(\\sigma_{i}, \\cdot\\right)\\right\\}\n\nD is non-empty, closed, and convex.\n\nu_{i}\\left(\\tilde{\\sigma}_{i}, \\cdot\\right) does not belong to the interior of D because it is not \\mathrm{s}. dominated by any \\sigma_{i} \\in \\Delta\\left(S_{i}\\right).\nBy the supporting hyperplane theorem, \\exists \\alpha \\in \\mathbb{R}^{S_{-i}} \\backslash\\{\\mathbf{0}\\} s.t.\n\n\n\\alpha \\cdot u_{i}\\left(\\tilde{\\sigma}_{i}, \\cdot\\right) \\geq \\alpha \\cdot x, \\forall x \\in D\n\nIn particular, \\alpha \\cdot u_{i}\\left(\\tilde{\\sigma}_{i}, \\cdot\\right) \\geq \\alpha \\cdot u_{i}\\left(\\sigma_{i}, \\cdot\\right), \\forall \\sigma_{i} \\in \\Delta\\left(S_{i}\\right).\n\nSince D is not bounded from below, \\alpha has non-negative components.\nNormalize \\alpha so that its components sum to 1 ; \\alpha interpreted as a belief in \\Delta\\left(S_{-i}\\right) with the property that\n\n\nu_{i}\\left(\\tilde{\\sigma}_{i}, \\alpha\\right) \\geq u_{i}\\left(\\sigma_{i}, \\alpha\\right), \\forall \\sigma_{i} \\in \\Delta\\left(S_{i}\\right)\n\nThus \\tilde{\\sigma}_{i} is a best response to belief \\alpha.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Game Theory</span>"
+    ]
+  },
+  {
+    "objectID": "game-theory.html#iteration-and-best-responses",
+    "href": "game-theory.html#iteration-and-best-responses",
+    "title": "1  Game Theory",
+    "section": "1.10 Iteration and Best Responses",
+    "text": "1.10 Iteration and Best Responses\n\nTheorem 1.2 For every k \\geq 0, each s_{i} \\in S_{i}^{k} is a best response (within S_{i} ) to a belief in \\Delta\\left(S_{-i}^{k-1}\\right).\n\n\n\n\n\n\n\nProof\n\n\n\nFix s_{i} \\in S_{i}^{k} ; s_{i} is a best response within S_{i}^{k-1} to some \\sigma_{-i} \\in \\Delta\\left(S_{-i}^{k-1}\\right). If s_{i} were not a best response within S_{i} to \\sigma_{-i}, let s_{i}^{\\prime} be a best response.\nSince s_{i} is a best response within S_{i}^{k-1} to \\sigma_{-i} and s_{i}^{\\prime} is a better response than s_{i} to \\sigma_{-i}, we need s_{i}^{\\prime} \\notin S_{i}^{k-1}.\nThen s_{i}^{\\prime} was deleted at an earlier stage, say s_{i}^{\\prime} \\in S_{i}^{l-1} but s_{i}^{\\prime} \\notin S_{i}^{\\prime} for some I \\leq k-1. This contradicts the fact that s_{i}^{\\prime} is a best response in S_{i} \\supseteq S_{i}^{l-1} to \\sigma_{-i} \\in \\Delta\\left(S_{-i}^{k-1}\\right) \\subseteq \\Delta\\left(S_{-i}^{\\prime-1}\\right).\n\n\n\nCorollary 1.2 If the game is finite, then each s_{i} \\in S_{i}^{\\infty} is a best response (within S_{i} ) to a belief in \\Delta\\left(S_{-i}^{\\infty}\\right).",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Game Theory</span>"
+    ]
+  },
+  {
+    "objectID": "game-theory.html#theorem-2",
+    "href": "game-theory.html#theorem-2",
+    "title": "1  Game Theory",
+    "section": "1.29 {Theorem 2}",
+    "text": "1.29 {Theorem 2}\nFor every k \\geq 0, each s_{i} \\in S_{i}^{k} is a best response (within S_{i} ) to a belief in \\Delta\\left(S_{-i}^{k-1}\\right).\n##Proof.}\nFix s_{i} \\in S_{i}^{k} ; s_{i} is a best response within S_{i}^{k-1} to some \\sigma_{-i} \\in \\Delta\\left(S_{-i}^{k-1}\\right). If s_{i} were not a best response within S_{i} to \\sigma_{-i}, let s_{i}^{\\prime} be a best response.\nSince s_{i} is a best response within S_{i}^{k-1} to \\sigma_{-i} and s_{i}^{\\prime} is a better response than s_{i} to \\sigma_{-i}, we need s_{i}^{\\prime} \\notin S_{i}^{k-1}.\nThen s_{i}^{\\prime} was deleted at an earlier stage, say s_{i}^{\\prime} \\in S_{i}^{l-1} but s_{i}^{\\prime} \\notin S_{i}^{\\prime} for some I \\leq k-1. This contradicts the fact that s_{i}^{\\prime} is a best response in S_{i} \\supseteq S_{i}^{l-1} to \\sigma_{-i} \\in \\Delta\\left(S_{-i}^{k-1}\\right) \\subseteq \\Delta\\left(S_{-i}^{\\prime-1}\\right).\nCorollary 2\nIf the game is finite, then each s_{i} \\in S_{i}^{\\infty} is a best response (within S_{i} ) to a belief in \\Delta\\left(S_{-i}^{\\infty}\\right).",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Game Theory</span>"
+    ]
+  },
+  {
+    "objectID": "game-theory.html#closed-under-rational-behavior",
+    "href": "game-theory.html#closed-under-rational-behavior",
+    "title": "1  Game Theory",
+    "section": "1.11 Closed under Rational Behavior",
+    "text": "1.11 Closed under Rational Behavior\n\nDefinition 1.5 A set Z=Z_{1} \\times \\ldots \\times Z_{n} with Z_{i} \\subseteq S_{i} for i \\in N is closed under rational behavior if, for all i, every strategy in Z_{i} is a best response to a belief in \\Delta\\left(Z_{-i}\\right).\n\n\nIf the game is finite (or if S is a compact metric space and u is continuous), then S^{\\infty} is the largest set closed under rational behavior.\n\n\n\n\n\n\n\nProof\n\n\n\nS^{\\infty} is closed under rational behavior by Corollary 2. Suppose that there exists Z_{1} \\times \\ldots \\times Z_{n} \\not \\subset S^{\\infty} that is closed under rational behavior.\nConsider the smallest k for which there is an i such that Z_{i} \\not \\subset S_{i}^{k}. It must be that k \\geq 1 and Z_{-i} \\subseteq S_{-i}^{k-1}.\nBy assumption, every element of Z_{i} is a best response to an element of \\Delta\\left(Z_{-i}\\right) \\subset \\Delta\\left(S_{-i}^{k-1}\\right), contradicting Z_{i} \\nsubseteq S_{i}^{k}.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Game Theory</span>"
+    ]
+  },
+  {
+    "objectID": "game-theory.html#definition-5",
+    "href": "game-theory.html#definition-5",
+    "title": "1  Game Theory",
+    "section": "1.31 {Definition 5}",
+    "text": "1.31 {Definition 5}\nA set Z=Z_{1} \\times \\ldots \\times Z_{n} with Z_{i} \\subseteq S_{i} for i \\in N is closed under rational behavior if, for all i, every strategy in Z_{i} is a best response to a belief in \\Delta\\left(Z_{-i}\\right).\n##Theorem 3}\nIf the game is finite (or if S is a compact metric space and u is continuous), then S^{\\infty} is the largest set closed under rational behavior.\n##Proof.}\nS^{\\infty} is closed under rational behavior by Corollary 2. Suppose that there exists Z_{1} \\times \\ldots \\times Z_{n} \\not \\subset S^{\\infty} that is closed under rational behavior.\nConsider the smallest k for which there is an i such that Z_{i} \\not \\subset S_{i}^{k}. It must be that k \\geq 1 and Z_{-i} \\subseteq S_{-i}^{k-1}.\nBy assumption, every element of Z_{i} is a best response to an element of \\Delta\\left(Z_{-i}\\right) \\subset \\Delta\\left(S_{-i}^{k-1}\\right), contradicting Z_{i} \\nsubseteq S_{i}^{k}.\n##Epistemic Foundations of Rationalizability}\nFormalize the idea of common knowledge and show that rationalizability captures the idea of common knowledge of rationality (and payoffs).\n##Definition 6 (Information Structure)}\nAn information (or belief) structure is a list \\left(\\Omega,\\left(l_{i}\\right)_{i \\in N},\\left(p_{i}\\right)_{i \\in N}\\right)\n\n\\Omega is a finite state space\nl_{i}: \\Omega \\rightarrow 2^{\\Omega} is a partition of \\Omega for each i \\in N s.t. l_{i}(\\omega) is the set of states that i thinks are possible when the true state is \\omega; \\omega^{\\prime} \\in l_{i}(\\omega) \\Leftrightarrow \\omega \\in l_{i}\\left(\\omega^{\\prime}\\right)\np_{i, l_{i}(\\omega)} \\in \\Delta\\left(l_{i}(\\omega)\\right): i^{\\prime} ’s belief at \\omega",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Game Theory</span>"
+    ]
+  },
+  {
+    "objectID": "game-theory.html#interpretation",
+    "href": "game-theory.html#interpretation",
+    "title": "1  Game Theory",
+    "section": "1.17 Interpretation",
+    "text": "1.17 Interpretation\n\nState \\omega summarizes all the relevant facts about the world. Only one of the states is true; all others are hypothetical states needed to encode players’ beliefs.\nIn state \\omega, player i is informed that the state is in l_{i}(\\omega) and gets no other information.\nSuch an information structure arises if each player observes a state-dependent signal and l_{i}(\\omega) is the set of states for which player i ’s signal is identical to the signal at \\omega.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Game Theory</span>"
+    ]
+  },
+  {
+    "objectID": "game-theory.html#knowledge-and-common-knowledge",
+    "href": "game-theory.html#knowledge-and-common-knowledge",
+    "title": "1  Game Theory",
+    "section": "1.13 Knowledge and Common Knowledge",
+    "text": "1.13 Knowledge and Common Knowledge\n\nFor any event F \\subseteq \\Omega, player i knows at \\omega that F obtains if l_{i}(\\omega) \\subseteq F. The event that i knows F is\n\nK_{i}(F)=\\left\\{\\omega \\mid I_{i}(\\omega) \\subseteq F\\right\\}\n\nThe event that everyone knows F is defined by\n\nK(F)=\\cap_{i \\in N} K_{i}(F)\n\nLet K^{0}(F)=F and K^{t+1}(F)=K\\left(K^{t}(F)\\right) for t \\geq 0. Set K^{\\infty}(F)=\\bigcap_{t \\geq 0} K^{t}(F) . K^{\\infty}(F) is the set of states where F is common knowledge.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Game Theory</span>"
+    ]
+  },
+  {
+    "objectID": "game-theory.html#definition-7",
+    "href": "game-theory.html#definition-7",
+    "title": "1  Game Theory",
+    "section": "1.34 {Definition 7}",
+    "text": "1.34 {Definition 7}\nFor any event F \\subseteq \\Omega, player i knows at \\omega that F obtains if l_{i}(\\omega) \\subseteq F. The event that i knows F is\n\nK_{i}(F)=\\left\\{\\omega \\mid I_{i}(\\omega) \\subseteq F\\right\\}\n\nThe event that everyone knows F is defined by\n\nK(F)=\\cap_{i \\in N} K_{i}(F)\n\nLet K^{0}(F)=F and K^{t+1}(F)=K\\left(K^{t}(F)\\right) for t \\geq 0. Set K^{\\infty}(F)=\\bigcap_{t \\geq 0} K^{t}(F) . K^{\\infty}(F) is the set of states where F is common knowledge.\n##Public Events}\nK\\left(K^{\\infty}(F)\\right)=K^{\\infty}(F) \\rightarrow alternative definition of common knowledge\nEvent F^{\\prime} is public if F^{\\prime}=\\cup_{\\left(\\omega^{\\prime} \\in F^{\\prime}\\right.} l_{i}\\left(\\omega^{\\prime}\\right) for all i. If F^{\\prime} is public, then K\\left(F^{\\prime}\\right)=F^{\\prime}, so K^{\\infty}\\left(F^{\\prime}\\right)=F^{\\prime}.\n##Lemma 1}\nAn event F is common knowledge at \\omega iff there exists a public event F^{\\prime} with \\omega \\in F^{\\prime} \\subseteq F.\nIf F is common knowledge at \\omega, there exists a submodel that includes state \\omega and respects the information structure where F is true state by state.\n##Strategies}\nFix a finite game (N, S, u). To give strategic meaning to information states, introduce a strategy profile \\mathbf{s}: \\Omega \\rightarrow S.\n##Definition 8}\nA strategy profile \\mathbf{s}: \\Omega \\rightarrow S is adapted with respect to \\left(\\Omega,\\left(I_{i}\\right)_{i \\in N},\\left(p_{i}\\right)_{i \\in N}\\right) if \\mathbf{s}_{i}(\\omega)=\\mathbf{s}_{i}\\left(\\omega^{\\prime}\\right) whenever l_{i}(\\omega)=l_{i}\\left(\\omega^{\\prime}\\right).\nPlayers must choose a constant action at all states in each information set since they cannot distinguish states in the same information set.\n##Definition 9}\nAn epistemic model \\left(\\Omega,\\left(l_{i}\\right)_{i \\in N},\\left(p_{i}\\right)_{i \\in N}, \\mathbf{s}\\right) consists of an information structure and an adapted strategy profile.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Game Theory</span>"
+    ]
+  },
+  {
+    "objectID": "game-theory.html#common-knowledge-of-rationality",
+    "href": "game-theory.html#common-knowledge-of-rationality",
+    "title": "1  Game Theory",
+    "section": "1.16 Common Knowledge of Rationality",
+    "text": "1.16 Common Knowledge of Rationality\n\nFor an epistemic model \\left(\\Omega,\\left(l_{i}\\right)_{i \\in N},\\left(p_{i}\\right)_{i \\in N}, \\mathbf{s}\\right), player i is rational at \\omega \\in \\Omega if\n\n\\mathbf{s}_{i}(\\omega) \\in \\arg \\max _{s_{i} \\in S_{i}} \\sum_{\\omega^{\\prime} \\in l_{i}(\\omega)} u_{i}\\left(s_{i}, \\mathbf{s}_{-j}\\left(\\omega^{\\prime}\\right)\\right) p_{i, l_{i}(\\omega)}\\left(\\omega^{\\prime}\\right)\n\n\n\nDefinition 1.7 A strategy s_{i} \\in S_{i} consistent with common knowledge of rationality if there exists a model \\left(\\Omega,\\left(l_{j}\\right)_{j \\in N},\\left(p_{j}\\right)_{j \\in N}, \\mathbf{s}\\right) and state \\omega^{*} \\in \\Omega with \\mathbf{s}_{i}\\left(\\omega^{*}\\right)=s_{i} at which it is common knowledge that all players are rational.\nEquivalently, \\exists\\left(\\Omega,\\left(l_{j}\\right)_{j \\in N},\\left(p_{j}\\right)_{j \\in N}, \\mathbf{s}\\right) s.t. \\mathbf{s}_{j}(\\omega) is a best response to \\mathbf{s}_{-j} at each \\omega \\in \\Omega for every player j \\in N.\n\n\nFor any i \\in N and s_{i} \\in S_{i}, s_{i} is consistent with common knowledge of rationality iff s_{i} \\in S_{i}^{\\infty}.\n\nCan extend result to allow for payoff uncertainty (adding the hypothesis that payoffs are common knowledge at the relevant state).\n\n\n\n\n\n\nProof\n\n\n\n\\Rightarrow) Fix s_{i} consistent with common knowledge of rationality.\n\\exists\\left(\\Omega,\\left(l_{j}\\right)_{j \\in N},\\left(p_{j}\\right)_{j \\in N}, \\mathbf{s}\\right) with \\omega^{*} \\in \\Omega s.t. \\mathbf{s}_{i}\\left(\\omega^{*}\\right)=s_{i} and\n\n\\mathbf{s}_{j}(\\omega) \\in \\arg \\max _{s_{j} \\in S_{j}} \\sum_{\\omega^{\\prime} \\in \\ell_{j}(\\omega)} u_{j}\\left(s_{j}, \\mathbf{s}_{-j}\\left(\\omega^{\\prime}\\right)\\right) p_{j, l, j}(\\omega)\\left(\\omega^{\\prime}\\right), \\forall j \\in N, \\omega \\in \\Omega\n\nDefine Z_{j}=\\mathbf{s}_{j}(\\Omega). Note that s_{i}=\\mathbf{s}_{i}\\left(\\omega^{*}\\right) \\in s_{i}(\\Omega)=Z_{i}. By Theorem 3, to show that s_{i} \\in S_{i}^{\\infty}, it suffices to prove that Z is closed under rational behavior.\n\\forall z_{j} \\in Z_{j}, \\exists \\omega \\in \\Omega s.t. z_{j}=\\mathbf{s}_{j}(\\omega). Define \\mu_{j, \\omega} \\in \\Delta\\left(Z_{-j}\\right) by\n\n\\mu_{j, \\omega}\\left(s_{-j}\\right)=\\sum_{\\omega^{\\prime} \\in l_{j}(\\omega), \\mathbf{s}_{-j}\\left(\\omega^{\\prime}\\right)=s_{-j}} p_{j, l_{j}(\\omega)}\\left(\\omega^{\\prime}\\right)\n\nThen\n\n\\begin{aligned}\nz_{j} & =\\mathbf{s}_{j}(\\omega) \\in \\arg \\max _{s_{j} \\in S_{j}} \\sum_{\\omega^{\\prime} \\in l_{j}(\\omega)} u_{j}\\left(s_{j}, \\mathbf{s}_{-j}\\left(\\omega^{\\prime}\\right)\\right) p_{i, l_{j}(\\omega)}\\left(\\omega^{\\prime}\\right) \\\\\n& =\\arg \\max _{s_{j} \\in S_{j}} \\sum_{s_{-j} \\in Z_{-j}} \\mu_{j, \\omega}\\left(s_{-j}\\right) u_{j}\\left(s_{j}, s_{-j}\\right)\n\\end{aligned}\n\n(\\Leftarrow) Since S^{\\infty} is closed under rational behavior, for every s_{i} \\in S_{i}^{\\infty}, there exists \\mu_{i, s_{i}} \\in \\Delta\\left(S_{-i}^{\\infty}\\right) for which s_{i} is a best response. Define the model \\left(S^{\\infty},\\left(l_{i}\\right)_{i \\in N},\\left(p_{i}\\right)_{i \\in N}, \\mathbf{s}\\right):\n\n\\begin{aligned}\nl_{i}(s) & =\\left\\{s_{i}\\right\\} \\times S_{-i}^{\\infty} \\\\\np_{i, s}\\left(s^{\\prime}\\right) & =\\mu_{i, s_{i}}\\left(s_{-i}^{\\prime}\\right) \\\\\n\\mathbf{s}(s) & =s\n\\end{aligned}\n\nIn this model, it is common knowledge that every player is rational:\n\n\\begin{aligned}\n& \\forall s \\in S^{\\infty}, \\mathbf{s}_{i}(s)=s_{i} \\in \\arg \\max _{s_{i}^{\\prime} \\in S_{i}} \\sum_{s_{-i} \\in S_{-i}^{\\infty}} u_{i}\\left(s_{i}^{\\prime}, s_{-i}\\right) \\mu_{i, s}\\left(s_{-i}^{\\prime}\\right) \\\\\n&=\\arg \\max _{s_{i}^{\\prime} \\in S_{i}} \\sum_{s^{\\prime} \\in l_{i}(s)} u_{i}\\left(s_{i}^{\\prime}, s_{-i}\\right) p_{i, s}\\left(s^{\\prime}\\right)\n\\end{aligned}\n\nFor every s_{i} \\in S_{i}^{\\infty}, there exists s=\\left(s_{i}, s_{-i}\\right) \\in S^{\\infty} s.t. \\mathbf{s}_{i}(s)=s_{i}, showing that s_{i} is consistent with common knowledge of rationality.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Game Theory</span>"
+    ]
+  },
+  {
+    "objectID": "game-theory.html#definition-10",
+    "href": "game-theory.html#definition-10",
+    "title": "1  Game Theory",
+    "section": "1.36 {Definition 10}",
+    "text": "1.36 {Definition 10}\nFor an epistemic model \\left(\\Omega,\\left(l_{i}\\right)_{i \\in N},\\left(p_{i}\\right)_{i \\in N}, \\mathbf{s}\\right), player i is rational at \\omega \\in \\Omega if\n\n\\mathbf{s}_{i}(\\omega) \\in \\arg \\max _{s_{i} \\in S_{i}} \\sum_{\\omega^{\\prime} \\in l_{i}(\\omega)} u_{i}\\left(s_{i}, \\mathbf{s}_{-j}\\left(\\omega^{\\prime}\\right)\\right) p_{i, l_{i}(\\omega)}\\left(\\omega^{\\prime}\\right)\n\n##Definition 11}\nA strategy s_{i} \\in S_{i} consistent with common knowledge of rationality if there exists a model \\left(\\Omega,\\left(l_{j}\\right)_{j \\in N},\\left(p_{j}\\right)_{j \\in N}, \\mathbf{s}\\right) and state \\omega^{*} \\in \\Omega with \\mathbf{s}_{i}\\left(\\omega^{*}\\right)=s_{i} at which it is common knowledge that all players are rational.\nEquivalently, \\exists\\left(\\Omega,\\left(l_{j}\\right)_{j \\in N},\\left(p_{j}\\right)_{j \\in N}, \\mathbf{s}\\right) s.t. \\mathbf{s}_{j}(\\omega) is a best response to \\mathbf{s}_{-j} at each \\omega \\in \\Omega for every player j \\in N.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Game Theory</span>"
+    ]
+  },
+  {
+    "objectID": "game-theory.html#result",
+    "href": "game-theory.html#result",
+    "title": "1  Game Theory",
+    "section": "1.37 {Result}",
+    "text": "1.37 {Result}",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Game Theory</span>"
+    ]
+  },
+  {
+    "objectID": "game-theory.html#theorem-4",
+    "href": "game-theory.html#theorem-4",
+    "title": "1  Game Theory",
+    "section": "1.38 {Theorem 4}",
+    "text": "1.38 {Theorem 4}\nFor any i \\in N and s_{i} \\in S_{i}, s_{i} is consistent with common knowledge of rationality iff s_{i} \\in S_{i}^{\\infty}.\nCan extend result to allow for payoff uncertainty (adding the hypothesis that payoffs are common knowledge at the relevant state).\n##Proof}\n\\Rightarrow) Fix s_{i} consistent with common knowledge of rationality.\n\\exists\\left(\\Omega,\\left(l_{j}\\right)_{j \\in N},\\left(p_{j}\\right)_{j \\in N}, \\mathbf{s}\\right) with \\omega^{*} \\in \\Omega s.t. \\mathbf{s}_{i}\\left(\\omega^{*}\\right)=s_{i} and\n\n\\mathbf{s}_{j}(\\omega) \\in \\arg \\max _{s_{j} \\in S_{j}} \\sum_{\\omega^{\\prime} \\in \\ell_{j}(\\omega)} u_{j}\\left(s_{j}, \\mathbf{s}_{-j}\\left(\\omega^{\\prime}\\right)\\right) p_{j, l, j}(\\omega)\\left(\\omega^{\\prime}\\right), \\forall j \\in N, \\omega \\in \\Omega\n\nDefine Z_{j}=\\mathbf{s}_{j}(\\Omega). Note that s_{i}=\\mathbf{s}_{i}\\left(\\omega^{*}\\right) \\in s_{i}(\\Omega)=Z_{i}. By Theorem 3, to show that s_{i} \\in S_{i}^{\\infty}, it suffices to prove that Z is closed under rational behavior.\n\\forall z_{j} \\in Z_{j}, \\exists \\omega \\in \\Omega s.t. z_{j}=\\mathbf{s}_{j}(\\omega). Define \\mu_{j, \\omega} \\in \\Delta\\left(Z_{-j}\\right) by\n\n\\mu_{j, \\omega}\\left(s_{-j}\\right)=\\sum_{\\omega^{\\prime} \\in l_{j}(\\omega), \\mathbf{s}_{-j}\\left(\\omega^{\\prime}\\right)=s_{-j}} p_{j, l_{j}(\\omega)}\\left(\\omega^{\\prime}\\right)\n\nThen\n\n\\begin{aligned}\nz_{j} & =\\mathbf{s}_{j}(\\omega) \\in \\arg \\max _{s_{j} \\in S_{j}} \\sum_{\\omega^{\\prime} \\in l_{j}(\\omega)} u_{j}\\left(s_{j}, \\mathbf{s}_{-j}\\left(\\omega^{\\prime}\\right)\\right) p_{i, l_{j}(\\omega)}\\left(\\omega^{\\prime}\\right) \\\\\n& =\\arg \\max _{s_{j} \\in S_{j}} \\sum_{s_{-j} \\in Z_{-j}} \\mu_{j, \\omega}\\left(s_{-j}\\right) u_{j}\\left(s_{j}, s_{-j}\\right)\n\\end{aligned}\n\n##Proof}\n(\\Leftarrow) Since S^{\\infty} is closed under rational behavior, for every s_{i} \\in S_{i}^{\\infty}, there exists \\mu_{i, s_{i}} \\in \\Delta\\left(S_{-i}^{\\infty}\\right) for which s_{i} is a best response. Define the model \\left(S^{\\infty},\\left(l_{i}\\right)_{i \\in N},\\left(p_{i}\\right)_{i \\in N}, \\mathbf{s}\\right):\n\n\\begin{aligned}\nl_{i}(s) & =\\left\\{s_{i}\\right\\} \\times S_{-i}^{\\infty} \\\\\np_{i, s}\\left(s^{\\prime}\\right) & =\\mu_{i, s_{i}}\\left(s_{-i}^{\\prime}\\right) \\\\\n\\mathbf{s}(s) & =s\n\\end{aligned}\n\nIn this model, it is common knowledge that every player is rational:\n\n\\begin{aligned}\n& \\forall s \\in S^{\\infty}, \\mathbf{s}_{i}(s)=s_{i} \\in \\arg \\max _{s_{i}^{\\prime} \\in S_{i}} \\sum_{s_{-i} \\in S_{-i}^{\\infty}} u_{i}\\left(s_{i}^{\\prime}, s_{-i}\\right) \\mu_{i, s}\\left(s_{-i}^{\\prime}\\right) \\\\\n&=\\arg \\max _{s_{i}^{\\prime} \\in S_{i}} \\sum_{s^{\\prime} \\in l_{i}(s)} u_{i}\\left(s_{i}^{\\prime}, s_{-i}\\right) p_{i, s}\\left(s^{\\prime}\\right)\n\\end{aligned}\n\nFor every s_{i} \\in S_{i}^{\\infty}, there exists s=\\left(s_{i}, s_{-i}\\right) \\in S^{\\infty} s.t. \\mathbf{s}_{i}(s)=s_{i}, showing that s_{i} is consistent with common knowledge of rationality.\n##Nash Equilibrium}\nMany games are not dominance solvable. Nevertheless, the involved parties find a solution.\nFigure: Coordination Game, Battle of the Sexes, Matching Pennies\nA Nash equilibrium is a strategy profile with the property that no player can benefit by deviating from his corresponding strategy.\nDefinition 12 (Nash 1950)\nA mixed-strategy profile \\sigma^{*} is a Nash equilibrium if for every i \\in N,\n\nu_{i}\\left(\\sigma_{i}^{*}, \\sigma_{-i}^{*}\\right) \\geq u_{i}\\left(s_{i}, \\sigma_{-i}^{*}\\right), \\forall s_{i} \\in S_{i}",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Game Theory</span>"
+    ]
+  },
+  {
+    "objectID": "game-theory.html#remarks",
+    "href": "game-theory.html#remarks",
+    "title": "1  Game Theory",
+    "section": "1.8 Remarks",
+    "text": "1.8 Remarks\nIn a finite game, the elimination procedure ends in a finite number of steps, so S^{\\infty} is simply the set of strategies left at the final stage.\nIn an infinite game, if S is a compact metric space and u is continuous, then one can use Cantor’s theorem (a decreasing nested sequence of non-empty compact sets has nonempty intersection) to show that S^{\\infty} \\neq \\emptyset.\nDefinition assumes that at each iteration all dominated strategies of every player are deleted simultaneously. In a finite game, the limit set S^{\\infty} does not depend on the particular order in which deletion proceeds.\nOutcome does not change if we eliminate s. dominated mixed strategies at every step. A strategy dominated against all pure strategies of the opponents iff it is dominated against all their mixed strategies. Eliminating mixed strategies for player i at any stage does not affect the set of s. dominated pure strategies for any j \\neq i at the next stage.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Game Theory</span>"
+    ]
+  },
+  {
+    "objectID": "game-theory.html#what-are-the-assumptions",
+    "href": "game-theory.html#what-are-the-assumptions",
+    "title": "1  Game Theory",
+    "section": "1.23 What Are the Assumptions?",
+    "text": "1.23 What Are the Assumptions?\n\nNash equilibria are “consistent” predictions (or “stable” conventions) of how the game will be played.\nIf all players expect that a specific Nash equilibrium will arise, then no player has incentives to play differently.\nEach player must have correct conjectures about the strategies of his opponents and play a best response to his conjecture.\nWe interpret mixed strategies as beliefs regarding opponents’ play, not necessarily as deliberate randomization.\nAssumes knowledge of strategies (beliefs) and rationality.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Game Theory</span>"
+    ]
+  },
+  {
+    "objectID": "game-theory.html#do-soccer-players-flip-coins",
+    "href": "game-theory.html#do-soccer-players-flip-coins",
+    "title": "1  Game Theory",
+    "section": "1.22 Do Soccer Players Flip Coins?",
+    "text": "1.22 Do Soccer Players Flip Coins?",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Game Theory</span>"
+    ]
+  },
+  {
+    "objectID": "game-theory.html#penalty-kicks",
+    "href": "game-theory.html#penalty-kicks",
+    "title": "1  Game Theory",
+    "section": "1.23 Penalty kicks",
+    "text": "1.23 Penalty kicks\n\nKicker’s strategy space: \\{L, M, R\\}\nGoalie’s strategy space: \\{L, M, R\\}\n\nWhat are the payoffs?\n\nWhat’s the Nash equilibrium?\nSimultaneous move game? (125mph, 0.2 seconds reaction time)\nWhat do players do in reality?\n\nChiappori, Levitt, and Groseclose (2002)\n\n459 kicks in French and Italian first leagues\n162 kickers, 88 goalies\n\nTable 3-Observed Matrix of Shots TaKen\nNotes: The sample includes all French first-league penalty kicks from 1997-1999 and all Italian first-league kicks (1997-2000). For shots involving left-footed kickers, the directions have been reversed so that shooting left corresponds to the “natural” side for all kickers.\n\nPierre-Andre Chiappori, Steven Levitt, Tim Groseclose, American Economic Association. All rights reserved. This content is excluded from our Creative Commons license. For more information, see .",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Game Theory</span>"
+    ]
+  },
+  {
+    "objectID": "game-theory.html#which-equilibrium-is-more-plausible",
+    "href": "game-theory.html#which-equilibrium-is-more-plausible",
+    "title": "1  Game Theory",
+    "section": "1.26 Which Equilibrium is More Plausible?",
+    "text": "1.26 Which Equilibrium is More Plausible?\n\nWe may expect (S, S) to be played because it is Pareto dominant. However, if one player expects the other to hunt hare, he is much better off hunting hare himself; and the potential downside of choosing stag is bigger than the upside-hare is the safer choice.\nHarsanyi and Selten (1988): H is the risk-dominant action-if each player expects the other to choose either action with probability 1 / 2, then H has a higher expected payoff (7.5) than S (4.5).\nFor a player to optimally choose stag, he should expect the other to play stag with probability \\geq 7 / 8.\nCoordination problem may persist even if players communicate: regardless of what i intends to do, he would prefer j to play stag, so attempts to convince j to play stag are cheap talk.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Game Theory</span>"
+    ]
+  },
+  {
+    "objectID": "game-theory.html#epistemic-foundations",
+    "href": "game-theory.html#epistemic-foundations",
+    "title": "1  Game Theory",
+    "section": "1.27 Epistemic Foundations",
+    "text": "1.27 Epistemic Foundations\n\nAumann and Brandenburger (1995): a framework that can be used to examine the epistemic foundations of Nash equilibrium.\nThe primitive of their model is an interactive belief system in which there is a possible set of types for each player; each type has associated to it a payoff for every action profile, a choice of which action to play, and a belief about the types of the other players.\nIn a 2-player game, if the game being played, the rationality of the players, and their conjectures are all mutually known, then the conjectures constitute a Nash equilibrium.\nFor games with more than 2 players, we need to assume additionally that players have a common prior and that conjectures are commonly known. This ensures that any two players have identical and separable (independent) conjectures about other players, consistent with a mixed strategy profile.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Game Theory</span>"
+    ]
+  },
+  {
+    "objectID": "game-theory.html#evolutionary-foundations",
+    "href": "game-theory.html#evolutionary-foundations",
+    "title": "1  Game Theory",
+    "section": "1.28 Evolutionary Foundations",
+    "text": "1.28 Evolutionary Foundations\n\nSolution concepts motivated by presuming that players make predictions about their opponents’ play by introspection and deduction, using knowledge of their opponents’ payoffs, rationality…\nAlternatively, assume players extrapolate from past observations of play in “similar” games and best respond to expectations based on past observations.\nCournot (1838) suggested that players take turns setting their outputs in the duopoly game, best responding to the opponent’s last-period action.\nSimultaneous action updating, best responding to average play, populations of players anonymously matched (another way to think about mixed strategies), etc.\nIf the process converges to a particular steady state, then the steady state is a Nash equilibrium.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Game Theory</span>"
+    ]
+  },
+  {
+    "objectID": "game-theory.html#shapley-1964-cycling",
+    "href": "game-theory.html#shapley-1964-cycling",
+    "title": "1  Game Theory",
+    "section": "1.18 Shapley (1964) Cycling",
+    "text": "1.18 Shapley (1964) Cycling\n\n\n\n\n\nL\nM\n\\mathrm{R}\n\n\n\n\nU\n0,0\n4,5\n5,4\n\n\nM\n5,4\n0,0,\n4,5\n\n\nD\n4,5\n5,4\n0,0",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Game Theory</span>"
+    ]
+  },
+  {
+    "objectID": "game-theory.html#remarks-1",
+    "href": "game-theory.html#remarks-1",
+    "title": "1  Game Theory",
+    "section": "1.22 Remarks",
+    "text": "1.22 Remarks\n\nThe fact that there is no profitable deviation in pure strategies implies there is no profitable deviation in mixed strategies either.\nIf in equilibrium a player uses a mixed strategy that places positive probability on several pure strategies, he must be indifferent between all pure strategies in its support.\nStrategies that do not survive iterated strict dominance (or are not rationalizable) cannot be played with positive probability in a Nash equilibrium.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Game Theory</span>"
+    ]
+  },
+  {
+    "objectID": "game-theory.html#existence-of-nash-equilibrium",
+    "href": "game-theory.html#existence-of-nash-equilibrium",
+    "title": "1  Game Theory",
+    "section": "1.7 Existence of Nash Equilibrium",
+    "text": "1.7 Existence of Nash Equilibrium\n\n\n\nCoordination Game, Battle of the Sexes, Matching Pennies\n\n\n\nThe coordination game and the battle of the sexes have multiple equilibria.\nMatching pennies does not have a pure strategy equilibrium. In the unique equilibrium, both players mix 50-50.\n\n\nTheorem 1.3 Every finite game has an equilibrium (potentially in mixed strategies).\n\n\nNash (1950)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nProof\n\n\n\n\n\n\nCourtesy of John F. Nash, Jr. “Equilibirum Points in N-Person Games”. Proceedings of the National Academy of Sciences of the United States of America 36 no. 1 (1949): 48-49.\n\n\nKakutani\n\nA long time ago, the Japanese mathematician Kakutani asked me why so many economists had attended the lecture he had just given. When I told him that he was famous because of the Kakutani fixed-point theorem, he replied, ‘What is the Kakutani fixed-point theorem?’\nKen Binmore, Playing for Real, 2007\n\n\n\nExistence of Nash Equilibria\nProve the existence of Nash equilibria in a more general setting.\n\nContinuity and compactness assumptions are indispensable, usually needed for the existence of solutions to optimization problems.\nConvexity is usually required for fixed-point theorems.\n\nNeed some topology prerequisites…\n\n\nCorrespondences\nTopological vector spaces X and Y\n\nA correspondence F: X \\rightrightarrows Y is a set valued function taking elements x \\in X into subsets F(x) \\subseteq Y.\nG(F)=\\{(x, y) \\mid y \\in F(x)\\}: graph of F\nx \\in X is a fixed point of F if x \\in F(x)\nF is non-empty/closed-valued/convex-valued if F(x) is non-empty/closed/convex for all x \\in X.\n\n\n\nClosed Graph\n\nA correspondence F has closed graph if G(F) is a closed subset of X \\times Y.\nIf X and Y are first-countable spaces (such as metric spaces), then F has closed graph iff for any sequence \\left(x_{m}, y_{m}\\right)_{m \\geq 0} with y_{m} \\in F\\left(x_{m}\\right) for all m \\geq 0, which converges to a pair (x, y), we have y \\in F(x).\nCorrespondences with closed graph are closed-valued.\n\n\n\nUpper Hemicontinuity\n\nA correspondence F is upper hemicontinuous at x \\in X if for every open neighborhood V_{Y} of F(x), there exists a neighborhood V_{X} of x such that x^{\\prime} \\in V_{X} \\Rightarrow F\\left(x^{\\prime}\\right) \\subset V_{Y}.\nClosed graph and upper hemicontinuity may have different implications. The constant correspondence F:[0,1] \\rightrightarrows[0,1] defined by F(x)=(0,1) is upper hemicontinuous, but does not have a closed graph.\n\nThe two concepts coincide for closed-valued correspondences in most spaces of interest.\n\nTheorem 1.4 (Closed Graph Theorem) A correspondence F: X \\rightrightarrows Y with compact Hausdorff range Y is closed iff it is upper hemicontinuous and closed-valued.\n\n\n\nThe Maximum Theorem\n\nTheorem 1.5 (Berge’s Maximum Theorem) Suppose that f: X \\times Y \\rightarrow \\mathbb{R} is a continuous function, where X and Y are metric spaces and Y is compact.\n\nThe function M: X \\rightarrow \\mathbb{R}, defined by\n\n\nM(x)=\\max _{y \\in Y} f(x, y)\n\nis continuous.\n\nThe correspondence F: X \\rightrightarrows Y,\n\n\nF(x)=\\arg \\max _{y \\in Y} f(x, y)\n\nis nonempty valued and has a closed graph.\n\n\n\nA Fixed-Point Theorem\n\nTheorem 1.6 (Kakutani’s Fixed-Point Theorem) Let X be a non-empty, compact, and convex subset of a Euclidean space and let the correspondence F: X \\rightrightarrows X have closed graph and non-empty convex values. Then the set of fixed points of F is non-empty and compact.\nIn game theoretic applications, X is usually the strategy space, assumed to be compact and convex when we include mixed strategies.\nF is typically the best response correspondence, which is non-empty valued and has a closed graph by the Maximum Theorem.\n\n\n\nConvexity\nTo ensure that F is convex-valued, assume that payoff functions are quasi-concave.\n\nDefinition 1.9 If X is a convex subset of a real vector space, then the function f: X \\rightarrow \\mathbb{R} is quasi-concave if\n\nf(t x+(1-t) y) \\geq \\min (f(x), f(y)), \\forall t \\in[0,1], x, y \\in X\n\n\nQuasi-concavity implies convex upper contour sets and convex arg max.\n\n\nExistence of Nash Equilibrium\n\nTheorem 1.7 Consider a game (N, S, u) such that S_{i} is a convex and compact subset of a Euclidean space and that u_{i} is continuous in s and quasi-concave in s_{i} for all i \\in N. Then there exists a pure strategy Nash equilibrium.\n\nThe result implies the existence of pure strategy Nash equilibria in generalizations of the Cournot competition game.\nTheorem 9 also implies the existence of mixed strategy Nash equilibria in finite games.\n\n\n\n\n\n\nProof\n\n\n\n\nLet B_{i}\\left(s_{-i}\\right):=\\arg \\max _{s_{i}^{\\prime} \\in S_{i}} u_{i}\\left(s_{i}^{\\prime}, s_{-i}\\right) and define F: S \\rightrightarrows S,\n\n\nF(s)=\\left\\{\\left(s_{1}^{*}, \\ldots, s_{n}^{*}\\right) \\mid s_{i}^{*} \\in B_{i}\\left(s_{-i}\\right), \\forall i \\in N\\right\\}=\\prod_{i \\in N} B_{i}\\left(s_{-i}\\right), \\forall s \\in S\n\n\nSince S is compact and the utility functions are continuous, the Maximum Theorem implies that B_{i} and F are non-empty valued and have closed graphs.\nAs u_{i} is quasi-concave in s_{i}, the set B_{i}\\left(s_{-i}\\right) is convex for all i and s_{-i}, so F is convex-valued.\nKakutani’s fixed-point theorem \\Rightarrow F has a fixed point,\n\n\ns^{*} \\in F\\left(s^{*}\\right)\n\ns_{i}^{*} \\in B_{i}\\left(s_{-i}^{*}\\right), \\forall i \\in N \\Rightarrow s^{*} is a Nash equilibrium.\n\n\n\n\nExistence of Mixed-Strategy Nash Equilibrium\n\nEvery finite game has a mixed strategy Nash equilibrium.\n\n\n\n\n\n\n\nProof\n\n\n\nSince S is finite, each \\Delta\\left(S_{i}\\right) is isomorphic to a simplex in a Euclidean space, which is convex and compact. Player i’s expected utility u_{i}(\\sigma)=\\sum_{s} u_{i}(s) \\sigma_{1}\\left(s_{1}\\right) \\cdots \\sigma_{n}\\left(s_{n}\\right) from a mixed strategy profile \\sigma is continuous in \\sigma and linear-hence also quasi-concave-in \\sigma_{i}. The game \\left(N, \\Delta\\left(S_{1}\\right), \\ldots, \\Delta\\left(S_{n}\\right), u\\right) satisfies the assumptions of Theorem 9. Therefore, it admits a Nash equilibrium \\sigma^{*} \\in \\Delta\\left(S_{1}\\right) \\times \\cdots \\times \\Delta\\left(S_{n}\\right), which can be interpreted as a mixed Nash equilibrium in the original game.\n\n\n\n\nUpperhemicontinuity of Nash Equilibrium\nFix N and S.\n\nX : compact metric space of payoff-relevant parameters\nS is a compact metric space (or a finite set)\npayoff function u_{i}: S \\times X \\rightarrow \\mathbb{R} of every i \\in N is continuous in strategies and parameters\nN E(x) and PNE (x): sets of Nash equilibria and pure Nash equilibria, resp., of game (N, S, u(\\cdot, x)) in which it is common knowledge that the parameter value is x\nEndow the space of mixed strategies with the weak topology.\n\n\nTheorem 1.8 The correspondences NE and PNE have closed graphs.\n\n\n\n\n\n\n\nProof\n\n\n\nConsider any sequence \\left(s^{m}, x^{m}\\right) \\rightarrow(s, x) with s^{m} \\in \\operatorname{PNE}\\left(x^{m}\\right) for each m. Suppose that s \\notin P N E(x). Then\n\nu_{i}\\left(s_{i}^{\\prime}, s_{-i}, x\\right)-u_{i}\\left(s_{i}, s_{-i}, x\\right)&gt;0\n\nfor some i \\in N, s_{i}^{\\prime} \\in S_{i}. Then \\left(s^{m}, x^{m}\\right) \\rightarrow(s, x) and the continuity of u_{i} imply that\n\nu_{i}\\left(s_{i}^{\\prime}, s_{-i}^{m}, x^{m}\\right)-u_{i}\\left(s_{i}^{m}, s_{-i}^{m}, x^{m}\\right)&gt;0\n\nfor sufficiently large m. However,\n\nu_{i}\\left(s_{i}^{\\prime}, s_{-i}^{m}, x^{m}\\right)&gt;u_{i}\\left(s_{i}^{m}, s_{-i}^{m}, x^{m}\\right)\n\ncontradicts s^{m} \\in \\operatorname{PNE}\\left(x^{m}\\right).",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Game Theory</span>"
+    ]
+  },
+  {
+    "objectID": "game-theory.html#nash-1950",
+    "href": "game-theory.html#nash-1950",
+    "title": "1  Game Theory",
+    "section": "1.49 {Nash (1950)}",
+    "text": "1.49 {Nash (1950)}",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Game Theory</span>"
+    ]
+  },
+  {
+    "objectID": "game-theory.html#equilibrium-points-in-n-person-games",
+    "href": "game-theory.html#equilibrium-points-in-n-person-games",
+    "title": "1  Game Theory",
+    "section": "1.26 EQUILIBRIUM POINTS IN N-PERSON GAMES",
+    "text": "1.26 EQUILIBRIUM POINTS IN N-PERSON GAMES\n\n\n\n\n\n\n\n\nProof\n\n\n\nAny n-tuple of strategies, one for each player, may be regarded as a point in the product space obtained by multiplying the n strategy spaces of the players. One such n-tuple counters another if the strategy of each player in the countering n-tuple yields the highest obtainable expectation for its player against the n-1 strategies of the other players in the countered n-tuple. A self-countering n-tuple is called an equilibrium point.\nThe correspondence of each n-tuple with its set of countering n-tuples gives a one-to-many mapping of the product space into itself. From the definition of countering we see that the set of countering points of a point is convex. By using the continuity of the pay-off functions we see that the graph of the mapping is closed. The closedness is equivalent to saying: if P_{1}, P_{2}, \\ldots and Q_{1}, Q_{2}, \\ldots, Q_{n}, \\ldots are sequences of points in the product space where Q_{n} \\rightarrow Q, P_{n} \\rightarrow P and Q_{n} counters P_{n} then Q counters P.\nSince the graph is closed and since the image of each point under the mapping is convex, we infer from Kakutani’s theorem { }^{1} that the mapping has a fixed point (i.e., point contained in its image). Hence there is an equilibrium point.\nIn the two-person zero-sum case the “main theorem” 2 and the existence of an equilibrium point are equivalent. In this case any two equilibrium points lead to the same expectations for the players, but this need not occur in general.\n\nThe author is indebted to Dr. David Gale for suggesting the use of Kakutani’s theorem to simplify the proof and to the A. E. C. for financial support.\n\n{ }^{1} Kakutani, S., Duke Math. J., 8, 457-459 (1941).\nCourtesy of John F. Nash, Jr. “Equilibirum Points in N-Person Games.” Proceedings of the National Academy of Sciences of the United States of America 36 no. 1 (1949): 48-49.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Game Theory</span>"
+    ]
+  },
+  {
+    "objectID": "game-theory.html#closed-graph",
+    "href": "game-theory.html#closed-graph",
+    "title": "1  Game Theory",
+    "section": "1.29 Closed Graph",
+    "text": "1.29 Closed Graph\n\nA correspondence F has closed graph if G(F) is a closed subset of X \\times Y.\nIf X and Y are first-countable spaces (such as metric spaces), then F has closed graph iff for any sequence \\left(x_{m}, y_{m}\\right)_{m \\geq 0} with y_{m} \\in F\\left(x_{m}\\right) for all m \\geq 0, which converges to a pair (x, y), we have y \\in F(x).\nCorrespondences with closed graph are closed-valued.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Game Theory</span>"
+    ]
+  },
+  {
+    "objectID": "game-theory.html#upper-hemicontinuity",
+    "href": "game-theory.html#upper-hemicontinuity",
+    "title": "1  Game Theory",
+    "section": "1.30 Upper Hemicontinuity",
+    "text": "1.30 Upper Hemicontinuity\n\nA correspondence F is upper hemicontinuous at x \\in X if for every open neighborhood V_{Y} of F(x), there exists a neighborhood V_{X} of x such that x^{\\prime} \\in V_{X} \\Rightarrow F\\left(x^{\\prime}\\right) \\subset V_{Y}.\nClosed graph and upper hemicontinuity may have different implications. The constant correspondence F:[0,1] \\rightrightarrows[0,1] defined by F(x)=(0,1) is upper hemicontinuous, but does not have a closed graph.\n\nThe two concepts coincide for closed-valued correspondences in most spaces of interest.\n\nTheorem 1.4 (Closed Graph Theorem) A correspondence F: X \\rightrightarrows Y with compact Hausdorff range Y is closed iff it is upper hemicontinuous and closed-valued.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Game Theory</span>"
+    ]
+  },
+  {
+    "objectID": "game-theory.html#the-maximum-theorem",
+    "href": "game-theory.html#the-maximum-theorem",
+    "title": "1  Game Theory",
+    "section": "1.23 The Maximum Theorem",
+    "text": "1.23 The Maximum Theorem\n\nTheorem 1.5 (Berge’s Maximum Theorem) Suppose that f: X \\times Y \\rightarrow \\mathbb{R} is a continuous function, where X and Y are metric spaces and Y is compact.\n\nThe function M: X \\rightarrow \\mathbb{R}, defined by\n\n\nM(x)=\\max _{y \\in Y} f(x, y)\n\nis continuous.\n\nThe correspondence F: X \\rightrightarrows Y,\n\n\nF(x)=\\arg \\max _{y \\in Y} f(x, y)\n\nis nonempty valued and has a closed graph.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Game Theory</span>"
+    ]
+  },
+  {
+    "objectID": "game-theory.html#theorem-7-berges-maximum-theorem",
+    "href": "game-theory.html#theorem-7-berges-maximum-theorem",
+    "title": "1  Game Theory",
+    "section": "1.54 {Theorem 7 (Berge’s Maximum Theorem)}",
+    "text": "1.54 {Theorem 7 (Berge’s Maximum Theorem)}\nSuppose that f: X \\times Y \\rightarrow \\mathbb{R} is a continuous function, where X and Y are metric spaces and Y is compact.\n(-) The function M: X \\rightarrow \\mathbb{R}, defined by\n\nM(x)=\\max _{y \\in Y} f(x, y)\n\nis continuous.\n\nThe correspondence F: X \\rightrightarrows Y,\n\n\nF(x)=\\arg \\max _{y \\in Y} f(x, y)\n\nis nonempty valued and has a closed graph.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Game Theory</span>"
+    ]
+  },
+  {
+    "objectID": "game-theory.html#a-fixed-point-theorem",
+    "href": "game-theory.html#a-fixed-point-theorem",
+    "title": "1  Game Theory",
+    "section": "1.11 A Fixed-Point Theorem",
+    "text": "1.11 A Fixed-Point Theorem\n\nTheorem 1.6 (Kakutani’s Fixed-Point Theorem) Let X be a non-empty, compact, and convex subset of a Euclidean space and let the correspondence F: X \\rightrightarrows X have closed graph and non-empty convex values. Then the set of fixed points of F is non-empty and compact.\nIn game theoretic applications, X is usually the strategy space, assumed to be compact and convex when we include mixed strategies.\nF is typically the best response correspondence, which is non-empty valued and has a closed graph by the Maximum Theorem.\n\n\nConvexity\nTo ensure that F is convex-valued, assume that payoff functions are quasi-concave.\n\nDefinition 1.9 If X is a convex subset of a real vector space, then the function f: X \\rightarrow \\mathbb{R} is quasi-concave if\n\nf(t x+(1-t) y) \\geq \\min (f(x), f(y)), \\forall t \\in[0,1], x, y \\in X\n\n\nQuasi-concavity implies convex upper contour sets and convex arg max.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Game Theory</span>"
+    ]
+  },
+  {
+    "objectID": "game-theory.html#theorem-8-kakutanis-fixed-point-theorem",
+    "href": "game-theory.html#theorem-8-kakutanis-fixed-point-theorem",
+    "title": "1  Game Theory",
+    "section": "1.56 {Theorem 8 (Kakutani’s Fixed-Point Theorem)}",
+    "text": "1.56 {Theorem 8 (Kakutani’s Fixed-Point Theorem)}\nLet X be a non-empty, compact, and convex subset of a Euclidean space and let the correspondence F: X \\rightrightarrows X have closed graph and non-empty convex values. Then the set of fixed points of F is non-empty and compact.\nIn game theoretic applications, X is usually the strategy space, assumed to be compact and convex when we include mixed strategies.\nF is typically the best response correspondence, which is non-empty valued and has a closed graph by the Maximum Theorem.\n##Convexity}\nTo ensure that F is convex-valued, assume that payoff functions are quasi-concave.\n##Definition 13}\nIf X is a convex subset of a real vector space, then the function f: X \\rightarrow \\mathbb{R} is quasi-concave if\n\nf(t x+(1-t) y) \\geq \\min (f(x), f(y)), \\forall t \\in[0,1], x, y \\in X\n\nQuasi-concavity implies convex upper contour sets and convex arg max.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Game Theory</span>"
+    ]
+  },
+  {
+    "objectID": "game-theory.html#existence-of-nash-equilibrium-1",
+    "href": "game-theory.html#existence-of-nash-equilibrium-1",
+    "title": "1  Game Theory",
+    "section": "1.12 Existence of Nash Equilibrium",
+    "text": "1.12 Existence of Nash Equilibrium\n\nTheorem 1.7 Consider a game (N, S, u) such that S_{i} is a convex and compact subset of a Euclidean space and that u_{i} is continuous in s and quasi-concave in s_{i} for all i \\in N. Then there exists a pure strategy Nash equilibrium.\n\nThe result implies the existence of pure strategy Nash equilibria in generalizations of the Cournot competition game.\nTheorem 9 also implies the existence of mixed strategy Nash equilibria in finite games.\n\n\n\n\n\n\nProof\n\n\n\n\nLet B_{i}\\left(s_{-i}\\right):=\\arg \\max _{s_{i}^{\\prime} \\in S_{i}} u_{i}\\left(s_{i}^{\\prime}, s_{-i}\\right) and define F: S \\rightrightarrows S,\n\n\nF(s)=\\left\\{\\left(s_{1}^{*}, \\ldots, s_{n}^{*}\\right) \\mid s_{i}^{*} \\in B_{i}\\left(s_{-i}\\right), \\forall i \\in N\\right\\}=\\prod_{i \\in N} B_{i}\\left(s_{-i}\\right), \\forall s \\in S\n\n\nSince S is compact and the utility functions are continuous, the Maximum Theorem implies that B_{i} and F are non-empty valued and have closed graphs.\nAs u_{i} is quasi-concave in s_{i}, the set B_{i}\\left(s_{-i}\\right) is convex for all i and s_{-i}, so F is convex-valued.\nKakutani’s fixed-point theorem \\Rightarrow F has a fixed point,\n\n\ns^{*} \\in F\\left(s^{*}\\right)\n\ns_{i}^{*} \\in B_{i}\\left(s_{-i}^{*}\\right), \\forall i \\in N \\Rightarrow s^{*} is a Nash equilibrium.\n\n\n\nExistence of Mixed-Strategy Nash Equilibrium\n\nEvery finite game has a mixed strategy Nash equilibrium.\n\n\n\n\n\n\n\nProof\n\n\n\nSince S is finite, each \\Delta\\left(S_{i}\\right) is isomorphic to a simplex in a Euclidean space, which is convex and compact. Player i’s expected utility u_{i}(\\sigma)=\\sum_{s} u_{i}(s) \\sigma_{1}\\left(s_{1}\\right) \\cdots \\sigma_{n}\\left(s_{n}\\right) from a mixed strategy profile \\sigma is continuous in \\sigma and linear-hence also quasi-concave-in \\sigma_{i}. The game \\left(N, \\Delta\\left(S_{1}\\right), \\ldots, \\Delta\\left(S_{n}\\right), u\\right) satisfies the assumptions of Theorem 9. Therefore, it admits a Nash equilibrium \\sigma^{*} \\in \\Delta\\left(S_{1}\\right) \\times \\cdots \\times \\Delta\\left(S_{n}\\right), which can be interpreted as a mixed Nash equilibrium in the original game.\n\n\n\n\nUpperhemicontinuity of Nash Equilibrium\nFix N and S.\n\nX : compact metric space of payoff-relevant parameters\nS is a compact metric space (or a finite set)\npayoff function u_{i}: S \\times X \\rightarrow \\mathbb{R} of every i \\in N is continuous in strategies and parameters\nN E(x) and PNE (x): sets of Nash equilibria and pure Nash equilibria, resp., of game (N, S, u(\\cdot, x)) in which it is common knowledge that the parameter value is x\nEndow the space of mixed strategies with the weak topology.\n\n\nTheorem 1.8 The correspondences NE and PNE have closed graphs.\n\n\n\n\n\n\n\nProof\n\n\n\nConsider any sequence \\left(s^{m}, x^{m}\\right) \\rightarrow(s, x) with s^{m} \\in \\operatorname{PNE}\\left(x^{m}\\right) for each m. Suppose that s \\notin P N E(x). Then\n\nu_{i}\\left(s_{i}^{\\prime}, s_{-i}, x\\right)-u_{i}\\left(s_{i}, s_{-i}, x\\right)&gt;0\n\nfor some i \\in N, s_{i}^{\\prime} \\in S_{i}. Then \\left(s^{m}, x^{m}\\right) \\rightarrow(s, x) and the continuity of u_{i} imply that\n\nu_{i}\\left(s_{i}^{\\prime}, s_{-i}^{m}, x^{m}\\right)-u_{i}\\left(s_{i}^{m}, s_{-i}^{m}, x^{m}\\right)&gt;0\n\nfor sufficiently large m. However,\n\nu_{i}\\left(s_{i}^{\\prime}, s_{-i}^{m}, x^{m}\\right)&gt;u_{i}\\left(s_{i}^{m}, s_{-i}^{m}, x^{m}\\right)\n\ncontradicts s^{m} \\in \\operatorname{PNE}\\left(x^{m}\\right).",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Game Theory</span>"
+    ]
+  },
+  {
+    "objectID": "game-theory.html#theorem-9",
+    "href": "game-theory.html#theorem-9",
+    "title": "1  Game Theory",
+    "section": "1.58 {Theorem 9}",
+    "text": "1.58 {Theorem 9}\nConsider a game (N, S, u) such that S_{i} is a convex and compact subset of a Euclidean space and that u_{i} is continuous in s and quasi-concave in s_{i} for all i \\in N. Then there exists a pure strategy Nash equilibrium.\nThe result implies the existence of pure strategy Nash equilibria in generalizations of the Cournot competition game.\nTheorem 9 also implies the existence of mixed strategy Nash equilibria in finite games.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Game Theory</span>"
+    ]
+  },
+  {
+    "objectID": "game-theory.html#proof",
+    "href": "game-theory.html#proof",
+    "title": "1  Game Theory",
+    "section": "1.49 {Proof}",
+    "text": "1.49 {Proof}\n\nLet B_{i}\\left(s_{-i}\\right):=\\arg \\max _{s_{i}^{\\prime} \\in S_{i}} u_{i}\\left(s_{i}^{\\prime}, s_{-i}\\right) and define F: S \\rightrightarrows S,\n\n\nF(s)=\\left\\{\\left(s_{1}^{*}, \\ldots, s_{n}^{*}\\right) \\mid s_{i}^{*} \\in B_{i}\\left(s_{-i}\\right), \\forall i \\in N\\right\\}=\\prod_{i \\in N} B_{i}\\left(s_{-i}\\right), \\forall s \\in S\n\n\nSince S is compact and the utility functions are continuous, the Maximum Theorem implies that B_{i} and F are non-empty valued and have closed graphs.\nAs u_{i} is quasi-concave in s_{i}, the set B_{i}\\left(s_{-i}\\right) is convex for all i and s_{-i}, so F is convex-valued.\nKakutani’s fixed-point theorem \\Rightarrow F has a fixed point,\n\n\ns^{*} \\in F\\left(s^{*}\\right)\n\ns_{i}^{*} \\in B_{i}\\left(s_{-i}^{*}\\right), \\forall i \\in N \\Rightarrow s^{*} is a Nash equilibrium.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Game Theory</span>"
+    ]
+  },
+  {
+    "objectID": "game-theory.html#existence-of-mixed-strategy-nash-equilibrium",
+    "href": "game-theory.html#existence-of-mixed-strategy-nash-equilibrium",
+    "title": "1  Game Theory",
+    "section": "1.35 Existence of Mixed-Strategy Nash Equilibrium",
+    "text": "1.35 Existence of Mixed-Strategy Nash Equilibrium\n\nEvery finite game has a mixed strategy Nash equilibrium.\n\n\n\n\n\n\n\nProof\n\n\n\nSince S is finite, each \\Delta\\left(S_{i}\\right) is isomorphic to a simplex in a Euclidean space, which is convex and compact. Player i’s expected utility u_{i}(\\sigma)=\\sum_{s} u_{i}(s) \\sigma_{1}\\left(s_{1}\\right) \\cdots \\sigma_{n}\\left(s_{n}\\right) from a mixed strategy profile \\sigma is continuous in \\sigma and linear-hence also quasi-concave-in \\sigma_{i}. The game \\left(N, \\Delta\\left(S_{1}\\right), \\ldots, \\Delta\\left(S_{n}\\right), u\\right) satisfies the assumptions of Theorem 9. Therefore, it admits a Nash equilibrium \\sigma^{*} \\in \\Delta\\left(S_{1}\\right) \\times \\cdots \\times \\Delta\\left(S_{n}\\right), which can be interpreted as a mixed Nash equilibrium in the original game.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Game Theory</span>"
+    ]
+  },
+  {
+    "objectID": "game-theory.html#corollary-3",
+    "href": "game-theory.html#corollary-3",
+    "title": "1  Game Theory",
+    "section": "1.61 {Corollary 3}",
+    "text": "1.61 {Corollary 3}\nEvery finite game has a mixed strategy Nash equilibrium.\n##Proof.}\nSince S is finite, each \\Delta\\left(S_{i}\\right) is isomorphic to a simplex in a Euclidean space, which is convex and compact. Player i’s expected utility u_{i}(\\sigma)=\\sum_{s} u_{i}(s) \\sigma_{1}\\left(s_{1}\\right) \\cdots \\sigma_{n}\\left(s_{n}\\right) from a mixed strategy profile \\sigma is continuous in \\sigma and linear-hence also quasi-concave-in \\sigma_{i}. The game \\left(N, \\Delta\\left(S_{1}\\right), \\ldots, \\Delta\\left(S_{n}\\right), u\\right) satisfies the assumptions of Theorem 9. Therefore, it admits a Nash equilibrium \\sigma^{*} \\in \\Delta\\left(S_{1}\\right) \\times \\cdots \\times \\Delta\\left(S_{n}\\right), which can be interpreted as a mixed Nash equilibrium in the original game.\n##Upperhemicontinuity of Nash Equilibrium}\nFix N and S.\n\nX : compact metric space of payoff-relevant parameters\nS is a compact metric space (or a finite set)\npayoff function u_{i}: S \\times X \\rightarrow \\mathbb{R} of every i \\in N is continuous in strategies and parameters\nN E(x) and PNE (x): sets of Nash equilibria and pure Nash equilibria, resp., of game (N, S, u(\\cdot, x)) in which it is common knowledge that the parameter value is x\nEndow the space of mixed strategies with the weak topology.\n\n##Theorem 10}\nThe correspondences NE and PNE have closed graphs.\n##Proof}\nConsider any sequence \\left(s^{m}, x^{m}\\right) \\rightarrow(s, x) with s^{m} \\in \\operatorname{PNE}\\left(x^{m}\\right) for each m. Suppose that s \\notin P N E(x). Then\n\nu_{i}\\left(s_{i}^{\\prime}, s_{-i}, x\\right)-u_{i}\\left(s_{i}, s_{-i}, x\\right)&gt;0\n\nfor some i \\in N, s_{i}^{\\prime} \\in S_{i}. Then \\left(s^{m}, x^{m}\\right) \\rightarrow(s, x) and the continuity of u_{i} imply that\n\nu_{i}\\left(s_{i}^{\\prime}, s_{-i}^{m}, x^{m}\\right)-u_{i}\\left(s_{i}^{m}, s_{-i}^{m}, x^{m}\\right)&gt;0\n\nfor sufficiently large m. However,\n\nu_{i}\\left(s_{i}^{\\prime}, s_{-i}^{m}, x^{m}\\right)&gt;u_{i}\\left(s_{i}^{m}, s_{-i}^{m}, x^{m}\\right)\n\ncontradicts s^{m} \\in \\operatorname{PNE}\\left(x^{m}\\right).\nMIT OpenCourseWare\n\n\\subsection*{Game Theory}\nSpring 2016\nFor information about citing these materials or our Terms of Use, visit: .",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Game Theory</span>"
+    ]
+  },
+  {
+    "objectID": "game-theory.html#normal-form-games",
+    "href": "game-theory.html#normal-form-games",
+    "title": "1  Game Theory",
+    "section": "1.3 Normal-Form Games",
+    "text": "1.3 Normal-Form Games\nA normal (or strategic) form game is a triplet (N, S, u) with the following properties:\n\nN=\\{1,2, \\ldots, n\\}: finite set of players\nS_{i} \\ni s_{i}: set of pure strategies of player i\nS=S_{1} \\times \\cdots \\times S_{n} \\ni s=\\left(s_{1}, \\ldots, s_{n}\\right): set of pure strategy profiles\nS_{-i}=\\prod_{j \\neq i} S_{j} \\ni S_{-i}: pure strategy profiles of i’s opponents\nu_{i}: S \\rightarrow \\mathbb{R}: payoff function of player i ; u=\\left(u_{1}, \\ldots, u_{n}\\right).\n\nOutcomes are interdependent. Player i \\in N receives payoff u_{i}\\left(s_{1}, \\ldots, s_{n}\\right) when s=\\left(s_{1}, \\ldots, s_{n}\\right) \\in S is played.\nThe structure of the game is common knoweldge: all players know (N, S, u), and know that their opponents know it, and know that their opponents know that everyone knows, and so on.\nThe game is finite if S is finite.\n\n\n\nRock-Paper-Scissors",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Game Theory</span>"
+    ]
+  },
+  {
+    "objectID": "game-theory.html#dominated-strategies",
+    "href": "game-theory.html#dominated-strategies",
+    "title": "1  Game Theory",
+    "section": "1.2 Dominated Strategies",
+    "text": "1.2 Dominated Strategies\nAre there obvious predictions about how a game should be played?\n\nAdvertising War: Coke vs. Pepsi\n\nWithout any advertising, each company earns \\$ 5 \\mathrm{~b} / year from Cola consumers.\nEach company can choose to spend \\$ 2 \\mathrm{~b} / year on advertising.\nAdvertising does not increase total sales for Cola, but if one company advertises while the other does not, it captures \\$ 3 b from the competitor.\n\n\n\n\n\n\n\nWhat will the Cola companies do?\nIs there a better feasible outcome?\n\n\n\nPrisoners’ Dilemma (PD)\nFlood and Dresher (1950): RAND corporation’s investigations into game theory for possible applications to global nuclear strategy\n\nTwo persons are arrested for a crime.\nThere is not enough evidence to convict either.\nDifferent cells, no communication.\nIf a suspect testifies against the other (“Defect”) and the other does not (“Cooperate”), the former is released and the latter gets a harsh punishment.\nIf both prisoners testify, they share the punishment.\nIf neither testifies, both serve time for a smaller offense.\n\n\n\n\n\n\n\nEach prisoner is better off defecting regardless of what the other does. We say D strictly dominates C for each prisoner.\nThe resulting outcome is (D, D), which is worse than (C, C).\n\n\n\nModified Prisoners’ Dilemma\nConsider the game obtained from the prisoners’ dilemma by changing player 1’s payoff for (C, D) from 0 to 2.\n\n\n\n\n\n\nNo matter what player 1 does, player 2 still prefers D to C.\nIf player 1 knows that 2 never plays C, then he prefers C to D.\nUnlike in the prisoners’ dilemma example, we use an additional assumption to reach our prediction in this case: player 1 needs to deduce that player 2 never plays a dominated strategy.\n\n\nDefinition 1.1 (Strictly Dominated Strategies) A strategy s_{i} \\in S_{i} is strictly (s.) dominated by \\sigma_{i} \\in \\Delta\\left(S_{i}\\right) if\n\nu_{i}\\left(\\sigma_{i}, s_{-i}\\right)&gt;u_{i}\\left(s_{i}, s_{-i}\\right), \\forall s_{-i} \\in S_{-i}\n\n\n\n\nPure Strategies May Be Dominated by Mixed Strategies\n\n\n\nB is s. dominated by 1 / 2 T+1 / 2 M.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Game Theory</span>"
+    ]
+  },
+  {
+    "objectID": "game-theory.html#prisoners-dilemma-pd",
+    "href": "game-theory.html#prisoners-dilemma-pd",
+    "title": "1  Game Theory",
+    "section": "1.6 Prisoners’ Dilemma (PD)",
+    "text": "1.6 Prisoners’ Dilemma (PD)\nFlood and Dresher (1950): RAND corporation’s investigations into game theory for possible applications to global nuclear strategy\n\nTwo persons are arrested for a crime.\nThere is not enough evidence to convict either.\nDifferent cells, no communication.\nIf a suspect testifies against the other (“Defect”) and the other does not (“Cooperate”), the former is released and the latter gets a harsh punishment.\nIf both prisoners testify, they share the punishment.\nIf neither testifies, both serve time for a smaller offense.\n\n\nEach prisoner is better off defecting regardless of what the other does. We say D strictly dominates C for each prisoner.\nThe resulting outcome is (D, D), which is worse than (C, C).",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Game Theory</span>"
+    ]
+  },
+  {
+    "objectID": "game-theory.html#modified-prisoners-dilemma",
+    "href": "game-theory.html#modified-prisoners-dilemma",
+    "title": "1  Game Theory",
+    "section": "1.7 Modified Prisoners’ Dilemma",
+    "text": "1.7 Modified Prisoners’ Dilemma\nConsider the game obtained from the prisoners’ dilemma by changing player 1’s payoff for (C, D) from 0 to 2 .\n\nNo matter what player 1 does, player 2 still prefers D to C.\nIf player 1 knows that 2 never plays C, then he prefers C to D.\nUnlike in the prisoners’ dilemma example, we use an additional assumption to reach our prediction in this case: player 1 needs to deduce that player 2 never plays a dominated strategy.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Game Theory</span>"
+    ]
+  },
+  {
+    "objectID": "game-theory.html#keynesian-beauty-contest",
+    "href": "game-theory.html#keynesian-beauty-contest",
+    "title": "1  Game Theory",
+    "section": "1.12 Keynesian Beauty Contest",
+    "text": "1.12 Keynesian Beauty Contest\nKeynes described the action of rational actors in a market using an analogy based on a newspaper contest. Entrants are asked to choose a set of 6 faces from photographs that they find “most beautiful”. Those who picked the most popular face are eligible for a prize.\nA naive strategy would be to choose the 6 faces that, in the opinion of the entrant, are most beautiful. A more sophisticated contest entrant, wishing to maximize the chances of winning against naive opponents, would guess which faces the majority finds attractive, and then make a selection based on this inference.\nThis can be carried one step further to account for the fact that other entrants would each have their own opinions of what public perceptions of beauty are. What does everyone believe about what everyone else believes about whom others find attractive?",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Game Theory</span>"
+    ]
+  },
+  {
+    "objectID": "game-theory.html#the-beauty-contest-and-the-stock-market",
+    "href": "game-theory.html#the-beauty-contest-and-the-stock-market",
+    "title": "1  Game Theory",
+    "section": "1.13 The Beauty Contest and the Stock Market",
+    "text": "1.13 The Beauty Contest and the Stock Market\n\nIt is not a case of choosing those faces that, to the best of one’s judgment, are really the prettiest, nor even those that average opinion genuinely thinks the prettiest. We have reached the third degree where we devote our intelligences to anticipating what average opinion expects the average opinion to be. And there are some, I believe, who practice the fourth, fifth and higher degrees.\nJohn Maynard Keynes, General Theory of Employment, Interest and Money, 1936\n\nKeynes suggested that similar behavior is observed in the stock market. Shares are not priced based on what people think their fundamental value is, but rather on what they think everyone else thinks the value is and what they think about these beliefs, and so on.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Game Theory</span>"
+    ]
+  },
+  {
+    "objectID": "game-theory.html#iterated-deletion-of-strictly-dominated-strategies",
+    "href": "game-theory.html#iterated-deletion-of-strictly-dominated-strategies",
+    "title": "1  Game Theory",
+    "section": "1.4 Iterated Deletion of Strictly Dominated Strategies",
+    "text": "1.4 Iterated Deletion of Strictly Dominated Strategies\nWe can iteratively eliminate dominated strategies, under the assumption that “I know that you know that other players know… that everyone knows the payoffs and that no one would ever use a dominated strategy.”\n\nDefinition 1.2 For all i \\in N, set S_{i}^{0}=S_{i} and define S_{i}^{k} recursively by\n\nS_{i}^{k}=\\left\\{s_{i} \\in S_{i}^{k-1} \\mid \\nexists \\sigma_{i} \\in \\Delta\\left(S_{i}^{k-1}\\right), u_{i}\\left(\\sigma_{i}, s_{-i}\\right)&gt;u_{i}\\left(s_{i}, s_{-i}\\right), \\forall s_{-i} \\in S_{-i}^{k-1}\\right\\}\n\nThe set of pure strategies of player i that survive iterated deletion of s. dominated strategies is S_{i}^{\\infty}=\\cap_{k \\geq 0} S_{i}^{k}. The set of surviving mixed strategies is\n\n\\left\\{\\sigma_{i} \\in \\Delta\\left(S_{i}^{\\infty}\\right) \\mid \\nexists \\sigma_{i}^{\\prime} \\in \\Delta\\left(S_{i}^{\\infty}\\right), u_{i}\\left(\\sigma_{i}^{\\prime}, s_{-i}\\right)&gt;u_{i}\\left(\\sigma_{i}, s_{-i}\\right), \\forall s_{-i} \\in S_{-i}^{\\infty}\\right\\}\n\n\n\nRemarks\nIn a finite game, the elimination procedure ends in a finite number of steps, so S^{\\infty} is simply the set of strategies left at the final stage.\nIn an infinite game, if S is a compact metric space and u is continuous, then one can use Cantor’s theorem (a decreasing nested sequence of non-empty compact sets has nonempty intersection) to show that S^{\\infty} \\neq \\emptyset.\nDefinition assumes that at each iteration all dominated strategies of every player are deleted simultaneously. In a finite game, the limit set S^{\\infty} does not depend on the particular order in which deletion proceeds.\nOutcome does not change if we eliminate s. dominated mixed strategies at every step. A strategy dominated against all pure strategies of the opponents iff it is dominated against all their mixed strategies. Eliminating mixed strategies for player i at any stage does not affect the set of s. dominated pure strategies for any j \\neq i at the next stage.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Game Theory</span>"
+    ]
+  },
+  {
+    "objectID": "game-theory.html#rationalizabile-strategies",
+    "href": "game-theory.html#rationalizabile-strategies",
+    "title": "1  Game Theory",
+    "section": "1.9 Rationalizabile Strategies",
+    "text": "1.9 Rationalizabile Strategies\nCommon knowledge of payoffs and rationality imposes restrictions on play…\n\nDefinition 1.4 Set S^{0}=S and let S^{k} be given recursively by\n\nS_{i}^{k}=\\left\\{s_{i} \\in S_{i}^{k-1} \\mid \\exists \\sigma_{-i} \\in \\Delta\\left(S_{-i}^{k-1}\\right), u_{i}\\left(s_{i}, \\sigma_{-i}\\right) \\geq u_{i}\\left(s_{i}^{\\prime}, \\sigma_{-i}\\right), \\forall s_{i}^{\\prime} \\in S_{i}^{k-1}\\right\\}\n\nThe set of correlated rationalizable strategies for player i is S_{i}^{\\infty}=\\bigcap_{k \\geq 0} S_{i}^{k}. A mixed strategy \\sigma_{i} \\in \\Delta\\left(S_{i}\\right) is rationalizable if there is a belief \\sigma_{-i} \\in \\Delta\\left(S_{-i}^{\\infty}\\right) s.t. u_{i}\\left(\\sigma_{i}, \\sigma_{-i}\\right) \\geq u_{i}\\left(s_{i}, \\sigma_{-i}\\right) for all s_{i} \\in S_{i}^{\\infty}.\n\nThe definition of independent rationalizability replaces \\Delta\\left(S_{-i}^{k-1}\\right) and \\Delta\\left(S_{-i}^{\\infty}\\right) with \\prod_{j \\neq i} \\Delta\\left(S_{j}^{k-1}\\right) and \\prod_{j \\neq i} \\Delta\\left(S_{j}^{\\infty}\\right), resp.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Game Theory</span>"
+    ]
+  },
+  {
+    "objectID": "game-theory.html#rationalizability-in-cournot-duopoly",
+    "href": "game-theory.html#rationalizability-in-cournot-duopoly",
+    "title": "1  Game Theory",
+    "section": "1.10 Rationalizability in Cournot Duopoly",
+    "text": "1.10 Rationalizability in Cournot Duopoly\nTwo firms compete on the market for a divisible homogeneous good.\n\nEach firm i=1,2 has zero marginal cost and simultaneously decides to produce an amount of output q_{i} \\geq 0.\nThe resulting price is p=1-q_{1}-q_{2}.\nProfit of firm i is q_{i}\\left(1-q_{1}-q_{2}\\right).\n\nBest response of one firm if the other produces q is\nB(q)=\\max (0,(1-q) / 2)(j=3-i) ; B is decreasing. If q \\lesseqgtr r then\nB(q) \\gtreqless(1-r) / 2.\n\nSince q \\geq q^{0}:=0, only strategies q \\leq q^{1}:=B\\left(q^{0}\\right)=\\left(1-q^{0}\\right) / 2 are best responses, S_{i}^{1}=\\left[q^{0}, q^{1}\\right].\nThen only q \\geq q^{2}:=B\\left(q^{1}\\right)=\\left(1-q^{1}\\right) / 2 survives the second round of elimination, S_{i}^{2}=\\left[q^{2}, q^{1}\\right] \\ldots\nWe obtain a sequence\n\n\nq^{0} \\leq q^{2} \\leq \\ldots \\leq q^{2 k} \\leq \\ldots \\leq q^{2 k+1} \\leq \\ldots \\leq q^{1}\n\nwhere q^{2 k}=\\sum_{l=1}^{k} 1 / 4^{l}=\\left(1-1 / 4^{k}\\right) / 3 and q^{2 k+1}=\\left(1-q^{2 k}\\right) / 2 s.t. S_{i}^{2 k+1}=\\left[q^{2 k}, q^{2 k+1}\\right] and S_{i}^{2 k}=\\left[q^{2 k}, q^{2 k-1}\\right] for all k \\geq 0.\n\\lim _{k \\rightarrow \\infty} q^{k}=1 / 3, so the only rationalizable strategy for firm i is q_{i}=1 / 3 (the Nash equilibrium).\nWhat strategies are rationalizable with more than two firms?",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Game Theory</span>"
+    ]
+  },
+  {
+    "objectID": "game-theory.html#rationalizability-in-cournot-duopoly-1",
+    "href": "game-theory.html#rationalizability-in-cournot-duopoly-1",
+    "title": "1  Game Theory",
+    "section": "1.13 Rationalizability in Cournot Duopoly",
+    "text": "1.13 Rationalizability in Cournot Duopoly\nBest response of one firm if the other produces q is\nB(q)=\\max (0,(1-q) / 2)(j=3-i) ; B is decreasing. If q \\lesseqgtr r then\nB(q) \\gtreqless(1-r) / 2.\n\nSince q \\geq q^{0}:=0, only strategies q \\leq q^{1}:=B\\left(q^{0}\\right)=\\left(1-q^{0}\\right) / 2 are best responses, S_{i}^{1}=\\left[q^{0}, q^{1}\\right].\nThen only q \\geq q^{2}:=B\\left(q^{1}\\right)=\\left(1-q^{1}\\right) / 2 survives the second round of elimination, S_{i}^{2}=\\left[q^{2}, q^{1}\\right] \\ldots\nWe obtain a sequence\n\n\nq^{0} \\leq q^{2} \\leq \\ldots \\leq q^{2 k} \\leq \\ldots \\leq q^{2 k+1} \\leq \\ldots \\leq q^{1}\n\nwhere q^{2 k}=\\sum_{l=1}^{k} 1 / 4^{l}=\\left(1-1 / 4^{k}\\right) / 3 and q^{2 k+1}=\\left(1-q^{2 k}\\right) / 2 s.t. S_{i}^{2 k+1}=\\left[q^{2 k}, q^{2 k+1}\\right] and S_{i}^{2 k}=\\left[q^{2 k}, q^{2 k-1}\\right] for all k \\geq 0.\n\\lim _{k \\rightarrow \\infty} q^{k}=1 / 3, so the only rationalizable strategy for firm i is q_{i}=1 / 3 (the Nash equilibrium).\nWhat strategies are rationalizable with more than two firms?",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Game Theory</span>"
+    ]
+  },
+  {
+    "objectID": "game-theory.html#never-best-responses",
+    "href": "game-theory.html#never-best-responses",
+    "title": "1  Game Theory",
+    "section": "1.9 Never Best Responses",
+    "text": "1.9 Never Best Responses\nA strategy \\sigma_{i} \\in \\Delta\\left(S_{i}\\right) is never a best response for player i if it is not a best response to any correlated belief \\sigma_{-i} \\in \\Delta\\left(S_{-i}\\right).\nRecall that \\sigma_{i} \\in \\Delta\\left(S_{i}\\right) is s. dominated if \\exists \\sigma_{i}^{\\prime} \\in \\Delta\\left(S_{i}\\right) s.t.\n\nu_{i}\\left(\\sigma_{i}^{\\prime}, s_{-i}\\right)&gt;u_{i}\\left(\\sigma_{i}, s_{-i}\\right), \\forall s_{-i} \\in S_{-i}\n\n\nTheorem 1.1 In a finite game, a strategy is never a best response iff it is s. dominated.\n\n\nCorollary 1.1 Correlated rationalizability and iterated strict dominance coincide.\n\nIf \\sigma_{i} is s. dominated by \\sigma_{i}^{\\prime}, then \\sigma_{i} is not a best response for any belief \\sigma_{-i} \\in \\Delta\\left(S_{-i}\\right): \\sigma_{i}^{\\prime} yields a higher payoff than \\sigma_{i} for player i against any \\sigma_{-i}. Left to prove that a strategy that is not \\mathrm{s}. dominated is a best response for some beliefs.\n\n\n\n\n\n\nProof\n\n\n\nSuppose \\tilde{\\sigma}_{i} is not s. dominated for player i.\n\nDefine set of “dominated payoffs” for i by\n\n\nD=\\left\\{x \\in \\mathbb{R}^{S_{-i}} \\mid \\exists \\sigma_{i} \\in \\Delta\\left(S_{i}\\right), x \\leq u_{i}\\left(\\sigma_{i}, \\cdot\\right)\\right\\}\n\nD is non-empty, closed, and convex.\n\nu_{i}\\left(\\tilde{\\sigma}_{i}, \\cdot\\right) does not belong to the interior of D because it is not \\mathrm{s}. dominated by any \\sigma_{i} \\in \\Delta\\left(S_{i}\\right).\nBy the supporting hyperplane theorem, \\exists \\alpha \\in \\mathbb{R}^{S_{-i}} \\backslash\\{\\mathbf{0}\\} s.t.\n\n\n\\alpha \\cdot u_{i}\\left(\\tilde{\\sigma}_{i}, \\cdot\\right) \\geq \\alpha \\cdot x, \\forall x \\in D\n\nIn particular, \\alpha \\cdot u_{i}\\left(\\tilde{\\sigma}_{i}, \\cdot\\right) \\geq \\alpha \\cdot u_{i}\\left(\\sigma_{i}, \\cdot\\right), \\forall \\sigma_{i} \\in \\Delta\\left(S_{i}\\right).\n\nSince D is not bounded from below, \\alpha has non-negative components.\nNormalize \\alpha so that its components sum to 1 ; \\alpha interpreted as a belief in \\Delta\\left(S_{-i}\\right) with the property that\n\n\nu_{i}\\left(\\tilde{\\sigma}_{i}, \\alpha\\right) \\geq u_{i}\\left(\\sigma_{i}, \\alpha\\right), \\forall \\sigma_{i} \\in \\Delta\\left(S_{i}\\right)\n\nThus \\tilde{\\sigma}_{i} is a best response to belief \\alpha.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Game Theory</span>"
+    ]
+  },
+  {
+    "objectID": "game-theory.html#remarks-2",
+    "href": "game-theory.html#remarks-2",
+    "title": "1  Game Theory",
+    "section": "1.19 Remarks",
+    "text": "1.19 Remarks\n\nEvolutionary processes are myopic and do not offer a compelling description of behavior.\nSuch processes do not provide good predictions for behavior in the actual repeated game, if players care about play in future periods and realize that their current actions can affect opponents’ future play.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Game Theory</span>"
+    ]
+  },
+  {
+    "objectID": "game-theory.html#proof-1",
+    "href": "game-theory.html#proof-1",
+    "title": "1  Game Theory",
+    "section": "1.59 {Proof}",
+    "text": "1.59 {Proof}\n\nLet B_{i}\\left(s_{-i}\\right):=\\arg \\max _{s_{i}^{\\prime} \\in S_{i}} u_{i}\\left(s_{i}^{\\prime}, s_{-i}\\right) and define F: S \\rightrightarrows S,\n\n\nF(s)=\\left\\{\\left(s_{1}^{*}, \\ldots, s_{n}^{*}\\right) \\mid s_{i}^{*} \\in B_{i}\\left(s_{-i}\\right), \\forall i \\in N\\right\\}=\\prod_{i \\in N} B_{i}\\left(s_{-i}\\right), \\forall s \\in S\n\n\nSince S is compact and the utility functions are continuous, the Maximum Theorem implies that B_{i} and F are non-empty valued and have closed graphs.\nAs u_{i} is quasi-concave in s_{i}, the set B_{i}\\left(s_{-i}\\right) is convex for all i and s_{-i}, so F is convex-valued.\nKakutani’s fixed-point theorem \\Rightarrow F has a fixed point,\n\n\ns^{*} \\in F\\left(s^{*}\\right)\n\ns_{i}^{*} \\in B_{i}\\left(s_{-i}^{*}\\right), \\forall i \\in N \\Rightarrow s^{*} is a Nash equilibrium.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Game Theory</span>"
+    ]
+  },
+  {
+    "objectID": "game-theory.html#epistemic-foundations-of-rationalizability",
+    "href": "game-theory.html#epistemic-foundations-of-rationalizability",
+    "title": "1  Game Theory",
+    "section": "1.12 Epistemic Foundations of Rationalizability",
+    "text": "1.12 Epistemic Foundations of Rationalizability\nFormalize the idea of common knowledge and show that rationalizability captures the idea of common knowledge of rationality (and payoffs).\n\nDefinition 1.6 (Information Structure) An information (or belief) structure is a list \\left(\\Omega,\\left(l_{i}\\right)_{i \\in N},\\left(p_{i}\\right)_{i \\in N}\\right)\n\n\\Omega is a finite state space\nl_{i}: \\Omega \\rightarrow 2^{\\Omega} is a partition of \\Omega for each i \\in N s.t. l_{i}(\\omega) is the set of states that i thinks are possible when the true state is \\omega; \\omega^{\\prime} \\in l_{i}(\\omega) \\Leftrightarrow \\omega \\in l_{i}\\left(\\omega^{\\prime}\\right)\np_{i, l_{i}(\\omega)} \\in \\Delta\\left(l_{i}(\\omega)\\right): i^{\\prime} ’s belief at \\omega\n\n\n\nInterpretation\n\nState \\omega summarizes all the relevant facts about the world. Only one of the states is true; all others are hypothetical states needed to encode players’ beliefs.\nIn state \\omega, player i is informed that the state is in l_{i}(\\omega) and gets no other information.\nSuch an information structure arises if each player observes a state-dependent signal and l_{i}(\\omega) is the set of states for which player i ’s signal is identical to the signal at \\omega.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Game Theory</span>"
+    ]
+  },
+  {
+    "objectID": "game-theory.html#public-events",
+    "href": "game-theory.html#public-events",
+    "title": "1  Game Theory",
+    "section": "1.14 Public Events",
+    "text": "1.14 Public Events\nK\\left(K^{\\infty}(F)\\right)=K^{\\infty}(F) \\rightarrow alternative definition of common knowledge\nEvent F^{\\prime} is public if F^{\\prime}=\\cup_{\\left(\\omega^{\\prime} \\in F^{\\prime}\\right.} l_{i}\\left(\\omega^{\\prime}\\right) for all i. If F^{\\prime} is public, then K\\left(F^{\\prime}\\right)=F^{\\prime}, so K^{\\infty}\\left(F^{\\prime}\\right)=F^{\\prime}.\n\nLemma 1.1 An event F is common knowledge at \\omega iff there exists a public event F^{\\prime} with \\omega \\in F^{\\prime} \\subseteq F.\nIf F is common knowledge at \\omega, there exists a submodel that includes state \\omega and respects the information structure where F is true state by state.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Game Theory</span>"
+    ]
+  },
+  {
+    "objectID": "game-theory.html#strategies",
+    "href": "game-theory.html#strategies",
+    "title": "1  Game Theory",
+    "section": "1.15 Strategies",
+    "text": "1.15 Strategies\nFix a finite game (N, S, u). To give strategic meaning to information states, introduce a strategy profile \\mathbf{s}: \\Omega \\rightarrow S.\n\nA strategy profile \\mathbf{s}: \\Omega \\rightarrow S is adapted with respect to \\left(\\Omega,\\left(I_{i}\\right)_{i \\in N},\\left(p_{i}\\right)_{i \\in N}\\right) if \\mathbf{s}_{i}(\\omega)=\\mathbf{s}_{i}\\left(\\omega^{\\prime}\\right) whenever l_{i}(\\omega)=l_{i}\\left(\\omega^{\\prime}\\right).\n\nPlayers must choose a constant action at all states in each information set since they cannot distinguish states in the same information set.\n\nAn epistemic model \\left(\\Omega,\\left(l_{i}\\right)_{i \\in N},\\left(p_{i}\\right)_{i \\in N}, \\mathbf{s}\\right) consists of an information structure and an adapted strategy profile.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Game Theory</span>"
+    ]
+  },
+  {
+    "objectID": "game-theory.html#proof-3",
+    "href": "game-theory.html#proof-3",
+    "title": "1  Game Theory",
+    "section": "1.59 {Proof}",
+    "text": "1.59 {Proof}\n\nLet B_{i}\\left(s_{-i}\\right):=\\arg \\max _{s_{i}^{\\prime} \\in S_{i}} u_{i}\\left(s_{i}^{\\prime}, s_{-i}\\right) and define F: S \\rightrightarrows S,\n\n\nF(s)=\\left\\{\\left(s_{1}^{*}, \\ldots, s_{n}^{*}\\right) \\mid s_{i}^{*} \\in B_{i}\\left(s_{-i}\\right), \\forall i \\in N\\right\\}=\\prod_{i \\in N} B_{i}\\left(s_{-i}\\right), \\forall s \\in S\n\n\nSince S is compact and the utility functions are continuous, the Maximum Theorem implies that B_{i} and F are non-empty valued and have closed graphs.\nAs u_{i} is quasi-concave in s_{i}, the set B_{i}\\left(s_{-i}\\right) is convex for all i and s_{-i}, so F is convex-valued.\nKakutani’s fixed-point theorem \\Rightarrow F has a fixed point,\n\n\ns^{*} \\in F\\left(s^{*}\\right)\n\ns_{i}^{*} \\in B_{i}\\left(s_{-i}^{*}\\right), \\forall i \\in N \\Rightarrow s^{*} is a Nash equilibrium.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Game Theory</span>"
+    ]
+  },
+  {
+    "objectID": "game-theory.html#nash-equilibrium",
+    "href": "game-theory.html#nash-equilibrium",
+    "title": "1  Game Theory",
+    "section": "1.6 Nash Equilibrium",
+    "text": "1.6 Nash Equilibrium\nMany games are not dominance solvable. Nevertheless, the involved parties find a solution.\n\n\n\nCoordination Game, Battle of the Sexes, Matching Pennies\n\n\nA Nash equilibrium is a strategy profile with the property that no player can benefit by deviating from his corresponding strategy.\n\nDefinition 1.8 (Nash 1950) A mixed-strategy profile \\sigma^{*} is a Nash equilibrium if for every i \\in N,\n\nu_{i}\\left(\\sigma_{i}^{*}, \\sigma_{-i}^{*}\\right) \\geq u_{i}\\left(s_{i}, \\sigma_{-i}^{*}\\right), \\forall s_{i} \\in S_{i}\n\n\n\nRemarks\n\nThe fact that there is no profitable deviation in pure strategies implies there is no profitable deviation in mixed strategies either.\nIf in equilibrium a player uses a mixed strategy that places positive probability on several pure strategies, he must be indifferent between all pure strategies in its support.\nStrategies that do not survive iterated strict dominance (or are not rationalizable) cannot be played with positive probability in a Nash equilibrium.\n\n\n\nWhat Are the Assumptions?\n\nNash equilibria are “consistent” predictions (or “stable” conventions) of how the game will be played.\nIf all players expect that a specific Nash equilibrium will arise, then no player has incentives to play differently.\nEach player must have correct conjectures about the strategies of his opponents and play a best response to his conjecture.\nWe interpret mixed strategies as beliefs regarding opponents’ play, not necessarily as deliberate randomization.\nAssumes knowledge of strategies (beliefs) and rationality.\n\n\n\nDo Soccer Players Flip Coins?\nPenalty kicks\n\nKicker’s strategy space: \\{L, M, R\\}\nGoalie’s strategy space: \\{L, M, R\\}\n\nWhat are the payoffs?\n\nWhat’s the Nash equilibrium?\nSimultaneous move game? (125mph, 0.2 seconds reaction time)\nWhat do players do in reality?\n\nChiappori, Levitt, and Groseclose (2002)\n\n459 kicks in French and Italian first leagues\n162 kickers, 88 goalies\n\n\n\n\n\n\n\n\nTennis Service Game\nPlayer 1 chooses whether to serve to player 2’s forehand, center or backhand side, and player 2 chooses which side to favor for the return. Unique mixed strategy equilibrium, which puts positive probability only on strategies C and B for either player.\n\n\n\n\n\n\nFor player 1 , playing C with probability \\epsilon and B with probability 1-\\epsilon \\mathrm{s}. dominates F.\nIf player 1 never chooses F, then C s. dominates F for player 2 .\nIn the remaining 2 \\times 2 game, there is a unique equilibrium, in which both players place probability 1 / 4 on C and 3 / 4 on B.\n\n\n\nStag Hunt\nEach player can choose to hunt hare by himself or hunt stag with the other. Stag offers a higher payoff, but only if players team up.\n\n\n\n\n\nThe game has two pure strategy Nash equilibria – (S, S) and (H, H) – and a mixed strategy Nash equilibrium – (7 / 8 S+1 / 8 H, 7 / 8 S+1 / 8 H).\n\n\nWhich Equilibrium is More Plausible?\n\nWe may expect (S, S) to be played because it is Pareto dominant. However, if one player expects the other to hunt hare, he is much better off hunting hare himself; and the potential downside of choosing stag is bigger than the upside-hare is the safer choice.\nHarsanyi and Selten (1988): H is the risk-dominant action-if each player expects the other to choose either action with probability 1 / 2, then H has a higher expected payoff (7.5) than S (4.5).\nFor a player to optimally choose stag, he should expect the other to play stag with probability \\geq 7 / 8.\nCoordination problem may persist even if players communicate: regardless of what i intends to do, he would prefer j to play stag, so attempts to convince j to play stag are cheap talk.\n\n\n\nEpistemic Foundations\n\nAumann and Brandenburger (1995): a framework that can be used to examine the epistemic foundations of Nash equilibrium.\nThe primitive of their model is an interactive belief system in which there is a possible set of types for each player; each type has associated to it a payoff for every action profile, a choice of which action to play, and a belief about the types of the other players.\nIn a 2-player game, if the game being played, the rationality of the players, and their conjectures are all mutually known, then the conjectures constitute a Nash equilibrium.\nFor games with more than 2 players, we need to assume additionally that players have a common prior and that conjectures are commonly known. This ensures that any two players have identical and separable (independent) conjectures about other players, consistent with a mixed strategy profile.\n\n\n\nEvolutionary Foundations\n\nSolution concepts motivated by presuming that players make predictions about their opponents’ play by introspection and deduction, using knowledge of their opponents’ payoffs, rationality…\nAlternatively, assume players extrapolate from past observations of play in “similar” games and best respond to expectations based on past observations.\nCournot (1838) suggested that players take turns setting their outputs in the duopoly game, best responding to the opponent’s last-period action.\nSimultaneous action updating, best responding to average play, populations of players anonymously matched (another way to think about mixed strategies), etc.\nIf the process converges to a particular steady state, then the steady state is a Nash equilibrium.\n\n\n\nConvergence\nHow sensitive is the convergence to the initial state? If convergence obtains for all initial strategy profiles sufficiently close to the steady state, we say that the steady state is asymptotically stable.\n\n\n\nCourtesy of The MIT Press. Used with permission.\n\n\n\n\n\n\nShapley (1964) Cycling\n\n\n\n\nRemarks\n\nEvolutionary processes are myopic and do not offer a compelling description of behavior.\nSuch processes do not provide good predictions for behavior in the actual repeated game, if players care about play in future periods and realize that their current actions can affect opponents’ future play.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Game Theory</span>"
+    ]
+  },
+  {
+    "objectID": "game-theory.html#tennis-service-game",
+    "href": "game-theory.html#tennis-service-game",
+    "title": "1  Game Theory",
+    "section": "1.24 Tennis Service Game",
+    "text": "1.24 Tennis Service Game\nPlayer 1 chooses whether to serve to player 2’s forehand, center or backhand side, and player 2 chooses which side to favor for the return. Unique mixed strategy equilibrium, which puts positive probability only on strategies C and B for either player.\n\nFor player 1 , playing C with probability \\epsilon and B with probability 1-\\epsilon \\mathrm{s}. dominates F.\nIf player 1 never chooses F, then C s. dominates F for player 2 .\nIn the remaining 2 \\times 2 game, there is a unique equilibrium, in which both players place probability 1 / 4 on C and 3 / 4 on B.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Game Theory</span>"
+    ]
+  },
+  {
+    "objectID": "game-theory.html#stag-hunt",
+    "href": "game-theory.html#stag-hunt",
+    "title": "1  Game Theory",
+    "section": "1.25 Stag Hunt",
+    "text": "1.25 Stag Hunt\nEach player can choose to hunt hare by himself or hunt stag with the other. Stag offers a higher payoff, but only if players team up.\nThe game has two pure strategy Nash equilibria- (S, S) and (H, H)-and a mixed strategy Nash equilibrium- (7 / 8 S+1 / 8 H, 7 / 8 S+1 / 8 H).",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Game Theory</span>"
+    ]
+  },
+  {
+    "objectID": "game-theory.html#convergence",
+    "href": "game-theory.html#convergence",
+    "title": "1  Game Theory",
+    "section": "1.29 Convergence",
+    "text": "1.29 Convergence\nHow sensitive is the convergence to the initial state? If convergence obtains for all initial strategy profiles sufficiently close to the steady state, we say that the steady state is asymptotically stable.\n\nCourtesy of The MIT Press. Used with permission.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Game Theory</span>"
+    ]
+  },
+  {
+    "objectID": "game-theory.html#nash-1950-1",
+    "href": "game-theory.html#nash-1950-1",
+    "title": "1  Game Theory",
+    "section": "1.21 Nash (1950)",
+    "text": "1.21 Nash (1950)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nProof\n\n\n\n\n\n\nCourtesy of John F. Nash, Jr. “Equilibirum Points in N-Person Games”. Proceedings of the National Academy of Sciences of the United States of America 36 no. 1 (1949): 48-49.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Game Theory</span>"
+    ]
+  },
+  {
+    "objectID": "game-theory.html#kakutani",
+    "href": "game-theory.html#kakutani",
+    "title": "1  Game Theory",
+    "section": "1.22 Kakutani",
+    "text": "1.22 Kakutani\n\nA long time ago, the Japanese mathematician Kakutani asked me why so many economists had attended the lecture he had just given. When I told him that he was famous because of the Kakutani fixed-point theorem, he replied, ‘What is the Kakutani fixed-point theorem?’\nKen Binmore, Playing for Real, 2007\n\n\nExistence of Nash Equilibria\nProve the existence of Nash equilibria in a more general setting.\n\nContinuity and compactness assumptions are indispensable, usually needed for the existence of solutions to optimization problems.\nConvexity is usually required for fixed-point theorems.\n\nNeed some topology prerequisites…\n\n\nCorrespondences\nTopological vector spaces X and Y\n\nA correspondence F: X \\rightrightarrows Y is a set valued function taking elements x \\in X into subsets F(x) \\subseteq Y.\nG(F)=\\{(x, y) \\mid y \\in F(x)\\}: graph of F\nx \\in X is a fixed point of F if x \\in F(x)\nF is non-empty/closed-valued/convex-valued if F(x) is non-empty/closed/convex for all x \\in X.\n\n\n\nClosed Graph\n\nA correspondence F has closed graph if G(F) is a closed subset of X \\times Y.\nIf X and Y are first-countable spaces (such as metric spaces), then F has closed graph iff for any sequence \\left(x_{m}, y_{m}\\right)_{m \\geq 0} with y_{m} \\in F\\left(x_{m}\\right) for all m \\geq 0, which converges to a pair (x, y), we have y \\in F(x).\nCorrespondences with closed graph are closed-valued.\n\n\n\nUpper Hemicontinuity\n\nA correspondence F is upper hemicontinuous at x \\in X if for every open neighborhood V_{Y} of F(x), there exists a neighborhood V_{X} of x such that x^{\\prime} \\in V_{X} \\Rightarrow F\\left(x^{\\prime}\\right) \\subset V_{Y}.\nClosed graph and upper hemicontinuity may have different implications. The constant correspondence F:[0,1] \\rightrightarrows[0,1] defined by F(x)=(0,1) is upper hemicontinuous, but does not have a closed graph.\n\nThe two concepts coincide for closed-valued correspondences in most spaces of interest.\n\nTheorem 1.4 (Closed Graph Theorem) A correspondence F: X \\rightrightarrows Y with compact Hausdorff range Y is closed iff it is upper hemicontinuous and closed-valued.\n\n\n\n1.22.1 The Maximum Theorem\n\nTheorem 1.5 (Berge’s Maximum Theorem) Suppose that f: X \\times Y \\rightarrow \\mathbb{R} is a continuous function, where X and Y are metric spaces and Y is compact.\n\nThe function M: X \\rightarrow \\mathbb{R}, defined by\n\n\nM(x)=\\max _{y \\in Y} f(x, y)\n\nis continuous.\n\nThe correspondence F: X \\rightrightarrows Y,\n\n\nF(x)=\\arg \\max _{y \\in Y} f(x, y)\n\nis nonempty valued and has a closed graph.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Game Theory</span>"
+    ]
+  },
+  {
+    "objectID": "game-theory.html#existence-of-nash-equilibria",
+    "href": "game-theory.html#existence-of-nash-equilibria",
+    "title": "1  Game Theory",
+    "section": "1.27 Existence of Nash Equilibria",
+    "text": "1.27 Existence of Nash Equilibria\nProve the existence of Nash equilibria in a more general setting.\n\nContinuity and compactness assumptions are indispensable, usually needed for the existence of solutions to optimization problems.\nConvexity is usually required for fixed-point theorems.\n\nNeed some topology prerequisites…",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Game Theory</span>"
+    ]
+  },
+  {
+    "objectID": "game-theory.html#correspondences",
+    "href": "game-theory.html#correspondences",
+    "title": "1  Game Theory",
+    "section": "1.28 Correspondences",
+    "text": "1.28 Correspondences\nTopological vector spaces X and Y\n\nA correspondence F: X \\rightrightarrows Y is a set valued function taking elements x \\in X into subsets F(x) \\subseteq Y.\nG(F)=\\{(x, y) \\mid y \\in F(x)\\}: graph of F\nx \\in X is a fixed point of F if x \\in F(x)\nF is non-empty/closed-valued/convex-valued if F(x) is non-empty/closed/convex for all x \\in X.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Game Theory</span>"
+    ]
+  },
+  {
+    "objectID": "game-theory.html#convexity",
+    "href": "game-theory.html#convexity",
+    "title": "1  Game Theory",
+    "section": "1.33 Convexity",
+    "text": "1.33 Convexity\nTo ensure that F is convex-valued, assume that payoff functions are quasi-concave.\n\nDefinition 1.9 If X is a convex subset of a real vector space, then the function f: X \\rightarrow \\mathbb{R} is quasi-concave if\n\nf(t x+(1-t) y) \\geq \\min (f(x), f(y)), \\forall t \\in[0,1], x, y \\in X\n\n\nQuasi-concavity implies convex upper contour sets and convex arg max.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Game Theory</span>"
+    ]
+  },
+  {
+    "objectID": "game-theory.html#upperhemicontinuity-of-nash-equilibrium",
+    "href": "game-theory.html#upperhemicontinuity-of-nash-equilibrium",
+    "title": "1  Game Theory",
+    "section": "1.36 Upperhemicontinuity of Nash Equilibrium",
+    "text": "1.36 Upperhemicontinuity of Nash Equilibrium\nFix N and S.\n\nX : compact metric space of payoff-relevant parameters\nS is a compact metric space (or a finite set)\npayoff function u_{i}: S \\times X \\rightarrow \\mathbb{R} of every i \\in N is continuous in strategies and parameters\nN E(x) and PNE (x): sets of Nash equilibria and pure Nash equilibria, resp., of game (N, S, u(\\cdot, x)) in which it is common knowledge that the parameter value is x\nEndow the space of mixed strategies with the weak topology.\n\n\nTheorem 1.8 The correspondences NE and PNE have closed graphs.\n\n\n\n\n\n\n\nProof\n\n\n\nConsider any sequence \\left(s^{m}, x^{m}\\right) \\rightarrow(s, x) with s^{m} \\in \\operatorname{PNE}\\left(x^{m}\\right) for each m. Suppose that s \\notin P N E(x). Then\n\nu_{i}\\left(s_{i}^{\\prime}, s_{-i}, x\\right)-u_{i}\\left(s_{i}, s_{-i}, x\\right)&gt;0\n\nfor some i \\in N, s_{i}^{\\prime} \\in S_{i}. Then \\left(s^{m}, x^{m}\\right) \\rightarrow(s, x) and the continuity of u_{i} imply that\n\nu_{i}\\left(s_{i}^{\\prime}, s_{-i}^{m}, x^{m}\\right)-u_{i}\\left(s_{i}^{m}, s_{-i}^{m}, x^{m}\\right)&gt;0\n\nfor sufficiently large m. However,\n\nu_{i}\\left(s_{i}^{\\prime}, s_{-i}^{m}, x^{m}\\right)&gt;u_{i}\\left(s_{i}^{m}, s_{-i}^{m}, x^{m}\\right)\n\ncontradicts s^{m} \\in \\operatorname{PNE}\\left(x^{m}\\right).",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Game Theory</span>"
+    ]
+  },
+  {
+    "objectID": "game-theory.html#footnotes",
+    "href": "game-theory.html#footnotes",
+    "title": "1  Game Theory",
+    "section": "",
+    "text": "Pierre-Andre Chiappori, Steven Levitt, Tim Groseclose, American Economic Association. All rights reserved. This content is excluded from our Creative Commons license. For more information, see .↩︎",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Game Theory</span>"
+    ]
+  }
+]
